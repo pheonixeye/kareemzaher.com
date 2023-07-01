@@ -1,0 +1,66 @@
+.main-component {
+    margin: 0px;
+    display: grid;
+    background-color: white;
+}
+
+.nav-and-hero {
+    display: grid;
+    height: 95vh;
+    grid-template-rows: 50px 1fr 3fr 1fr;
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+}
+
+
+.nav-bar {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background-color: black;
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+.nav-bar h1 {
+    flex: 40%;
+    color: white;
+    text-align: center;
+}
+
+.nav-bar nav {
+    flex: 50%;
+}
+
+.nav-bar a {
+    color: white;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar li {
+    margin-left: 25px;
+
+}
+
+.hero-div {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    height: 95vh;
+    background-color: #102B4A;
+}
+
+.hero-div-background-image {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    height: 95vh;
+    width: 100%;
+    opacity: 0.4;
+    object-fit: cover;
+}
