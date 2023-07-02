@@ -36,6 +36,16 @@
 
 .nav-bar a {
     color: white;
+    font-size: 18px;
+    font-style: normal;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
+.nav-bar a:hover {
+    color: yellow;
+    font-size: 20px;
+    text-decoration-line: underline;
 }
 
 .nav-bar ul {
@@ -61,6 +71,6 @@
     grid-column: 1 / -1;
     height: 95vh;
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.3;
     object-fit: cover;
 }
