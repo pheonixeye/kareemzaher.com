@@ -284,4 +284,134 @@
 
 .clinic-rating {
   height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 165px;
+  padding: 20px 20px;
+  background-color: #f6f6f6;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .clinic-rating {
+    padding: 5px 5px;
+    gap: 5px;
+  }
+}
+
+.clinic-rating-list {
+  list-style: none;
+  list-style-position: outside;
+}
+
+.rating-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  height: 165px;
+  grid-row: 1 / 2;
+  grid-column: 1;
+  background-color: white;
+}
+
+/* .rating-item,
+.item-hidden {
+  display: none;
+} */
+
+.rating-stars {
+  display: flex;
+  margin: auto;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 100%;
+}
+
+.rating-item img {
+  height: 16px;
+  width: 16px;
+}
+
+.rating-item .overall-rating {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.rating-item .comment {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+.rating-item .user {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+}
+.rating-item .date {
+  grid-row: 5 / 6;
+  grid-column: 1 / 2;
+}
+@media only screen and (max-width: 600px) {
+  .rating-item .date {
+    font-size: small;
+  }
+}
+
+.no-margin {
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.doctor-rating-number {
+  grid-row: 2 / 4;
+  grid-column: 2 / 3;
+  display: grid;
+}
+.doctor-rating-text {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+}
+
+.doctor-rating-number-background {
+  margin: auto;
+  height: 100%;
+  width: 25%;
+  border-radius: 12%;
+  background-color: #0070cd;
+  align-items: center;
+  display: flex;
+}
+
+.doctor-rating-number-background p {
+  margin: auto;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.doctor-rating-text {
+  display: flex;
+}
+
+.doctor-rating-text p {
+  margin: auto;
+}
+
+.follow-us {
+  height: 10vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 20px 20px;
+  background-color: #f6f6f6;
+  gap: 20px;
+}
+
+.site-footer {
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px 20px;
+  background-color: #222222;
+  gap: 20px;
 }
