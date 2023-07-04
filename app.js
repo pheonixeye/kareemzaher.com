@@ -51,7 +51,7 @@ function buildHourItem(index) {
   return `<li>
   <div class="hours-container">
     <div class="circle-shape" style="background-color: ${colors[index]}">
-      <img src="/images_svg/calender.svg" alt="calender icon" />
+      <img src="images_svg/calender.svg" alt="calender icon" />
     </div>
     <h3>${days[index]}</h3>
     <h5>6:00 P.M. - 10:00 P.M.</h5>
