@@ -11,21 +11,21 @@ function closeNav() {
 //TODO: add event listener to close overlay if user taps anywhere on the screen
 
 const mobileTemplate = `
-<a href="../index.html">Home</a>
-<a href="../appointments.html">Appointments</a>
-<a href="#">Services</a>
-<a href="#">Articles</a>
-<a href="#">Reviews</a>
-<a href="#">Erection-Test</a>
+<a href="./">Home</a>
+<a href="appointments.html">Appointments</a>
+<a href="services.html">Services</a>
+<a href="articles.html">Articles</a>
+<a href="reviews.html">Reviews</a>
+<a href="erection_test.html">Erection-Test</a>
 `;
 
 const desktopTemplate = `
-<li><a href="../index.html">Home</a></li>
-<li><a href="../appointments.html">Appointments</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Articles</a></li>
-<li><a href="#">Reviews</a></li>
-<li><a href="#">Erection-Test</a></li>
+<li><a href="./">Home</a></li>
+<li><a href="appointments.html">Appointments</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="articles.html">Articles</a></li>
+<li><a href="reviews.html">Reviews</a></li>
+<li><a href="erection_test.html">Erection-Test</a></li>
 `;
 
 document
