@@ -7,28 +7,28 @@ function buildContactTemplate(inFooter) {
 <ul>
   <li>
     <div>
-      <img src="images_svg/location_on.svg" alt="location pin icon" />
+      <img src="../images_svg/location_on.svg" alt="location pin icon" />
       <h4>Address</h4>
     </div>
     <a href="#">Zahraa El Maadi, El Nada Tower, First Floor.</a>
   </li>
   <li>
     <div>
-      <img src="images_svg/landline.svg" alt="landline icon" />
+      <img src="../images_svg/landline.svg" alt="landline icon" />
       <h4>Phone</h4>
     </div>
     <a href="#">0225165064</a>
   </li>
   <li>
     <div>
-      <img src="images_svg/mobile.svg" alt="mobile icon" />
+      <img src="../images_svg/mobile.svg" alt="mobile icon" />
       <h4>Mobile</h4>
     </div>
     <a href="#">01021646574</a>
   </li>
   <li>
     <div>
-      <img src="images_svg/email.svg" alt="email icon" />
+      <img src="../images_svg/email.svg" alt="email icon" />
       <h4>Email</h4>
     </div>
     <a href="#">info@kareemzaher.com</a>
@@ -41,10 +41,14 @@ function buildContactTemplate(inFooter) {
 
 const contactList = document.querySelector(".contact-list");
 
-contactList.insertAdjacentHTML("afterbegin", buildContactTemplate());
+if (contactList != undefined) {
+  contactList.insertAdjacentHTML("afterbegin", buildContactTemplate());
+}
 
-console.log(contactList);
+// console.log(contactList);
 
 const footerContact = document.querySelector(".footer-contact");
 
-footerContact.insertAdjacentHTML("beforeend", buildContactTemplate(true));
+if (footerContact != undefined) {
+  footerContact.insertAdjacentHTML("beforeend", buildContactTemplate(true));
+}

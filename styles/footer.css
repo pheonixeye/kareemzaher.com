@@ -1,7 +1,8 @@
 .site-footer {
-  height: 70vh;
+  /* height: 100vh; TODO */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 0.1fr;
   padding: 20px 20px;
   background-color: var(--darkblue);
   gap: 20px;
@@ -11,12 +12,16 @@
   .site-footer {
     display: flex;
     flex-direction: column;
-    flex-basis: 33%;
+    /* flex-basis: 33%; */
   }
 }
 
-.footer-contact h1 {
-  color: white;
+.footer-card {
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 10px;
 }
 
 .footer-contact {
@@ -26,14 +31,81 @@
   height: 100%;
 }
 
-.footer-contact-card {
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  border-radius: 20px;
-  backdrop-filter: blur(14px);
-  background-color: rgba(255, 255, 255, 0.2);
+.footer-about {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-about h1 {
+  align-self: flex-start;
+}
+.footer-about h3 {
+  margin: 5px 10px;
+}
+
+.doctor-img-holder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  border: 2px solid white;
   padding: 10px 10px;
 }
-.footer-about {
+
+#doctor-img {
+  margin: auto;
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
 }
 .footer-nav {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-nav h1 {
+  align-self: flex-start;
+}
+
+.site-map-list {
+  list-style: none;
+}
+.site-map-list div {
+  display: inline;
+  align-items: center;
+}
+.site-map-list img {
+  padding-right: 20px;
+  height: 25px;
+  width: 25px;
+}
+
+.site-map-list li {
+  margin-top: 10px;
+}
+
+.site-map-list a {
+  color: white;
+  font-size: 32px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.site-map-list a:hover {
+  color: orange;
+  font-size: 48px;
+  text-decoration: underline;
+}
+.copyright {
+  grid-row: 2/3;
+  grid-column: 1 / -1;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }

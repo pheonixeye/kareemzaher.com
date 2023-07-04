@@ -1,4 +1,4 @@
-import data from "./json/ratings.json" assert { type: "json" };
+import data from "../json/ratings.json" assert { type: "json" };
 
 const ratings = data;
 const length = ratings.length;

@@ -65,14 +65,14 @@ body {
 .nav-and-hero {
   display: grid;
   /* height: 80%; */
-  grid-template-rows: 50px 1fr 3fr 0.5fr;
+  grid-template-rows: 50px 0.5fr 3fr 0.5fr;
   grid-template-columns: 1fr 4fr 4fr 1fr;
 }
 
 @media (max-width: 600px) {
   .nav-and-hero {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr 3fr;
+    grid-template-rows: 50px 0.5fr 3fr;
   }
   .hero-image-slider {
     margin: 10px 10px;
@@ -87,6 +87,7 @@ body {
   grid-row: 1 / 2;
   background-color: grey;
   opacity: 1;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-items: center;
@@ -297,6 +298,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 0px 20px;
 }
 
 .separator div {
@@ -463,7 +465,7 @@ body {
 .rating-item {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
   width: 100%;
   height: 165px;
   grid-row: 1 / 2;
