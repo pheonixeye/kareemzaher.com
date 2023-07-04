@@ -12,7 +12,7 @@ function closeNav() {
 
 const mobileTemplate = `
 <a href="../index.html">Home</a>
-<a href="pages/appointments.html">Appointments</a>
+<a href="../appointments.html">Appointments</a>
 <a href="#">Services</a>
 <a href="#">Articles</a>
 <a href="#">Reviews</a>
@@ -21,7 +21,7 @@ const mobileTemplate = `
 
 const desktopTemplate = `
 <li><a href="../index.html">Home</a></li>
-<li><a href="pages/appointments.html">Appointments</a></li>
+<li><a href="../appointments.html">Appointments</a></li>
 <li><a href="#">Services</a></li>
 <li><a href="#">Articles</a></li>
 <li><a href="#">Reviews</a></li>

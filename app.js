@@ -27,7 +27,7 @@ const colors = ["red", "green", "blue", "orange", "purple"];
 function buildHourItem(index) {
   return `<li>
   <div class="hours-container">
-    <div class="circle-shape" style="background-color: ${colors[index]}">
+    <div class="circle-shape" style="background-color: #0070cd">
       <img src="images_svg/calender.svg" alt="calender icon" />
     </div>
     <h3>${days[index]}</h3>

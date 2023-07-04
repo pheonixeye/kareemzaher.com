@@ -39,7 +39,7 @@ function buildFooterNavTemplate(navData) {
   let Template = `
     <li>
       <div>
-        <img src="../images_svg/site_map.svg" alt="site map icon" />
+        <img src="images_svg/site_map.svg" alt="site map icon" />
         <a href="${navData.link}">${navData.text}</a>
       </div>
     </li>`;

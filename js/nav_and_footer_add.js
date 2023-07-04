@@ -1,5 +1,5 @@
 const navPagesIds = [
-  "#appointment-id",
+  "#appointments-id",
   "#services-id",
   "#articles-id",
   "#reviews-id",

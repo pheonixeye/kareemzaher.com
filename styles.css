@@ -283,6 +283,11 @@ body {
   color: black;
   font-size: 1.2rem;
 }
+.btn-hero:active {
+  background-color: orange;
+  color: black;
+  font-size: 1.2rem;
+}
 
 .mini-divider {
   border-width: 7px 7px 7px 7px;
