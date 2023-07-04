@@ -9,6 +9,18 @@
 
   <body>
     <!-- <div> 1st home div HERO</div> -->
+
+    <div class="overlay-nav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+      <div class="overlay-content">
+        <a href="#">Home</a>
+        <a href="#">Appointments</a>
+        <a href="#">Services</a>
+        <a href="#">Articles</a>
+        <a href="#">Reviews</a>
+        <a href="#">Erection-Test</a>
+      </div>
+    </div>
     <div class="nav-and-hero">
       <div class="hero-div">
         <img
@@ -19,7 +31,7 @@
       </div>
       <div class="nav-bar">
         <h1>K.Z. Clinic</h1>
-        <nav>
+        <nav class="desktop-nav">
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Appointments</a></li>
@@ -29,6 +41,11 @@
             <li><a href="#">Erection-Test</a></li>
           </ul>
         </nav>
+        <div class="mobile-nav">
+          <button class="mobile-nav-btn" onclick="openNav()">
+            <span>&#9776;</span>
+          </button>
+        </div>
       </div>
       <div class="hero-title">
         <h2>Dr. Kareem Zaher</h2>
@@ -118,44 +135,33 @@
         </ul>
       </div>
     </div>
-
     <!-- <div> separator </div> -->
-
     <div class="separator">
       <div></div>
       <h4>Clinic Ratings</h4>
       <div></div>
     </div>
-
     <!-- <div> clinic RATING </div> -->
-
     <div class="clinic-rating">
       <button class="read-more-btn btn-hero">Read More</button>
     </div>
-
     <!-- <div> separator </div> -->
-
     <div class="separator">
       <div></div>
       <h4>Follow Us</h4>
       <div></div>
     </div>
-
     <!-- <div> clinic FOLLOW-US </div> -->
-
     <div class="follow-us"></div>
-
     <!-- <div> separator </div> -->
-
     <div class="separator">
       <div></div>
     </div>
-
     <!-- <div> clinic FOOTER </div> -->
-
     <footer class="site-footer"></footer>
 
     <script src="app.js" type="text/javascript"></script>
+    <script src="navbar.js" type="text/javascript"></script>
     <script src="ratings.js" type="module"></script>
   </body>
 </html>
