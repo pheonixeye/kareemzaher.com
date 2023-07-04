@@ -2,8 +2,10 @@ import data from "./json/ratings.json" assert { type: "json" };
 
 const ratings = data;
 const length = ratings.length;
-const ratingsFragments = length / 5;
+const ratingsFragments = Math.floor(length / 5);
 let currentFragment = 1;
+
+console.log(ratingsFragments);
 
 const template = `<div class="rating-item">
 <div class="rating-stars no-margin">
@@ -27,14 +29,14 @@ const template = `<div class="rating-item">
 </div>
 </div>`;
 
-function calculateDivHeightAndItemCount() {
+function calculateDivHeightAndItemCount(fragment) {
   const ratingsContainer = document.querySelector(".clinic-rating");
-  ratingsContainer.style.gridTemplateRows = `repeat(${length}, "165px")`;
-  ratingsContainer.style.height = `${length * 185}px`;
+  ratingsContainer.style.gridTemplateRows = `repeat(${fragment * 5}, "165px")`;
+  ratingsContainer.style.height = `${fragment * 5 * 185 + 70}px`;
   console.log(getComputedStyle(ratingsContainer)["grid-template-rows"]); //TODO: remove
 }
 
-calculateDivHeightAndItemCount();
+calculateDivHeightAndItemCount(currentFragment);
 
 function buildTemplateRatingItem(rating, index) {
   var starList = [];
@@ -65,7 +67,7 @@ function buildTemplateRatingItem(rating, index) {
   let hasRating = rating.rating != null;
 
   var templateHTML = `
-    <div class="rating-item item-hidden" id="${index}rating">
+    <div class="rating-item" id="${index}rating">
       <div class="rating-stars no-margin">
         ${starTemplate}
       </div>
@@ -94,12 +96,13 @@ function buildTemplateRatingItem(rating, index) {
   return templateHTML;
 }
 
-function addRatingsToRatingDiv() {
+function addRatingsToRatingDiv(fragment) {
+  fragment = fragment || 1;
   const ratingsContainer = document.querySelector(".clinic-rating");
 
-  for (let index = 0; index < ratings.length; index++) {
+  for (let index = fragment - 1; index < fragment * 5; index++) {
     ratingsContainer.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       buildTemplateRatingItem(ratings[index], index)
     );
     let ratingItem = document.getElementById(`${index}rating`);
@@ -109,4 +112,20 @@ function addRatingsToRatingDiv() {
 
 addRatingsToRatingDiv();
 
-//TODO: add 'load more functionality'
+//* add 'load more functionality'
+const readMoreBtn = document.querySelector(".read-more-btn");
+
+function loadMoreRatings() {
+  if (currentFragment < ratingsFragments) {
+    currentFragment++;
+    calculateDivHeightAndItemCount(currentFragment);
+    addRatingsToRatingDiv(currentFragment);
+  } else {
+    readMoreBtn.style.display = "none";
+    return;
+  }
+}
+
+readMoreBtn.addEventListener("click", () => {
+  loadMoreRatings();
+});

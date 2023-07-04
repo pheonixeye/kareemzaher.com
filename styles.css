@@ -299,9 +299,10 @@
   }
 }
 
-.clinic-rating-list {
-  list-style: none;
-  list-style-position: outside;
+.read-more-btn {
+  margin: auto;
+  width: 150px;
+  padding: 10px 10px;
 }
 
 .rating-item {
@@ -314,11 +315,6 @@
   grid-column: 1;
   background-color: white;
 }
-
-/* .rating-item,
-.item-hidden {
-  display: none;
-} */
 
 .rating-stars {
   display: flex;
@@ -381,6 +377,11 @@
   background-color: #0070cd;
   align-items: center;
   display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .doctor-rating-number-background {
+    height: 50%;
+  }
 }
 
 .doctor-rating-number-background p {
