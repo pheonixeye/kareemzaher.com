@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/social_links.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
     <title>Dr. KareemZaher</title>
+    <link rel="favicon" type="image/x-icon" href="images/favicon.ico" />
+    <!--TODO-->
   </head>
 
   <body>
@@ -12,14 +16,7 @@
 
     <div class="overlay-nav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
-      <div class="overlay-content">
-        <a href="#">Home</a>
-        <a href="#">Appointments</a>
-        <a href="#">Services</a>
-        <a href="#">Articles</a>
-        <a href="#">Reviews</a>
-        <a href="#">Erection-Test</a>
-      </div>
+      <div class="overlay-content" id="overlay-content"></div>
     </div>
     <div class="nav-and-hero">
       <div class="hero-div">
@@ -32,14 +29,7 @@
       <div class="nav-bar">
         <h1>K.Z. Clinic</h1>
         <nav class="desktop-nav">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Appointments</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">Erection-Test</a></li>
-          </ul>
+          <ul id="desktop-nav"></ul>
         </nav>
         <div class="mobile-nav">
           <button class="mobile-nav-btn" onclick="openNav()">
@@ -83,7 +73,7 @@
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Contact & Hours</h4>
+      <h4>Contact</h4>
       <div></div>
     </div>
     <!-- <div> 2nd home div MAP - CONTACT - HOURS </div> -->
@@ -97,37 +87,7 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
       <div class="contact-list">
-        <ul>
-          <h3>Contact Info</h3>
-          <li>
-            <div>
-              <img src="images_svg/location_on.svg" alt="location pin icon" />
-              <h4>Address</h4>
-            </div>
-            <a href="#">Zahraa El Maadi, El Nada Tower, First Floor.</a>
-          </li>
-          <li>
-            <div>
-              <img src="images_svg/landline.svg" alt="landline icon" />
-              <h4>Phone</h4>
-            </div>
-            <a href="#">0225165064</a>
-          </li>
-          <li>
-            <div>
-              <img src="images_svg/mobile.svg" alt="mobile icon" />
-              <h4>Mobile</h4>
-            </div>
-            <a href="#">01021646574</a>
-          </li>
-          <li>
-            <div>
-              <img src="images_svg/email.svg" alt="email icon" />
-              <h4>Email</h4>
-            </div>
-            <a href="#">info@kareemzaher.com</a>
-          </li>
-        </ul>
+        <!--! js: contact.js !-->
       </div>
       <div class="clinic-hours">
         <ul id="clinic-hours-list">
@@ -138,7 +98,7 @@
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Clinic Ratings</h4>
+      <h4>Ratings</h4>
       <div></div>
     </div>
     <!-- <div> clinic RATING </div> -->
@@ -148,20 +108,58 @@
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Follow Us</h4>
+      <h4>Social</h4>
       <div></div>
     </div>
     <!-- <div> clinic FOLLOW-US </div> -->
-    <div class="follow-us"></div>
+    <div class="follow-us">
+      <div class="glass-btn blue-btn">
+        <!--<div class="content">
+          h
+        </div> -->
+        <img
+          src="https://i.postimg.cc/DwbWDQTx/facebook.png"
+          alt="facebook"
+          style="width: 5.5em"
+        />
+      </div>
+
+      <div class="glass-btn red-btn">
+        <!-- <div class="content">
+          e
+        </div> -->
+        <img
+          src="https://i.postimg.cc/LstJ4Hhf/youtube.png"
+          alt="youtube"
+          style="width: 6em"
+        />
+      </div>
+    </div>
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
     </div>
     <!-- <div> clinic FOOTER </div> -->
+    <footer class="site-footer">
+      <div class="footer-contact-card">
+        <div class="footer-contact"></div>
+      </div>
+      <div class="footer-about">
+        <h1>About Me</h1>
+      </div>
+      <div class="footer-nav">
+        <h1>Navigation</h1>
+      </div>
+    </footer>
+    <!-- <div> separator </div> -->
+    <div class="separator">
+      <div></div>
+    </div>
     <footer class="site-footer"></footer>
 
     <script src="app.js" type="text/javascript"></script>
     <script src="navbar.js" type="text/javascript"></script>
     <script src="ratings.js" type="module"></script>
+    <script src="contact.js" type="text/javascript"></script>
   </body>
 </html>

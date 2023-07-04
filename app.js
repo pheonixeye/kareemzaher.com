@@ -20,7 +20,7 @@ async function fetchDoctorData() {
 
 fetchDoctorData().then((data) => {
   doctorInfo = data;
-  console.log(doctorInfo);
+  // console.log(doctorInfo);
 });
 
 //hero div image slider function

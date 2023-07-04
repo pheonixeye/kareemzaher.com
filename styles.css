@@ -4,6 +4,12 @@
   background-color: white;
 }
 
+:root {
+  --darkblue: #0070cd;
+  --babyblue: #00d0ef;
+  --darkgrey: #222222;
+}
+
 body {
   margin: 0 auto;
 }
@@ -30,7 +36,7 @@ body {
 .overlay-nav a {
   padding: 8px;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 18px;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -186,8 +192,9 @@ body {
 .hero-title h2 {
   flex: 50%;
   text-align: center;
-  color: #00d0ef;
+  color: #cef0d4;
   font-size: 4rem;
+  text-shadow: 1px 1px black;
 }
 
 .hero-title h3 {
@@ -256,7 +263,7 @@ body {
 }
 
 .btn-hero {
-  background-color: #00d0ef;
+  background-color: var(--darkblue);
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -278,8 +285,8 @@ body {
 
 .mini-divider {
   border-width: 7px 7px 7px 7px;
-  border-color: #00d0ef;
-  background-color: #00d0ef;
+  border-color: var(--darkblue);
+  background-color: var(--darkblue);
   width: 80px;
   height: 8px;
   margin-bottom: 40px;
@@ -294,8 +301,8 @@ body {
 
 .separator div {
   border-width: 7px 7px 7px 7px;
-  border-color: #00d0ef;
-  background-color: #00d0ef;
+  border-color: var(--darkgrey);
+  background-color: var(--darkgrey);
   height: 8px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -305,7 +312,7 @@ body {
 .contact-map-hours {
   height: 80%;
   display: grid;
-  grid-template-columns: 25px 1fr 1fr 1fr 25px;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   gap: 20px;
   background-color: #f6f6f6;
@@ -314,14 +321,14 @@ body {
 @media (max-width: 600px) {
   .contact-map-hours {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.7fr 1fr;
   }
 }
 
 .map-iframe {
   width: 95%;
   height: 95%;
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 1;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -336,8 +343,8 @@ body {
 }
 
 .contact-list {
-  grid-column: 4 / 5;
-  grid-row: 1;
+  grid-column: 3 / 4;
+  grid-row: 1 / -1;
 }
 
 @media (max-width: 600px) {
@@ -348,45 +355,60 @@ body {
   }
 }
 
-.contact-list ul {
+.contact-list ul,
+.footer-contact ul {
   list-style: none;
 }
 
-.contact-list li img {
+.contact-list li img,
+.footer-contact li img {
   width: 25px;
   height: 25px;
+  transition: all 0.15s;
 }
-.contact-list li a {
+.contact-list li img:hover,
+.footer-contact li img:hover {
+  width: 50px;
+  height: 50px;
+}
+
+.contact-list li a,
+.footer-contact li a {
   padding-left: 50px;
 }
-.contact-list li div {
+.contact-list li div,
+.footer-contact li div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .clinic-hours {
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   margin: auto;
   grid-row: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
   .clinic-hours {
     grid-row: 3 / 4;
     grid-column: 1 /-1;
+    margin-right: 120px;
   }
 }
 
 .clinic-hours ul {
   list-style: none;
+  list-style-position: outside;
 }
 
 .hours-container {
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 50px 50px;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 
@@ -507,7 +529,7 @@ body {
   height: 100%;
   width: 25%;
   border-radius: 12%;
-  background-color: #0070cd;
+  background-color: var(--darkblue);
   align-items: center;
   display: flex;
 }
@@ -534,18 +556,10 @@ body {
 
 .follow-us {
   height: 10vh;
-  display: grid;
-  grid-template-rows: 1fr;
+  display: flex;
   padding: 20px 20px;
   background-color: #f6f6f6;
   gap: 20px;
-}
-
-.site-footer {
-  height: 80vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 20px 20px;
-  background-color: #222222;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }

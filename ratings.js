@@ -5,7 +5,7 @@ const length = ratings.length;
 const ratingsFragments = Math.floor(length / 5);
 let currentFragment = 1;
 
-console.log(ratingsFragments);
+// console.log(ratingsFragments);
 
 const template = `<div class="rating-item">
 <div class="rating-stars no-margin">
@@ -33,7 +33,7 @@ function calculateDivHeightAndItemCount(fragment) {
   const ratingsContainer = document.querySelector(".clinic-rating");
   ratingsContainer.style.gridTemplateRows = `repeat(${fragment * 5}, "165px")`;
   ratingsContainer.style.height = `${fragment * 5 * 185 + 70}px`;
-  console.log(getComputedStyle(ratingsContainer)["grid-template-rows"]); //TODO: remove
+  // console.log(getComputedStyle(ratingsContainer)["grid-template-rows"]); //TODO: remove
 }
 
 calculateDivHeightAndItemCount(currentFragment);
