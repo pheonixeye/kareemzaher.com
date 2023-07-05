@@ -14,7 +14,7 @@ function slideImages() {
     }
     // console.log(slider);
     // console.log(randomInterval);
-    slider.setAttribute("src", `images_jpg/${i}.jpg`);
+    slider.setAttribute("src", `images_webp/${i}.webp`);
     slider.setAttribute("alt", `slider image no ${i}`);
   }, randomInterval);
 }
