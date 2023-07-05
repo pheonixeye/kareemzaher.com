@@ -1,0 +1,37 @@
+.floating-btn-div {
+  width: 100px;
+  height: 150px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 2 !important;
+  top: calc(90% - 100px);
+  left: calc(98% - 100px);
+  right: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  background-color: var(--darkblue);
+  border: 0px none transparent;
+  box-shadow: 1px 1px grey;
+  transition: all 0.15s;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.lang-btn:hover {
+  background-color: orange;
+  box-shadow: 2px 2px var(--babyblue);
+}
+.lang-btn:active {
+  background-color: var(--babyblue);
+}

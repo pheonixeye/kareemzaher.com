@@ -35,6 +35,10 @@ const footerTemplate = `
 </footer>`;
 
 const navTemplate = `
+<div class="floating-btn-div">
+  <button class="lang-btn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#9650;</button>
+  <button class="lang-btn" type="button">EN</button>
+</div>
 <div class="overlay-nav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
   <div class="overlay-content" id="overlay-content"></div>

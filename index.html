@@ -6,16 +6,25 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles/social_links.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/floating_btn.css" />
     <title>Dr. KareemZaher</title>
-    <link rel="favicon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="favicon" type="image/x-icon" href="favicon.ico" />
     <!--TODO-->
   </head>
 
   <body id="index-id">
-    <!-- <div> 1st home div HERO</div> -->
-
+    <div class="floating-btn-div">
+      <button
+        class="lang-btn"
+        type="button"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+      >
+        &#9650;
+      </button>
+      <button class="lang-btn" type="button">EN</button>
+    </div>
     <div class="overlay-nav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+      <a href="#" class="closebtn" onclick="closeNav()">X</a>
       <div class="overlay-content" id="overlay-content"></div>
     </div>
     <div class="nav-and-hero">

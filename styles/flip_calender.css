@@ -1,0 +1,76 @@
+#appointments-id {
+  background: #dfebed;
+}
+
+.calender {
+  background: #2b4450;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  height: 501px;
+  perspective: 1000;
+  transition: 0.9s;
+  transform-style: preserve-3d;
+  width: 95%;
+  margin: 10px 10px;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  height: 100%;
+  transform: rotateY(180deg);
+}
+
+.current-date {
+  border-bottom: 1px solid rgba(73, 114, 133, 0.6);
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+}
+@media (max-width: 600px) {
+  .current-date {
+    padding: 10px 20px;
+  }
+}
+
+.current-date h1 {
+  color: #dfebed;
+  font-size: 1.4em;
+  font-weight: 300;
+}
+
+.current-month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.weekday-list-item {
+  text-align: center;
+  font-weight: 600;
+  padding: 20px 20px;
+  color: #dfebed;
+}
+@media (max-width: 600px) {
+  .weekday-list-item {
+    padding: 20px 5px;
+  }
+}
+
+.calender-day-item {
+  text-align: center;
+  font-weight: 600;
+  padding: 20px 20px;
+  color: #dfebed;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .calender-day-item {
+    padding: 20px 5px;
+  }
+}

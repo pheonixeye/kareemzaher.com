@@ -9,9 +9,12 @@
   --babyblue: #00d0ef;
   --darkgrey: #222222;
 }
-
+html,
 body {
-  margin: 0 auto;
+  margin: 0px 0px;
+  overflow-x: hidden;
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
 }
 
 .overlay-nav {
@@ -284,7 +287,7 @@ body {
   font-size: 1.2rem;
 }
 .btn-hero:active {
-  background-color: orange;
+  background-color: var(--babyblue);
   color: black;
   font-size: 1.2rem;
 }
@@ -476,7 +479,6 @@ body {
   grid-row: 1 / 2;
   grid-column: 1;
   background-color: white;
-  padding-left: 20px;
 }
 
 .rating-stars {
@@ -512,6 +514,9 @@ body {
 @media only screen and (max-width: 600px) {
   .rating-item .date {
     font-size: small;
+  }
+  .rating-item .comment {
+    font-size: 14px;
   }
 }
 
