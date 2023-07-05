@@ -1,4 +1,5 @@
 import doctorInfo from "../js/fetch_doctor_data.js";
+import navData from "./navigation_data.js";
 
 const imgData = doctorInfo["avatar"];
 const imgPrefix = "data:image/png;base64,";
@@ -9,32 +10,7 @@ const imageHolder = document.querySelector("#doctor-img");
 imageHolder.src = image.src;
 
 // insert items in bottom footer nav
-const navData = [
-  {
-    text: "Home",
-    link: "../index.html",
-  },
-  {
-    text: "Appointments",
-    link: "../pages/appointments.html",
-  },
-  {
-    text: "Services",
-    link: "../pages/services.html",
-  },
-  {
-    text: "Articles",
-    link: "../pages/articles.html",
-  },
-  {
-    text: "Ratings",
-    link: "../pages/ratings.html",
-  },
-  {
-    text: "Erection-Test",
-    link: "../erection_test.html",
-  },
-];
+
 function buildFooterNavTemplate(navData) {
   let Template = `
     <li>

@@ -476,6 +476,7 @@ body {
   grid-row: 1 / 2;
   grid-column: 1;
   background-color: white;
+  padding-left: 20px;
 }
 
 .rating-stars {

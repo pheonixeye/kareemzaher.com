@@ -43,3 +43,8 @@ function completeListOfDays() {
   }
 }
 completeListOfDays();
+
+const socialButton = document.querySelector(".glass-btn.blue-btn");
+socialButton.addEventListener("click", (e) => {
+  window.open("https://www.facebook.com/kzuroclinic", "_blank");
+});
