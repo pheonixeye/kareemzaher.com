@@ -19,15 +19,42 @@
     <div class="page-content">
       <div id="calender" class="calender">
         <!-- CALENDER-FRONT-->
-        <div id="calender-front" class="front">
+        <div id="calender-front" class="calender-front">
           <div id="current-date" class="current-date">
             <h1 id="calender-header-weekday-day"></h1>
+            <button type="button" class="date-nav-btn">&#9664;</button>
             <h1 id="calender-header-month-year"></h1>
+            <button type="button" class="date-nav-btn">&#9658;</button>
           </div>
           <div id="current-month" class="current-month"></div>
         </div>
         <!-- CALENDER-BACK-->
-        <div class="back"></div>
+        <div class="calender-back">
+          <input placeholder="Enter Name" />
+          <input placeholder="Enter Mobile Number" />
+          <div class="info">
+            <div class="date">
+              <p class="info-date">Date: <span>Jan 15th, 2016</span></p>
+              <p class="info-time">Time: <span>6:00 - 10:00 P.M.</span></p>
+            </div>
+            <div class="address">
+              <p>
+                Address:
+                <span>Zahraa El Maadi, El Nada Tower, First Floor.</span>
+              </p>
+            </div>
+            <div class="observations">
+              <p>Additional Info: <span>You be notified by SMS.</span></p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="save">Confirm <i class="ion-checkmark"></i></button>
+            <button class="dismiss">
+              Cancel <i class="ion-android-close"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/nav_and_footer_add.js" type="text/javascript"></script>

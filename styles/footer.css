@@ -99,7 +99,7 @@
   transition: all 0.15s;
 }
 .site-map-list a:hover {
-  color: orange;
+  color: var(--cuteorange);
   font-size: 48px;
   text-decoration: underline;
 }

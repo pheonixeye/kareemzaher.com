@@ -29,7 +29,7 @@
 }
 
 .lang-btn:hover {
-  background-color: orange;
+  background-color: var(--cuteorange);
   box-shadow: 2px 2px var(--babyblue);
 }
 .lang-btn:active {
