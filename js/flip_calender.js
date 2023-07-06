@@ -100,6 +100,12 @@ weekdayDay.innerHTML = `${weekDays[date.getDay()].a} ${date.getDate()}${buildTH(
 //set month/year of calender header
 monthYear.innerHTML = `${months[date.getMonth()].a} ${date.getFullYear()}`;
 
+//set date of date display
+const dateDisplay = document.querySelector(".info-date span");
+dateDisplay.innerHTML = `${
+  months[date.getMonth()].a
+} ${date.getDate()}${buildTH(date.getDate())}, ${date.getFullYear()}`;
+
 //function to add or subtract months
 
 function moveMonth() {
@@ -137,7 +143,7 @@ function buildPreviousMonthDays() {
       "beforeend",
       ` <span id="${
         startingDayFromPreviousMonth + index
-      }" class="calender-day-item not-available">
+      }" class="calender-day-item not-available m-prev">
            ${startingDayFromPreviousMonth + index}
            </span>
            `
@@ -167,7 +173,7 @@ function buildCurrentMonthDays() {
         thisMonthListOfDays[index].date
       }" class="calender-day-item wd-${thisMonthListOfDays[index].weekday} ${
         notAvailable ? "not-available" : ""
-      } ${isToday ? "is-today" : ""}">
+      } ${isToday ? "is-today" : ""} m-this">
          ${helperNormalizeNumbersView(thisMonthListOfDays[index].date)}
          </span>
          `
@@ -183,7 +189,9 @@ function buildNextMonthDays() {
     currentMonth.insertAdjacentHTML(
       "beforeend",
       ` <span id="${nextMonthListOfDays[index].date}"
-       class="calender-day-item wd-${nextMonthListOfDays[index].weekday}">
+       class="calender-day-item wd-${
+         nextMonthListOfDays[index].weekday
+       } m-next">
       ${helperNormalizeNumbersView(nextMonthListOfDays[index].date)}
       </span>
                `
@@ -193,8 +201,9 @@ function buildNextMonthDays() {
 
 buildNextMonthDays();
 
+const items = document.querySelectorAll(".calender-day-item");
+
 function activateCalenderItem() {
-  const items = document.querySelectorAll(".calender-day-item");
   items.forEach((e) => {
     if (!e.classList.contains("not-available")) {
       e.addEventListener("click", (event) => {
@@ -208,6 +217,49 @@ function activateCalenderItem() {
 }
 
 activateCalenderItem();
+
+//data binding
+function bindData() {
+  items.forEach((e) => {
+    e.addEventListener("click", (event) => {
+      console.log(e.classList);
+      //update day & weekday
+      weekdayDay.innerHTML = `${
+        weekDays[parseInt(e.classList[1][e.classList[1].length - 1])]["a"]
+      } ${parseInt(e.innerHTML)}${buildTH(parseInt(e.innerHTML))}`;
+      //note: for returning correct data on backing a month
+      monthYear.innerHTML = `${
+        months[date.getMonth()].a
+      } ${date.getFullYear()}`;
+      if (e.classList.contains("m-next")) {
+        //update month & year
+        monthYear.innerHTML = `${
+          months[date.getMonth() + 1 === 12 ? 0 : date.getMonth() + 1].a
+        } ${
+          date.getMonth() + 1 === 12
+            ? date.getFullYear() + 1
+            : date.getFullYear()
+        }`;
+      }
+      //update the date on the data entry page
+      dateDisplay.innerHTML = `${
+        months[
+          date.getMonth() + 1 === 12
+            ? 0
+            : e.classList.contains("m-next")
+            ? date.getMonth() + 1
+            : date.getMonth()
+        ].b
+      }   ${
+        weekDays[parseInt(e.classList[1][e.classList[1].length - 1])]["a"]
+      }  ${parseInt(e.innerHTML)}${buildTH(parseInt(e.innerHTML))}, ${
+        date.getMonth() + 1 === 12 ? date.getFullYear() + 1 : date.getFullYear()
+      }`;
+    });
+  });
+}
+
+bindData();
 
 function animateFrontToBack() {
   const calender = document.querySelector(".calender");
