@@ -22,19 +22,35 @@
         <div id="calender-front" class="calender-front">
           <div id="current-date" class="current-date">
             <h1 id="calender-header-weekday-day"></h1>
-            <button type="button" class="date-nav-btn">&#9664;</button>
+            <button type="button" class="date-nav-btn" onclick="prevMonth()">
+              &#9664;
+            </button>
             <h1 id="calender-header-month-year"></h1>
-            <button type="button" class="date-nav-btn">&#9658;</button>
+            <button type="button" class="date-nav-btn" onclick="nextMonth()">
+              &#9658;
+            </button>
           </div>
           <div id="current-month" class="current-month"></div>
         </div>
         <!-- CALENDER-BACK-->
         <div class="calender-back">
-          <input placeholder="Enter Name" />
-          <input placeholder="Enter Mobile Number" />
+          <i>&#128241;</i>
+          <input
+            id="name-input"
+            type="text"
+            required
+            placeholder="   Enter Name"
+          />
+          <i>&#129333;</i>
+          <input
+            id="mobile-input"
+            type="tel"
+            required
+            placeholder="   Enter Mobile Number"
+          />
           <div class="info">
             <div class="date">
-              <p class="info-date">Date: <span>Jan 15th, 2016</span></p>
+              <p class="info-date">Date: <span>MMM WKDY ddth, yyyy</span></p>
               <p class="info-time">Time: <span>6:00 - 10:00 P.M.</span></p>
             </div>
             <div class="address">
@@ -49,10 +65,8 @@
           </div>
 
           <div class="actions">
-            <button class="save">Confirm <i class="ion-checkmark"></i></button>
-            <button class="dismiss">
-              Cancel <i class="ion-android-close"></i>
-            </button>
+            <button class="save">Confirm</button>
+            <button class="dismiss">Cancel</button>
           </div>
         </div>
       </div>

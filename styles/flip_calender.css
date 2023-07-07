@@ -39,7 +39,7 @@
 
 @media (max-width: 600px) {
   .current-date h1 {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 }
 
@@ -48,6 +48,8 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.15s;
+  background-color: transparent;
+  color: #dfebed;
 }
 
 .date-nav-btn:hover {
@@ -95,7 +97,7 @@
   font-weight: 200;
   padding: 10px 20px;
   color: #ffffff;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   transition: all 0.15s;
 }
 
@@ -109,9 +111,15 @@
   opacity: 0.3;
 }
 
+.m-prev,
+.m-next {
+  background-color: var(--darkblue);
+}
+
 .calender-day-item:not(.not-available):hover {
   cursor: pointer;
   font-weight: 600;
+  border: 0.5px solid white;
 }
 
 .is-today {
@@ -122,6 +130,12 @@
 .is-active {
   background-color: var(--cuteorange);
   border-radius: 50%;
+}
+
+@media screen and(min-width : 600px) {
+  .is-active {
+    border-radius: 0px;
+  }
 }
 
 .calender-back {
@@ -148,7 +162,14 @@
   font-size: 1.4em;
   font-weight: 300;
   padding: 30px 0px;
-  width: 100%;
+  width: 90%;
+  display: inline-block;
+  text-align: center;
+}
+
+.calender-back input:focus {
+  background-color: #79d7e7;
+  color: grey;
 }
 
 @media (max-width: 600px) {
@@ -156,6 +177,22 @@
     font-size: 1.2em;
     padding: 20px 0px;
   }
+}
+i {
+  font-size: 40px;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  i {
+    font-size: 20px;
+  }
+}
+
+#name-input {
+}
+
+#mobile-input {
 }
 
 .info {
@@ -174,7 +211,7 @@
   }
 }
 
-.info div:not(.observations) {
+.info div {
   margin-bottom: 20px;
 }
 
@@ -211,16 +248,19 @@
   padding: 20px 0;
   text-transform: uppercase;
   width: 45%;
+  box-shadow: 1px 1px 3px 3px var(--cuteorange);
 }
 
 @media (max-width: 600px) {
   .actions button {
-    padding: 30px 0;
+    padding: 20px 0;
   }
 }
 
 .actions button {
   border: 1px solid rgba(73, 114, 133, 0.6);
+  border-radius: 12px;
+  transition: all 0.15;
 }
 
 .actions button:hover {
@@ -231,4 +271,5 @@
 .actions button:active {
   background: #5889a0;
   outline: none;
+  transform: translateY(4px);
 }
