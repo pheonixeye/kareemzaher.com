@@ -391,6 +391,7 @@ function nextMonth() {
   buildNextMonthDays(nextMonthDaysList);
   activateCalenderItemListener();
   animateFrontToBack();
+  //TODO updateCalenderRealtime();
 }
 
 function prevMonth() {
@@ -441,4 +442,8 @@ function prevMonth() {
   buildNextMonthDays(nextMonthDaysList);
   activateCalenderItemListener();
   animateFrontToBack();
+  //TODO updateCalenderRealtime();
 }
+
+// window.prevMonth = prevMonth();
+// window.nextMonth = nextMonth();
