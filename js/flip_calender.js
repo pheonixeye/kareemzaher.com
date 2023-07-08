@@ -1,3 +1,5 @@
+import updateCalenderRealtime from "./calender_update_module.js";
+
 const date = new Date();
 const isLeapYear = date.getFullYear() % 4 === 0;
 const days = [
@@ -343,7 +345,7 @@ const selectedMonthYearElement = document.querySelector(
   "#calender-header-month-year"
 );
 
-function nextMonth() {
+async function nextMonth() {
   //TODO:
   let dataArray = selectedMonthYearElement.innerHTML.split(" ");
   console.log("next: " + dataArray);
@@ -391,10 +393,10 @@ function nextMonth() {
   buildNextMonthDays(nextMonthDaysList);
   activateCalenderItemListener();
   animateFrontToBack();
-  //TODO updateCalenderRealtime();
+  updateCalenderRealtime();
 }
 
-function prevMonth() {
+async function prevMonth() {
   let dataArray = selectedMonthYearElement.innerHTML.split(" ");
   console.log("prev: " + dataArray);
   const selectedMonth = monthsToInt[dataArray[0]];
@@ -442,8 +444,18 @@ function prevMonth() {
   buildNextMonthDays(nextMonthDaysList);
   activateCalenderItemListener();
   animateFrontToBack();
-  //TODO updateCalenderRealtime();
+  updateCalenderRealtime();
 }
 
-// window.prevMonth = prevMonth();
-// window.nextMonth = nextMonth();
+//bind nextMonth() / prevMonth() functions
+
+function bindNextPrev() {
+  document.querySelector("#next-month-btn").addEventListener("click", (e) => {
+    nextMonth();
+  });
+  document.querySelector("#prev-month-btn").addEventListener("click", (e) => {
+    prevMonth();
+  });
+}
+
+bindNextPrev();

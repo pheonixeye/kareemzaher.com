@@ -3,40 +3,53 @@ const clinicLocation =
 const phone = "0225165064";
 const mobile = "01021646574";
 const email = "info@kareemzaher.com";
+
+function blackStyleString(inFooter) {
+  return inFooter ? "" : "contact-data-color-black";
+}
+
 function buildContactTemplate(inFooter) {
   inFooter = inFooter || false;
   var template =
     `${inFooter ? "<h1>K.Z. Clinic</h1>" : ""}` +
     `
-<h3>Contact Info</h3>
-<ul>
+    <ul>
+    <h3>Contact Info</h3>
   <li>
     <div>
       <img src="images_svg/location_on.svg" alt="location pin icon" />
-      <h4>Address</h4>
+      <h4 class="contact-link-title">Address</h4>
     </div>
-    <a href="${clinicLocation}" target="_blank">Zahraa El Maadi, El Nada Tower, First Floor.</a>
+    <a href="${clinicLocation}" target="_blank" class="contact-link-data ${blackStyleString(
+      inFooter
+    )}" >Zahraa El Maadi, El Nada Tower, First Floor.</a>
   </li>
   <li>
     <div>
       <img src="images_svg/landline.svg" alt="landline icon" />
-      <h4>Phone</h4>
+      <h4 class="contact-link-title">Phone</h4>
     </div>
-    <a href="tel:${phone}">0225165064</a>
+    <a href="tel:${phone}" class="contact-link-data ${blackStyleString(
+      inFooter
+    )}">0225165064</a>
   </li>
   <li>
     <div>
       <img src="images_svg/mobile.svg" alt="mobile icon" />
-      <h4>Mobile</h4>
+      <h4 class="contact-link-title">Mobile</h4>
     </div>
-    <a href="tel:${mobile}">01021646574</a>
+    <a href="tel:${mobile}" class="contact-link-data ${blackStyleString(
+      inFooter
+    )}">01021646574</a>
   </li>
   <li>
     <div>
       <img src="images_svg/email.svg" alt="email icon" />
-      <h4>Email</h4>
+      <h4 class="contact-link-title">Email</h4>
     </div>
-    <a href="mailto:${email}">info@kareemzaher.com</a>
+    <a href="mailto:${email}" class="contact-link-data ${blackStyleString(
+      inFooter
+    )}">info@kareemzaher.com</a>
   </li>
 </ul>
 `;
@@ -47,7 +60,7 @@ function buildContactTemplate(inFooter) {
 const contactList = document.querySelector(".contact-list");
 
 if (contactList != undefined) {
-  contactList.insertAdjacentHTML("afterbegin", buildContactTemplate());
+  contactList.insertAdjacentHTML("afterbegin", buildContactTemplate(false));
 }
 
 // console.log(contactList);

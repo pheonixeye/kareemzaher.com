@@ -5,5 +5,7 @@ extends: standard
 parserOptions:
   ecmaVersion: latest
 rules: {
-  semi: false
+  semi: 0,
+  no-unused-vars: 1,
+  quotes: "",
 }

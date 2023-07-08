@@ -9,6 +9,7 @@
   --babyblue: #00d0ef;
   --darkgrey: #222222;
   --cuteorange: #f78536;
+  --linkcolor: #777777;
 }
 html,
 body {
@@ -385,8 +386,27 @@ body {
 
 .contact-list li a,
 .footer-contact li a {
-  padding-left: 50px;
 }
+
+.contact-link-data {
+  padding-left: 50px;
+  text-decoration: none;
+  color: white;
+}
+
+.contact-data-color-black {
+  color: black;
+}
+
+.contact-link-data:hover {
+  color: var(--babyblue);
+}
+
+.contact-link-title {
+  text-decoration: none;
+  color: var(--linkcolor);
+}
+
 .contact-list li div,
 .footer-contact li div {
   display: flex;
@@ -470,10 +490,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
 .read-more-btn {
-  margin: 40px 0;
   width: 150px;
   padding: 10px 10px;
 }
@@ -483,7 +503,7 @@ body {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
-  /* height: 165px; */
+  height: 165px;
   grid-row: 1 / 2;
   grid-column: 1;
   background-color: white;

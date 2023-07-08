@@ -1,25 +1,28 @@
-const _url = "https://cosmosurgeserver.xyz/cpanel";
-const _body = {
-  _id: 111111,
-};
+// const _url = "https://cosmosurgeserver.xyz/cpanel";
+// const _body = {
+//   _id: 111111,
+// };
 
-var doctorInfo = {};
+// var doctorInfo = {};
 
-async function fetchDoctorData() {
-  const request = await fetch(_url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(_body),
-  });
-  var response = await request.json().then((data) => (doctorInfo = data));
-  return response;
-}
+// async function fetchDoctorData() {
+//   const request = await fetch(_url, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(_body),
+//   });
+//   var response = await request.json().then((data) => (doctorInfo = data));
+//   return response;
+// }
 
-await fetchDoctorData().then((data) => {
-  doctorInfo = data;
-});
+// await fetchDoctorData().then((data) => {
+//   doctorInfo = data;
+// });
+
+import doctorInfo from "./fetch_doctor_data.js";
+
 const schedule = doctorInfo["schedule"];
 
 console.log(schedule);
@@ -27,6 +30,7 @@ function updateCalenderRealtime() {
   //TODO: modify conditioning
   const calenderItems = document.querySelectorAll(".calender-day-item");
   calenderItems.forEach((e) => {
+    // console.log(e.id);
     const wdClass = e.classList[1];
     const wd = wdClass[wdClass.length - 1];
     const wdInt = parseInt(wd);
@@ -35,7 +39,7 @@ function updateCalenderRealtime() {
       const element = schedule[index];
       const intDay = element["intday"];
       if (
-        wdInt === intDay &&
+        wdInt == intDay &&
         !e.classList.contains("m-prev") &&
         !e.classList.contains("m-next")
       ) {
@@ -47,25 +51,57 @@ function updateCalenderRealtime() {
     const data =
       calenderItems[index].attributes.getNamedItem("data").textContent;
     const itemDate = new Date(data);
-
-    calenderItems[index].classList.add("not-available");
-    if (calenderItems[index].classList.contains("is-today")) {
-      console.log(itemDate);
-      break;
+    if (
+      calenderItems[index].classList.contains("m-prev") ||
+      calenderItems[index].classList.contains("m-next")
+    ) {
+      calenderItems[index].classList.add("not-available");
     }
   }
   const today = document.querySelector(".is-today");
-  const todayDateData = new Date(
-    today.attributes.getNamedItem("data").textContent
-  );
-  schedule.forEach((e) => {
-    const intday = e["intday"];
-    if (todayDateData.getDay() === intday) {
-      today.classList.remove("not-available");
+  if (today != undefined) {
+    const todayDateData = new Date(
+      today.attributes.getNamedItem("data").textContent
+    );
+    schedule.forEach((e) => {
+      const intday = e["intday"];
+      if (todayDateData.getDay() === intday) {
+        today.classList.remove("not-available");
+      }
+    });
+  }
+
+  calenderItems.forEach((e) => {
+    const today = new Date();
+    const itemDate = new Date(e.attributes.getNamedItem("data").textContent);
+    if (itemDate < today) {
+      e.classList.add("not-available");
+    }
+    if (e.classList.contains("is-today")) {
+      e.classList.remove("not-available");
     }
   });
 }
 
-updateCalenderRealtime();
+function main() {
+  let functionExecuted = false;
+  try {
+    updateCalenderRealtime();
+    functionExecuted = true;
+  } catch (error) {
+    setTimeout(() => {
+      updateCalenderRealtime();
+    }, 1000);
+    console.log("update pending");
+  }
+  if (functionExecuted) {
+    return;
+  }
+  console.log("update performed");
+  return;
+}
 
-// export default updateCalenderRealtime;
+main();
+// updateCalenderRealtime();
+
+export default updateCalenderRealtime;
