@@ -11,6 +11,7 @@
   transition: transform 0.9s;
   transform-style: preserve-3d;
   width: 95%;
+  max-width: 600px;
   margin: 10px 10px;
 }
 
@@ -212,7 +213,7 @@ i {
 }
 
 .info div {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .info span {
@@ -236,6 +237,7 @@ i {
   justify-content: space-between;
   /* position: absolute; */
   width: 100%;
+  padding-top: 30px;
 }
 
 .actions button {

@@ -10,6 +10,7 @@
   --darkgrey: #222222;
   --cuteorange: #f78536;
   --linkcolor: #777777;
+  --lightgrey: #f6f6f6;
 }
 html,
 body {
@@ -384,9 +385,9 @@ body {
   height: 50px;
 }
 
-.contact-list li a,
+/* .contact-list li a,
 .footer-contact li a {
-}
+} */
 
 .contact-link-data {
   padding-left: 50px;

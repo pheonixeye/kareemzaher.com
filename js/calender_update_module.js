@@ -1,29 +1,8 @@
-// const _url = "https://cosmosurgeserver.xyz/cpanel";
-// const _body = {
-//   _id: 111111,
-// };
-
-// var doctorInfo = {};
-
-// async function fetchDoctorData() {
-//   const request = await fetch(_url, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(_body),
-//   });
-//   var response = await request.json().then((data) => (doctorInfo = data));
-//   return response;
-// }
-
-// await fetchDoctorData().then((data) => {
-//   doctorInfo = data;
-// });
-
 import doctorInfo from "./fetch_doctor_data.js";
 
 const schedule = doctorInfo["schedule"];
+let intDaysList = [];
+schedule.forEach((e) => intDaysList.push(e["intday"]));
 
 console.log(schedule);
 function updateCalenderRealtime() {
@@ -48,9 +27,9 @@ function updateCalenderRealtime() {
     }
   });
   for (let index = 0; index < 42; index++) {
-    const data =
-      calenderItems[index].attributes.getNamedItem("data").textContent;
-    const itemDate = new Date(data);
+    // const data =
+    //   calenderItems[index].attributes.getNamedItem("data").textContent;
+    // const itemDate = new Date(data);
     if (
       calenderItems[index].classList.contains("m-prev") ||
       calenderItems[index].classList.contains("m-next")
@@ -74,6 +53,8 @@ function updateCalenderRealtime() {
   calenderItems.forEach((e) => {
     const today = new Date();
     const itemDate = new Date(e.attributes.getNamedItem("data").textContent);
+
+    // console.log(intDaysList);
     if (itemDate < today) {
       e.classList.add("not-available");
     }
@@ -81,6 +62,18 @@ function updateCalenderRealtime() {
       e.classList.remove("not-available");
     }
   });
+  const todayItem = document.querySelector(".is-today");
+  if (todayItem != undefined) {
+    const wdClass = todayItem.classList[1];
+    const wd = wdClass[wdClass.length - 1];
+    const wdInt = parseInt(wd);
+
+    intDaysList.forEach((e) => {
+      if (e != wdInt) {
+        todayItem.classList.add("not-available");
+      }
+    });
+  }
 }
 
 function main() {
