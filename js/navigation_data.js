@@ -1,28 +1,18 @@
+class NavData {
+  constructor(text, link, id) {
+    this.text = text;
+    this.link = link;
+    this.id = id;
+  }
+}
+
 const navData = [
-  {
-    text: "Home",
-    link: "./",
-  },
-  {
-    text: "Appointments",
-    link: "appointments.html",
-  },
-  {
-    text: "Services",
-    link: "services.html",
-  },
-  {
-    text: "Articles",
-    link: "articles.html",
-  },
-  {
-    text: "Reviews",
-    link: "reviews.html",
-  },
-  {
-    text: "Erection-Test",
-    link: "erection_test.html",
-  },
+  new NavData("Home", "./", "index-id"),
+  new NavData("Appointments", "appointments.html", "appointments-id"),
+  new NavData("Services", "services.html", "services-id"),
+  new NavData("Articles", "articles.html", "articles-id"),
+  new NavData("Reviews", "reviews.html", "reviews-id"),
+  new NavData("Erection-Test", "erection_test.html", "erection-test-id"),
 ];
 
 export default navData;

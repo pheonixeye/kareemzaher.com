@@ -55,15 +55,17 @@ body {
   position: absolute;
   top: 20px;
   right: 45px;
-  font-size: 60px;
+  font-size: 20px;
+  color: #818181;
+  background-color: transparent;
 }
 
 @media screen and (max-height: 450px) {
   .overlay-nav a {
     font-size: 20px;
   }
-  .overlay-nav .closebtn {
-    font-size: 40px;
+  .closebtn {
+    font-size: 20px;
     top: 15px;
     right: 35px;
   }
@@ -93,10 +95,16 @@ body {
   grid-row: 1 / 2;
   background-color: grey;
   opacity: 1;
-  height: 50px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-items: center;
+}
+
+@media (max-width: 600px) {
+  .nav-bar {
+    height: 50px;
+  }
 }
 
 .nav-bar h1 {
@@ -106,7 +114,8 @@ body {
 }
 
 .desktop-nav {
-  flex: 50%;
+  flex: 60%;
+  text-align: center;
 }
 
 .mobile-nav {
@@ -148,6 +157,13 @@ body {
     text-emphasis-postion 0.15s;
 }
 
+.active-nav-link {
+  color: var(--babyblue) !important;
+  background-color: transparent !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
 .nav-bar a:hover {
   color: rgb(241, 195, 110);
   text-emphasis-style: "•";
@@ -155,7 +171,7 @@ body {
 }
 
 .nav-bar a:active {
-  color: #00d0ef;
+  color: var(--babyblue);
 }
 
 .nav-bar ul {
@@ -320,6 +336,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   flex: 40%;
+  /* width: 100%; */
 }
 
 .contact-map-hours {

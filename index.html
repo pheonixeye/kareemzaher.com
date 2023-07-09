@@ -23,8 +23,8 @@
       </button>
       <button class="lang-btn" type="button">EN</button>
     </div>
-    <div class="overlay-nav">
-      <a href="#" class="closebtn" onclick="closeNav()">X</a>
+    <div id="overlay-nav" class="overlay-nav">
+      <button type="button" class="closebtn" onclick="closeNav()">X</button>
       <div class="overlay-content" id="overlay-content"></div>
     </div>
     <div class="nav-and-hero">
@@ -134,26 +134,12 @@
     <!-- <div> clinic FOLLOW-US </div> -->
     <div class="follow-us">
       <div class="glass-btn blue-btn">
-        <!--<div class="content">
-          h
-        </div> -->
         <img
           src="images_svg/facebook.svg"
           alt="facebook"
           style="width: 5.5em"
         />
       </div>
-
-      <!-- <div class="glass-btn red-btn"> -->
-      <!-- <div class="content">
-          e
-        </div> -->
-      <!-- <img -->
-      <!-- src="https://i.postimg.cc/LstJ4Hhf/youtube.png" -->
-      <!-- alt="youtube" -->
-      <!-- style="width: 6em" -->
-      <!-- /> -->
-      <!-- </div> -->
     </div>
     <!-- <div> separator </div> -->
     <div class="separator">
@@ -188,7 +174,6 @@
     </footer>
 
     <script src="app.js" type="text/javascript"></script>
-    <script src="js/navigation_data.js" type="module"></script>
     <script src="js/build_navbar.js" type="module"></script>
     <script src="js/mobile_nav_fns.js" type="text/javascript"></script>
     <script src="js/ratings.js" type="module"></script>

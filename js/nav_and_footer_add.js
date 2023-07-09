@@ -39,8 +39,8 @@ const navTemplate = `
   <button class="lang-btn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#9650;</button>
   <button class="lang-btn" type="button">EN</button>
 </div>
-<div class="overlay-nav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+<div id="overlay-nav" class="overlay-nav">
+<button type="button" class="closebtn" onclick="closeNav()">X</button>
   <div class="overlay-content" id="overlay-content"></div>
 </div>
 <div class="nav-bar">
@@ -56,10 +56,34 @@ const navTemplate = `
 </div>
 `;
 
+const socialTemplate = `
+<!-- <div> separator </div> -->
+    <div class="separator">
+      <div></div>
+      <h4>Social</h4>
+      <div></div>
+    </div>
+    <!-- <div> clinic FOLLOW-US </div> -->
+    <div class="follow-us">
+      <div class="glass-btn blue-btn">
+        <img
+          src="images_svg/facebook.svg"
+          alt="facebook"
+          style="width: 5.5em"
+        />
+      </div>
+    </div>
+    <!-- <div> separator </div> -->
+    <div class="separator">
+      <div></div>
+    </div>
+`;
+
 for (let index = 0; index < navPagesIds.length; index++) {
   const pageBody = document.querySelector(`${navPagesIds[index]}`);
   if (pageBody != undefined) {
     pageBody.insertAdjacentHTML("afterbegin", navTemplate);
+    pageBody.insertAdjacentHTML("beforeend", socialTemplate);
     pageBody.insertAdjacentHTML("beforeend", footerTemplate);
   }
 }
