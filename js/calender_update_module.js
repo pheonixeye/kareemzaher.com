@@ -67,12 +67,9 @@ function updateCalenderRealtime() {
     const wdClass = todayItem.classList[1];
     const wd = wdClass[wdClass.length - 1];
     const wdInt = parseInt(wd);
-
-    intDaysList.forEach((e) => {
-      if (e != wdInt) {
-        todayItem.classList.add("not-available");
-      }
-    });
+    if (!intDaysList.contains(wdInt)) {
+      todayItem.classList.add("not-available");
+    }
   }
 }
 
