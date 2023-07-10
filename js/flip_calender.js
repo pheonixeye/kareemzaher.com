@@ -1,4 +1,6 @@
 import updateCalenderRealtime from "./calender_update_module.js";
+import doctorInfo from "./fetch_doctor_data.js";
+import Schedule from "./book_appointment.js";
 
 const date = new Date();
 const isLeapYear = date.getFullYear() % 4 === 0;
@@ -299,6 +301,24 @@ function updateUIonClick(e) {
       `${weekDays[itemDate.getDay()].a}` +
       " " +
       `${itemDate.getFullYear()}`;
+
+    //set data for request fomulation
+    dateDisplay.setAttribute("reservation-date", `${itemDate.toISOString()}`);
+
+    //set schedule for request formulation
+    const scheduleList = doctorInfo["schedule"];
+    let selectedSchedule;
+    scheduleList.forEach((e) => {
+      if (e["intday"] === itemDate.getDay()) {
+        selectedSchedule = new Schedule(
+          e["day"],
+          e["intday"],
+          e["start"],
+          e["end"]
+        ).toString();
+      }
+    });
+    dateDisplay.setAttribute("schedule-day", `${selectedSchedule}`);
   });
 }
 
