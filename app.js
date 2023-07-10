@@ -18,7 +18,7 @@ function slideImages() {
     slider.setAttribute("alt", `slider image no ${i}`);
   }, randomInterval);
 }
-slideImages();
+// slideImages();
 
 //insert list of days function
 const days = ["Saturday", "Monday", "Tuesday", "Wednesday", "Thursday"];

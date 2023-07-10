@@ -12,6 +12,7 @@
   --cuteorange: #f78536;
   --linkcolor: #777777;
   --lightgrey: #f6f6f6;
+  --bevangreen: #23a4a0;
 }
 html,
 body {
@@ -209,7 +210,7 @@ body {
 
 .nav-bar li:hover {
   border-radius: 8px;
-  background-color: var(--lightgrey);
+  background-color: var(--darkgrey);
 }
 
 .hero-div {
@@ -217,7 +218,14 @@ body {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   height: 100%;
-  background-color: #102b4a;
+  background-color: var(--bevanblue);
+  z-index: -1;
+}
+
+.hero-div img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
   z-index: -1;
 }
 
@@ -226,7 +234,7 @@ body {
   grid-column: 1 / -1;
   height: 100%;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.7;
   object-fit: cover;
   transition: all 0.15s;
 }
@@ -273,6 +281,15 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
+.hero-image-slider-background {
+  grid-column: 1 / -1;
+  grid-row: 1 /-1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkgrey);
+  border-radius: 20px;
+  opacity: 0.8;
+}
 
 .hero-image-slider img {
   object-fit: contain;
@@ -280,6 +297,7 @@ body {
   height: 100%;
   grid-column: 1;
   grid-row: 1;
+  z-index: 2;
 }
 
 .hero-info-text {
@@ -312,7 +330,7 @@ body {
 }
 
 .btn-hero {
-  background-color: var(--darkblue);
+  background-color: var(--bevangreen);
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -339,8 +357,8 @@ body {
 
 .mini-divider {
   border-width: 7px 7px 7px 7px;
-  border-color: var(--darkblue);
-  background-color: var(--darkblue);
+  border-color: var(--lightgrey);
+  background-color: var(--lightgrey);
   width: 80px;
   height: 8px;
   margin-bottom: 40px;
