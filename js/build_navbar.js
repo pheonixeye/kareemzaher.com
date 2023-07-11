@@ -2,7 +2,7 @@ import navData from "./navigation_data.js";
 
 function buildTemplate(isMobile) {
   isMobile = isMobile || false;
-  let templateList = [];
+  const templateList = [];
   for (let index = 0; index < navData.length; index++) {
     if (isMobile) {
       templateList.push(
@@ -30,7 +30,7 @@ const body = document.getElementsByTagName("body");
 const bodyId = body[0].id;
 
 navLinks.forEach((item) => {
-  if (item.id == bodyId) {
+  if (item.id === bodyId) {
     item.classList.add("active-nav-link");
   }
 });

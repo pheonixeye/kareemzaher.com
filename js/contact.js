@@ -10,7 +10,7 @@ function blackStyleString(inFooter) {
 
 function buildContactTemplate(inFooter) {
   inFooter = inFooter || false;
-  var template =
+  const template =
     `${inFooter ? "<h1>K.Z. Clinic</h1>" : ""}` +
     `
     <ul>

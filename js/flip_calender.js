@@ -91,7 +91,7 @@ class DateItem {
 
 const thisYear = date.getFullYear();
 
-const firstDayOfThisYear = new Date(thisYear, 0, 1);
+// const firstDayOfThisYear = new Date(thisYear, 0, 1);
 
 for (let i = 0; i < Object.keys(months).length; i++) {
   dateToDay[i] = [];
@@ -114,7 +114,7 @@ const nextMonthListOfDays =
 const previousMonthDays =
   dateToDay[date.getMonth() - 1 === -1 ? 11 : date.getMonth() - 1];
 
-const firstDayofThisMonth = dateToDay[date.getMonth()][0];
+// const firstDayofThisMonth = dateToDay[date.getMonth()][0];
 
 const weekdayDay = document.getElementById("calender-header-weekday-day");
 const monthYear = document.getElementById("calender-header-month-year");
@@ -158,7 +158,7 @@ function helperNormalizeNumbersView(number) {
 }
 
 //grid item counter
-var itemCounter = 0;
+let itemCounter = 0;
 
 function buildPreviousMonthDays(pMonthDaysList, nMonthDaysList) {
   pMonthDaysList ??= previousMonthDays;
@@ -173,8 +173,8 @@ function buildPreviousMonthDays(pMonthDaysList, nMonthDaysList) {
   const startingDayFromPreviousMonth = previousMonthDaysLength - skipCount;
 
   for (let index = 1; index <= skipCount; index++) {
-    const notAvailable =
-      pMonthDaysList[pMonthDaysList.length - index].iDate < date;
+    // const notAvailable =
+    //   pMonthDaysList[pMonthDaysList.length - index].iDate < date;
 
     // console.log(notAvailable);
     currentMonth.insertAdjacentHTML(
@@ -233,7 +233,7 @@ function buildNextMonthDays(monthDaysList) {
   monthDaysList ??= nextMonthListOfDays;
 
   for (let index = 0; index < 42 - itemCounter; index++) {
-    const notAvailable = monthDaysList[index].iDate <= date;
+    // const notAvailable = monthDaysList[index].iDate <= date;
     currentMonth.insertAdjacentHTML(
       "beforeend",
       `<span id="${monthDaysList[index].date}"` +
@@ -367,7 +367,7 @@ const selectedMonthYearElement = document.querySelector(
 
 async function nextMonth() {
   //TODO:
-  let dataArray = selectedMonthYearElement.innerHTML.split(" ");
+  const dataArray = selectedMonthYearElement.innerHTML.split(" ");
   console.log("next: " + dataArray);
 
   const selectedMonth = monthsToInt[dataArray[0]];
@@ -417,7 +417,7 @@ async function nextMonth() {
 }
 
 async function prevMonth() {
-  let dataArray = selectedMonthYearElement.innerHTML.split(" ");
+  const dataArray = selectedMonthYearElement.innerHTML.split(" ");
   console.log("prev: " + dataArray);
   const selectedMonth = monthsToInt[dataArray[0]];
   let selectedYear = dataArray[1];

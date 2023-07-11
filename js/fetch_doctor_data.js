@@ -3,7 +3,7 @@ const _body = {
   _id: 111111,
 };
 
-var doctorInfo = {};
+let doctorInfo = {};
 
 async function fetchDoctorData() {
   const request = await fetch(_url, {
@@ -13,7 +13,7 @@ async function fetchDoctorData() {
     },
     body: JSON.stringify(_body),
   });
-  var response = await request.json().then((data) => (doctorInfo = data));
+  const response = await request.json().then((data) => (doctorInfo = data));
   return response;
 }
 

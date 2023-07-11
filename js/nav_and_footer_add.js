@@ -56,6 +56,27 @@ const navTemplate = `
 </div>
 `;
 
+function buildNavTemplate(pageId) {
+  const inAppointments = pageId === navPagesIds[0];
+  const alertTemplate = `
+  <div id="alert-overlay">
+    <div id="alert-template" class="slit-in-vertical">
+      <div id="alert-head"> 
+        ERROR !!! 
+      </div>
+      <div id="alert-body"> 
+        ERROR-MESSAGE !!!
+      </div>
+      <div id="alert-action">
+        <button id="alert-action-btn">OK</button>
+      </div>
+    </div>
+  </div>
+  `;
+
+  return inAppointments ? alertTemplate + navTemplate : navTemplate;
+}
+
 const socialTemplate = `
 <!-- <div> separator </div> -->
     <div class="separator">
@@ -82,7 +103,10 @@ const socialTemplate = `
 for (let index = 0; index < navPagesIds.length; index++) {
   const pageBody = document.querySelector(`${navPagesIds[index]}`);
   if (pageBody != undefined) {
-    pageBody.insertAdjacentHTML("afterbegin", navTemplate);
+    pageBody.insertAdjacentHTML(
+      "afterbegin",
+      buildNavTemplate(navPagesIds[index])
+    );
     pageBody.insertAdjacentHTML("beforeend", socialTemplate);
     pageBody.insertAdjacentHTML("beforeend", footerTemplate);
   }

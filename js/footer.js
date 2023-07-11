@@ -30,6 +30,4 @@ for (let index = 0; index < navData.length; index++) {
   );
 }
 
-{
-  /* <img src="images_svg/site_map.svg" alt="site map icon" /> */
-}
+/* <img src="images_svg/site_map.svg" alt="site map icon" /> */

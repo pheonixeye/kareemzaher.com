@@ -1,7 +1,7 @@
 import doctorInfo from "./fetch_doctor_data.js";
 
 const schedule = doctorInfo["schedule"];
-let intDaysList = [];
+const intDaysList = [];
 schedule.forEach((e) => intDaysList.push(e["intday"]));
 
 console.log(schedule);
@@ -18,7 +18,7 @@ function updateCalenderRealtime() {
       const element = schedule[index];
       const intDay = element["intday"];
       if (
-        wdInt == intDay &&
+        wdInt === intDay &&
         !e.classList.contains("m-prev") &&
         !e.classList.contains("m-next")
       ) {
@@ -38,7 +38,7 @@ function updateCalenderRealtime() {
     }
   }
   const today = document.querySelector(".is-today");
-  if (today != undefined) {
+  if (today !== undefined) {
     const todayDateData = new Date(
       today.attributes.getNamedItem("data").textContent
     );
@@ -63,11 +63,11 @@ function updateCalenderRealtime() {
     }
   });
   const todayItem = document.querySelector(".is-today");
-  if (todayItem != undefined) {
+  if (todayItem !== undefined) {
     const wdClass = todayItem.classList[1];
     const wd = wdClass[wdClass.length - 1];
     const wdInt = parseInt(wd);
-    if (!intDaysList.contains(wdInt)) {
+    if (!intDaysList.includes(wdInt)) {
       todayItem.classList.add("not-available");
     }
   }

@@ -39,7 +39,7 @@ function calculateDivHeightAndItemCount(fragment) {
 calculateDivHeightAndItemCount(currentFragment);
 
 function buildTemplateRatingItem(rating, index) {
-  var starList = [];
+  let starList = [];
   for (let index = 0; index < rating.rating; index++) {
     starList.push(
       `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
@@ -64,9 +64,9 @@ function buildTemplateRatingItem(rating, index) {
 
   const starTemplate = starList.join(" ");
 
-  let hasRating = rating.rating != null;
+  const hasRating = rating.rating != null;
 
-  var templateHTML = `
+  let templateHTML = `
     <div class="rating-item" id="${index}rating">
       <div class="rating-stars no-margin">
         ${starTemplate}
