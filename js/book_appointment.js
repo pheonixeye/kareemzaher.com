@@ -40,21 +40,17 @@ let appointment;
 
 const confirmButton = document.querySelector(".save");
 
-confirmButton.addEventListener("click", (e) => {
+confirmButton.addEventListener("click", async (e) => {
   const userName = document.getElementById("name-input").value;
+  const userPhone = document.getElementById("mobile-input").value;
+  const reg = new RegExp("^[0-9]+$");
 
-  if (!userName || userName.length == 0 || userName.trim().length) {
-    //TODO: show modal error
-
+  if (!userName || userName.length === 0 || userName.trim().length === 0) {
+    //show modal error
     showAlertBox("Kindly Enter Your name...");
     return;
-  }
-
-  const reg = new RegExp("^[0-9]+$");
-  const userPhone = document.getElementById("mobile-input").value;
-  if (!userPhone || userPhone.length !== 11 || !reg.test(userPhone)) {
-    //TODO: show modal error
-
+  } else if (!userPhone || userPhone.length !== 11 || !reg.test(userPhone)) {
+    //show modal error
     showAlertBox("Kindly Enter a Valid Mobile Number...");
     return;
   }
@@ -77,23 +73,49 @@ confirmButton.addEventListener("click", (e) => {
     Schedule.toJson(selectedScheduleItem)
   );
 
-  console.log(appointment);
+  // console.log(appointment);
+  await sendBookingRequest(appointment);
 });
 
-function sendBookingRequest(params) {}
+//book request
+async function sendBookingRequest(appointment) {
+  const _url = "https://cosmosurgeserver.xyz/cpanelappointements";
+  const request = await fetch(_url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(appointment),
+  });
 
-function showAlertBox(message) {
+  const response = await request.json();
+
+  showAlertBox(response, "INFO !!!", true);
+}
+
+//form validation
+function showAlertBox(message, header, redirect) {
+  redirect ??= false;
   const alertOverlay = document.querySelector("#alert-overlay");
   const alertTemplate = document.querySelector("#alert-template");
+  const alertHead = document.querySelector("#alert-head");
   const alertMessage = document.querySelector("#alert-body");
   alertOverlay.style.display = "block";
   alertTemplate.style.display = "block";
   alertMessage.innerText = message;
 
+  if (header) {
+    alertHead.style.backgroundColor = "#ff9800";
+    alertHead.innerText = header;
+  }
+
   const dismissAlertBtn = document.querySelector("#alert-action-btn");
   dismissAlertBtn.addEventListener("click", (e) => {
     alertOverlay.style.display = "none";
     alertTemplate.style.display = "none";
+    if (redirect) {
+      location.href = "/";
+    }
   });
 }
 
