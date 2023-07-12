@@ -1,0 +1,19 @@
+[
+    {
+        "id":0,
+        "entitle": "",
+        "artitle":"",
+        "svg":"",
+        "img":"",
+        "ytlink":"",
+        "paragraph":"",
+        "info":[
+            {
+                "entitle":"",
+                "artitle":"",
+                "entext":"",
+                "artext":""
+            }
+        ]
+    }
+]

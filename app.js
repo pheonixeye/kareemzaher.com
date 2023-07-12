@@ -1,4 +1,4 @@
-console.log("js side connected...");
+// console.log("js side connected...");
 
 //hero div image slider function
 //TODO: MAKE BETTER TRANSITION

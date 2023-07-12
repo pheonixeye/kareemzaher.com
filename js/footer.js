@@ -1,18 +1,18 @@
-import doctorInfo from "../js/fetch_doctor_data.js";
+// import doctorInfo from "../js/fetch_doctor_data.js";
 import navData from "./navigation_data.js";
 
-const imgData = doctorInfo["avatar"];
-const imgPrefix = "data:image/png;base64,";
-let image = new Image();
-image.src = imgPrefix + imgData;
+// const imgData = doctorInfo["avatar"];
+// const imgPrefix = "data:image/png;base64,";
+// let image = new Image();
+// image.src = imgPrefix + imgData;
 
-const imageHolder = document.querySelector("#doctor-img");
-imageHolder.src = image.src;
+// const imageHolder = document.querySelector("#doctor-img");
+// imageHolder.src = image.src;
 
 // insert items in bottom footer nav
 
 function buildFooterNavTemplate(navData) {
-  let Template = `
+  const Template = `
     <li>
       <div>
         <a href="${navData.link}">${navData.text}</a>
