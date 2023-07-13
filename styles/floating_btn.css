@@ -4,7 +4,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 2 !important;
+  z-index: 6 !important;
   top: calc(90% - 100px);
   left: calc(98% - 100px);
   right: 30px;
