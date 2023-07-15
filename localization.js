@@ -29,7 +29,7 @@ function translateElement(element) {
 }
 
 async function fetchTranslationsFor(newLocale) {
-  const response = await fetch(`../lang/${newLocale}.json`);
+  const response = await fetch(`lang/${newLocale}.json`);
   return await response.json();
 }
 
