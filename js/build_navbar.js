@@ -6,11 +6,11 @@ function buildTemplate(isMobile) {
   for (let index = 0; index < navData.length; index++) {
     if (isMobile) {
       templateList.push(
-        `<a id="${navData[index].id}" class="nav-link" href="${navData[index].link}">${navData[index].text}</a>`
+        `<a id="${navData[index].id}" class="nav-link" href="${navData[index].link}" lang-key="${navData[index].text}">${navData[index].text}</a>`
       );
     } else {
       templateList.push(
-        `<li><a id="${navData[index].id}" class="nav-link" href="${navData[index].link}">${navData[index].text}</a></li>`
+        `<li><a id="${navData[index].id}" class="nav-link" href="${navData[index].link}" lang-key="${navData[index].text}">${navData[index].text}</a></li>`
       );
     }
   }

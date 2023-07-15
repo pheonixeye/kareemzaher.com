@@ -7,7 +7,7 @@
   z-index: 6 !important;
   top: calc(90% - 100px);
   left: calc(98% - 100px);
-  right: 30px;
+  right: calc(98% - 100px);
   align-items: center;
   justify-content: center;
 }

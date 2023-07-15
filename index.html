@@ -21,7 +21,7 @@
       >
         &#9650;
       </button>
-      <button class="lang-btn" type="button">AR</button>
+      <button id="lang-btn" class="lang-btn" type="button">ar</button>
     </div>
     <div id="overlay-nav" class="overlay-nav">
       <button type="button" class="closebtn" onclick="closeNav()">X</button>
@@ -32,7 +32,7 @@
         <img src="images_webp/pattern.webp" alt="pattern background" />
       </div>
       <div class="nav-bar">
-        <h1>K.Z. Clinic</h1>
+        <h1 lang-key="logo">K.Z. Clinic</h1>
         <nav class="desktop-nav">
           <ul id="desktop-nav"></ul>
         </nav>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="hero-title">
-        <h2>Dr. Kareem Zaher</h2>
+        <h2 lang-key="docname">Dr. Kareem Zaher</h2>
         <!-- <h3>MSc. Urology And Andrology</h3> -->
       </div>
       <div class="hero-main">
@@ -56,20 +56,21 @@
           />
         </div>
         <div class="hero-info-text">
-          <h3>Urology and Andrology Specialist Surgeon.</h3>
+          <h3 lang-key="doctitle">Urology and Andrology Specialist Surgeon.</h3>
           <div class="mini-divider"></div>
           <ul>
-            <li>MSc. Urology and Andrology.</li>
-            <li>Faculty of Medicine.</li>
-            <li>Al - Azhar University - Cairo.</li>
-            <li>EUA member.</li>
-            <li>Uro-Andrology Specialist.</li>
+            <li lang-key="t1">MSc. Urology and Andrology.</li>
+            <li lang-key="t2">Faculty of Medicine.</li>
+            <li lang-key="t3">Al - Azhar University - Cairo.</li>
+            <li lang-key="t4">EUA member.</li>
+            <li lang-key="t5">Uro-Andrology Specialist.</li>
           </ul>
           <div class="action-btn-div">
             <button
               type="button"
               class="btn-hero book-appointment"
               onclick="window.location = 'appointments.html'"
+              lang-key="book-app"
             >
               Book an Appointment
             </button>
@@ -80,7 +81,7 @@
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Contact</h4>
+      <h4 lang-key="contact">Contact</h4>
       <div></div>
     </div>
     <!-- <div> 2nd home div MAP - CONTACT - HOURS </div> -->
@@ -107,18 +108,20 @@
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Reviews</h4>
+      <h4 lang-key="reviews">Reviews</h4>
       <div></div>
     </div>
     <!-- <div> clinic RATING </div> -->
     <div class="clinic-rating"></div>
     <div class="read-more-div">
-      <button class="read-more-btn btn-hero">Read More</button>
+      <button class="read-more-btn btn-hero" lang-key="read-more">
+        Read More
+      </button>
     </div>
     <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Social</h4>
+      <h4 lang-key="social">Social</h4>
       <div></div>
     </div>
     <!-- <div> clinic FOLLOW-US </div> -->
@@ -127,6 +130,13 @@
         <img
           src="images_svg/facebook.svg"
           alt="facebook"
+          style="width: 5.5em"
+        />
+      </div>
+      <div class="glass-btn amber-btn">
+        <img
+          src="images_svg/playstore.svg"
+          alt="erection-test-app"
           style="width: 5.5em"
         />
       </div>
@@ -142,7 +152,7 @@
       </div>
       <div class="footer-card">
         <div class="footer-about">
-          <h1>About</h1>
+          <h1 lang-key="about">About</h1>
           <div class="doctor-img-holder">
             <img
               id="doctor-img"
@@ -150,20 +160,19 @@
               alt="doctor image"
             />
           </div>
-          <h2>Dr. Kareem Zaher</h2>
-          <h3>Uro-Andrology Specialist Surgeon</h3>
-          <h3>E.U.A Member</h3>
-          <h3>M.O.I. Hospitals</h3>
+          <h2 lang-key="docname">Dr. Kareem Zaher</h2>
+          <h3 lang-key="doctitle">Uro-Andrology Specialist Surgeon</h3>
+          <h3 lang-key="t4">E.U.A Member</h3>
         </div>
       </div>
       <div class="footer-card">
         <div class="footer-nav">
-          <h1>Site Map</h1>
+          <h1 lang-key="site-map">Site Map</h1>
           <ul class="site-map-list"></ul>
         </div>
       </div>
       <div class="copyright">
-        <p>Copyright - KareemZaher.com</p>
+        <p lang-key="copyright">Copyright - KareemZaher.com</p>
       </div>
     </footer>
 
@@ -174,5 +183,6 @@
     <script src="js/contact.js" type="module"></script>
     <script src="js/fetch_doctor_data.js" type="module"></script>
     <script src="js/footer.js" type="module"></script>
+    <script src="js/localization.js" type="text/javascript"></script>
   </body>
 </html>

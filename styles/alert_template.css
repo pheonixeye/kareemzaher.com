@@ -59,7 +59,9 @@
 #alert-action {
   background-color: var(--bevanblue);
   padding: 10px;
-  text-align: right;
+  text-align: start;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #alert-action-btn {

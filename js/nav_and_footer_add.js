@@ -13,38 +13,37 @@ const footerTemplate = `
   </div>
   <div class="footer-card">
     <div class="footer-about">
-      <h1>About</h1>
+      <h1 lang-key="about">About</h1>
       <div class="doctor-img-holder">
         <img id="doctor-img" src="images_webp/doctor.webp" alt="doctor image" />
       </div>
-      <h2>Dr. Kareem Zaher</h2>
-      <h3>Uro-Andrology Specialist Surgeon</h3>
-      <h3>E.U.A Member</h3>
-      <h3>M.O.I. Hospitals</h3>
+      <h2 lang-key="docname">Dr. Kareem Zaher</h2>
+      <h3 lang-key="doctitle">Uro-Andrology Specialist Surgeon</h3>
+      <h3 lang-key="t4">E.U.A Member</h3>
     </div>
   </div>
   <div class="footer-card">
     <div class="footer-nav">
-      <h1>Site Map</h1>
+      <h1 lang-key="site-map">Site Map</h1>
       <ul class="site-map-list"></ul>
     </div>
   </div>
   <div class="copyright">
-    <p>Copyright - KareemZaher.com</p>
+    <p lang-key="copyright">Copyright - KareemZaher.com</p>
   </div>
 </footer>`;
 
 const navTemplate = `
 <div class="floating-btn-div">
   <button class="lang-btn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#9650;</button>
-  <button class="lang-btn" type="button">EN</button>
+  <button id="lang-btn" class="lang-btn" type="button">ar</button>
 </div>
 <div id="overlay-nav" class="overlay-nav">
 <button type="button" class="closebtn" onclick="closeNav()">X</button>
   <div class="overlay-content" id="overlay-content"></div>
 </div>
 <div class="nav-bar">
-  <h1>K.Z. Clinic</h1>
+  <h1 lang-key="logo">K.Z. Clinic</h1>
   <nav class="desktop-nav">
     <ul id="desktop-nav"></ul>
   </nav>
@@ -81,7 +80,7 @@ const socialTemplate = `
 <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>
-      <h4>Social</h4>
+      <h4 lang-key="social">Social</h4>
       <div></div>
     </div>
     <!-- <div> clinic FOLLOW-US </div> -->
@@ -90,6 +89,13 @@ const socialTemplate = `
         <img
           src="images_svg/facebook.svg"
           alt="facebook"
+          style="width: 5.5em"
+        />
+      </div>
+      <div class="glass-btn amber-btn">
+        <img
+          src="images_svg/playstore.svg"
+          alt="erection-test-app"
           style="width: 5.5em"
         />
       </div>
@@ -111,3 +117,15 @@ for (let index = 0; index < navPagesIds.length; index++) {
     pageBody.insertAdjacentHTML("beforeend", footerTemplate);
   }
 }
+
+const facebookButton = document.querySelector(".glass-btn.blue-btn");
+const playstoreButton = document.querySelector(".glass-btn.amber-btn");
+facebookButton.addEventListener("click", (e) => {
+  window.open("https://www.facebook.com/kzuroclinic", "_blank");
+});
+playstoreButton.addEventListener("click", (e) => {
+  window.open(
+    "https://play.google.com/store/apps/details?id=com.kareemzaher.iief15&hl=en&gl=US",
+    "_blank"
+  );
+});

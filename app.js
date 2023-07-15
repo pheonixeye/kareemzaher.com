@@ -30,8 +30,8 @@ function buildHourItem(index) {
     <div class="circle-shape" style="background-color: #0070cd">
       <img src="images_svg/calender.svg" alt="calender icon" />
     </div>
-    <h3>${days[index]}</h3>
-    <h5>6:00 P.M. - 10:00 P.M.</h5>
+    <h3 lang-key="${days[index]}">${days[index]}</h3>
+    <h5>6:00 <span lang-key="pm">P.M.</span> - 10:00 <span lang-key="pm">P.M.</span></h5>
   </div>
 </li>`;
 }
@@ -43,8 +43,3 @@ function completeListOfDays() {
   }
 }
 completeListOfDays();
-
-const socialButton = document.querySelector(".glass-btn.blue-btn");
-socialButton.addEventListener("click", (e) => {
-  window.open("https://www.facebook.com/kzuroclinic", "_blank");
-});

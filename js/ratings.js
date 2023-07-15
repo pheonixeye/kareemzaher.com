@@ -71,7 +71,7 @@ function buildTemplateRatingItem(rating, index) {
       <div class="rating-stars no-margin">
         ${starTemplate}
       </div>
-      <p class="overall-rating no-margin">Overall Rating</p>
+      <p class="overall-rating no-margin" lang-key="overall-rating">Overall Rating</p>
       <p class="comment no-margin">${rating.comment}</p>
       <p class="user no-margin">${rating.user_name}  ${
     rating.user_age == undefined ? "" : rating.user_age + "years old"
@@ -86,7 +86,7 @@ function buildTemplateRatingItem(rating, index) {
         </div>
       </div>
       <div class="doctor-rating-text">
-        <p>Doctor rating</p>
+        <p lang-key="doctor-rating">Doctor rating</p>
       </div>`
           : ``
       }

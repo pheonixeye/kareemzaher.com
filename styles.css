@@ -117,6 +117,12 @@ body {
   text-align: center;
 }
 
+@media (max-width: 1100px) {
+  .nav-bar h1 {
+    flex: 80%;
+  }
+}
+
 .desktop-nav {
   flex: 70%;
   display: flex;
@@ -135,11 +141,12 @@ body {
 }
 
 .mobile-nav {
-  flex: 30%;
+  flex: 20%;
   display: none;
 }
 .mobile-nav-btn {
   margin-right: 20px;
+  margin-left: 20px;
   height: 45px;
   width: 45px;
   background-color: transparent;
@@ -252,6 +259,12 @@ body {
   color: #cef0d4;
   font-size: 4rem;
   text-shadow: 1px 1px black;
+}
+
+@media (max-width: 600px) {
+  .hero-title h2 {
+    font-size: 3rem;
+  }
 }
 
 .hero-title h3 {
@@ -482,13 +495,14 @@ body {
   grid-row: 1;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
   .clinic-hours {
     grid-row: 3 / 4;
     grid-column: 1 /-1;
-    margin-right: 120px;
+    /* margin-right: 120px; */
   }
 }
 
@@ -513,6 +527,11 @@ body {
   grid-column: 1 / 2;
   grid-row: 1 / -1;
 }
+.clinic-hours-list li {
+  display: flex;
+  max-width: 100%;
+}
+
 .clinic-hours li img {
   width: 25px;
   height: 25px;
