@@ -465,8 +465,10 @@ body {
 
 .contact-link-data {
   padding-left: 50px;
+  padding-right: 50px;
   text-decoration: none;
   color: white;
+  text-align: center;
 }
 
 .contact-data-color-black {

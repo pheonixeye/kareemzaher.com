@@ -79,7 +79,7 @@ confirmButton.addEventListener("click", async (e) => {
 
 //book request
 async function sendBookingRequest(appointment) {
-  const _url = "https://cosmosurgeserver.xyz/cpanelappointements";
+  const _url = "https://cosmosurgebasicserver.fly.dev/cpanelappointements";
   const request = await fetch(_url, {
     method: "POST",
     headers: {
