@@ -2,6 +2,23 @@ import updateCalenderRealtime from "./calender_update_module.js";
 import doctorInfo from "./fetch_doctor_data.js";
 import Schedule from "./book_appointment.js";
 
+//localization
+const html = document.getElementsByTagName("html")[0];
+const lang = html.getAttribute("lang");
+console.log(lang);
+const isEnglishWebsite = lang == "en";
+
+const prevMonthBtn = document.querySelector("#prev-month-btn");
+const nextMonthBtn = document.querySelector("#next-month-btn");
+
+if (isEnglishWebsite) {
+  prevMonthBtn.innerHTML = `&#9664;`;
+  nextMonthBtn.innerHTML = `&#9658;`;
+} else {
+  prevMonthBtn.innerHTML = `&#9658;`;
+  nextMonthBtn.innerHTML = `&#9664;`;
+}
+
 const date = new Date();
 const isLeapYear = date.getFullYear() % 4 === 0;
 const days = [
@@ -14,13 +31,13 @@ const days = [
   "Saturday",
 ];
 const weekDays = {
-  0: { a: "Sunday", b: "SUN" },
-  1: { a: "Monday", b: "MON" },
-  2: { a: "Tuesday", b: "TUE" },
-  3: { a: "Wednesday", b: "WED" },
-  4: { a: "Thursday", b: "THU" },
-  5: { a: "Friday", b: "FRI" },
-  6: { a: "Saturday", b: "SAT" },
+  0: { a: "Sunday", b: "SUN", t: "احد" },
+  1: { a: "Monday", b: "MON", t: "اثنين" },
+  2: { a: "Tuesday", b: "TUE", t: "ثلاثاء" },
+  3: { a: "Wednesday", b: "WED", t: "اربعاء" },
+  4: { a: "Thursday", b: "THU", t: "خميس" },
+  5: { a: "Friday", b: "FRI", t: "جمعة" },
+  6: { a: "Saturday", b: "SAT", t: "سبت" },
 };
 
 const initialToint = {
@@ -34,18 +51,18 @@ const initialToint = {
 };
 
 const months = {
-  0: { a: "January", b: "JAN", d: 31 },
-  1: { a: "February", b: "FEB", d: isLeapYear ? 29 : 28 },
-  2: { a: "March", b: "MAR", d: 31 },
-  3: { a: "April", b: "APR", d: 30 },
-  4: { a: "May", b: "MAY", d: 31 },
-  5: { a: "June", b: "JUN", d: 30 },
-  6: { a: "July", b: "JUL", d: 31 },
-  7: { a: "August", b: "AUG", d: 31 },
-  8: { a: "September", b: "SEP", d: 30 },
-  9: { a: "October", b: "OCT", d: 31 },
-  10: { a: "November", b: "NOV", d: 30 },
-  11: { a: "December", b: "DEC", d: 31 },
+  0: { a: "January", b: "JAN", d: 31, t: "يناير" },
+  1: { a: "February", b: "FEB", d: isLeapYear ? 29 : 28, t: "فبراير" },
+  2: { a: "March", b: "MAR", d: 31, t: "مارس" },
+  3: { a: "April", b: "APR", d: 30, t: "ابريا" },
+  4: { a: "May", b: "MAY", d: 31, t: "مايو" },
+  5: { a: "June", b: "JUN", d: 30, t: "يونيو" },
+  6: { a: "July", b: "JUL", d: 31, t: "يوليو" },
+  7: { a: "August", b: "AUG", d: 31, t: "اغسطس" },
+  8: { a: "September", b: "SEP", d: 30, t: "سبتمبر" },
+  9: { a: "October", b: "OCT", d: 31, t: "اكتوبر" },
+  10: { a: "November", b: "NOV", d: 30, t: "نوفمبر" },
+  11: { a: "December", b: "DEC", d: 31, t: "ديسمبر" },
 };
 
 const monthsToInt = {
@@ -120,17 +137,19 @@ const weekdayDay = document.getElementById("calender-header-weekday-day");
 const monthYear = document.getElementById("calender-header-month-year");
 
 //set day/date of calender header
-weekdayDay.innerHTML = `${weekDays[date.getDay()].a} ${date.getDate()}${buildTH(
-  date.getDate()
-)}`;
+weekdayDay.innerHTML = `${
+  isEnglishWebsite ? weekDays[date.getDay()].a : weekDays[date.getDay()].t
+} ${date.getDate()}${buildTH(date.getDate())}`;
 
 //set month/year of calender header
-monthYear.innerHTML = `${months[date.getMonth()].a} ${date.getFullYear()}`;
+monthYear.innerHTML = `${
+  isEnglishWebsite ? months[date.getMonth()].a : months[date.getMonth()].t
+} ${date.getFullYear()}`;
 
 //set date of date display
-const dateDisplay = document.querySelector(".info-date span");
+const dateDisplay = document.querySelector(".value-date");
 dateDisplay.innerHTML = `${
-  months[date.getMonth()].a
+  isEnglishWebsite ? months[date.getMonth()].a : months[date.getMonth()].t
 } ${date.getDate()}${buildTH(date.getDate())}, ${date.getFullYear()}`;
 
 const currentMonth = document.querySelector("#current-month");
@@ -143,7 +162,7 @@ for (let index = 0; index < Object.keys(weekDays).length; index++) {
       " " +
       `class="weekday-list-item ${index}">` +
       " " +
-      `${weekDays[index].b}</span>`
+      `${isEnglishWebsite ? weekDays[index].b : weekDays[index].t}</span>`
   );
 }
 
@@ -281,24 +300,36 @@ function updateUIonClick(e) {
     //update day & weekday
 
     weekdayDay.innerHTML = `${
-      weekDays[itemDate.getDay()].a
+      isEnglishWebsite
+        ? weekDays[itemDate.getDay()].a
+        : weekDays[itemDate.getDay()].t
     } ${itemDate.getDate()}${buildTH(itemDate.getDate())}`;
 
     //update month && year
 
     monthYear.innerHTML = `${
-      months[itemDate.getMonth()].a
+      isEnglishWebsite
+        ? months[itemDate.getMonth()].a
+        : months[itemDate.getMonth()].t
     } ${itemDate.getFullYear()}`;
 
     //update the date on the data entry page
 
     dateDisplay.innerHTML =
-      `${months[itemDate.getMonth()].a}` +
+      `${
+        isEnglishWebsite
+          ? months[itemDate.getMonth()].a
+          : months[itemDate.getMonth()].t
+      }` +
       " " +
       `${itemDate.getDate()}` +
       `${buildTH(itemDate.getDay())}` +
       " " +
-      `${weekDays[itemDate.getDay()].a}` +
+      `${
+        isEnglishWebsite
+          ? weekDays[itemDate.getDay()].a
+          : weekDays[itemDate.getDay()].t
+      }` +
       " " +
       `${itemDate.getFullYear()}`;
 
@@ -479,3 +510,30 @@ function bindNextPrev() {
 }
 
 bindNextPrev();
+
+// function rebuildPlaceholders() {
+//   const nameInput = document.querySelector("#name-input");
+//   const mobileInput = document.querySelector("#mobile-input");
+//   nameInput.setAttribute("placeholder", "");
+//   mobileInput.setAttribute("placeholder", "");
+//   if (isEnglishWebsite) {
+//     nameInput.setAttribute("placeholder", "Enter Your Name");
+//     mobileInput.setAttribute("placeholder", "Enter Your Mobile Number");
+//   } else if (!isEnglishWebsite) {
+//     nameInput.setAttribute("placeholder", "ادخل الاسم");
+//     mobileInput.setAttribute("placeholder", "ادخل رقم الموبايل");
+//   }
+// }
+
+// const langChangeObserver = new MutationObserver((mutations) => {
+//   mutations.forEach((m) => {
+//     if (m.type === "attributes") {
+//       rebuildPlaceholders();
+//       // console.log("language change in calender observer fired...");
+//     }
+//   });
+// });
+
+// langChangeObserver.observe(html, {
+//   attributes: true, //configure it to listen to attribute changes
+// });

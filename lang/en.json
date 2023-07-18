@@ -22,6 +22,13 @@
     "Wednesday":"Wednesday",
     "Thursday":"Thursday",
     "Friday":"Friday",
+    "SAT":"SAT",
+    "SUN":"SUN",
+    "MON":"MON",
+    "TUE":"TUE",
+    "WED":"WED",
+    "THU":"THU",
+    "FRI":"FRI",
     "pm" : "P.M.",
     "overall-rating": "Overall Rating",
     "doctor-rating": "Doctor Rating",
@@ -41,7 +48,16 @@
     "clinic-hours":"Clinic Hours",
     "doctor-articles":"Doctor Articles",
     "no-articles":"No Articles yet...",
-    "coming-soon":"Coming Soon..."
+    "coming-soon":"Coming Soon...",
+    "date" : "Date : ",
+    "time" : "Time : ",
+    "address:":"Address : ",
+    "sms" : "You be notified by SMS.",
+    "additional-info" : "Additional Info : ",
+    "confirm": "Confirm",
+    "cancel":"Cancel",
+    "label-name" : "Name",
+    "label-mobile" : "Mobile Number"
 
 
 }

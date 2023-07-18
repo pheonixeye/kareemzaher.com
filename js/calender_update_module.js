@@ -4,7 +4,7 @@ const schedule = doctorInfo["schedule"];
 const intDaysList = [];
 schedule.forEach((e) => intDaysList.push(e["intday"]));
 
-console.log(schedule);
+// console.log(schedule);
 function updateCalenderRealtime() {
   //TODO: modify conditioning
   const calenderItems = document.querySelectorAll(".calender-day-item");
@@ -82,12 +82,12 @@ function main() {
     setTimeout(() => {
       updateCalenderRealtime();
     }, 1000);
-    console.log("update pending");
+    // console.log("update pending");
   }
   if (functionExecuted) {
     return;
   }
-  console.log("update performed");
+  // console.log("update performed");
   return;
 }
 

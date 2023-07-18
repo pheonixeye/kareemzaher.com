@@ -157,15 +157,35 @@
 }
 .calender-back input {
   background: none;
-  border: none;
-  border-bottom: 1px solid rgba(73, 114, 133, 0.6);
+  /* border: none; */
+  border: 1px solid rgba(73, 114, 133, 0.6);
   color: #dfebed;
   font-size: 1.4em;
   font-weight: 300;
-  padding: 30px 0px;
+  padding: 20px 0px;
   width: 90%;
   display: inline-block;
   text-align: center;
+}
+
+.name-input-div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px 1fr;
+}
+.mobile-input-div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px 1fr;
+}
+
+.name-label-text,
+.mobile-label-text {
+  color: white;
+  align-self: center;
+}
+.calender-back input::placeholder {
+  color: white;
 }
 
 .calender-back input:focus {
@@ -176,12 +196,14 @@
 @media (max-width: 600px) {
   .calender-back input {
     font-size: 1.2em;
-    padding: 20px 0px;
+    padding: 10px 0px;
   }
 }
 i {
   font-size: 40px;
   font-style: normal;
+  align-self: center;
+  justify-self: center;
 }
 
 @media (max-width: 600px) {
@@ -190,10 +212,12 @@ i {
   }
 }
 
-#name-input {
+#name-input ::placeholder {
+  color: #fff;
 }
 
-#mobile-input {
+#mobile-input ::placeholder {
+  color: #fff;
 }
 
 .info {

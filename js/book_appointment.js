@@ -2,6 +2,10 @@ import doctorInfo from "./fetch_doctor_data.js";
 
 // const scheduleList = doctorInfo["schedule"];
 
+const lang = document.querySelector("html").getAttribute("lang");
+
+const isEnglish = lang == "en";
+
 class Schedule {
   constructor(day, intday, start, end) {
     this.day = day;
@@ -47,11 +51,21 @@ confirmButton.addEventListener("click", async (e) => {
 
   if (!userName || userName.length === 0 || userName.trim().length === 0) {
     //show modal error
-    showAlertBox("Kindly Enter Your name...");
+    showAlertBox(
+      `${isEnglish ? "Kindly Enter Your name..." : "برجاء ادخال الاسم..."}`,
+      `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`
+    );
     return;
   } else if (!userPhone || userPhone.length !== 11 || !reg.test(userPhone)) {
     //show modal error
-    showAlertBox("Kindly Enter a Valid Mobile Number...");
+    showAlertBox(
+      `${
+        isEnglish
+          ? "Kindly Enter a Valid Mobile Number..."
+          : "برجاء ادخال رقم موبايل صحيح ..."
+      }`,
+      `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`
+    );
     return;
   }
 
@@ -90,7 +104,7 @@ async function sendBookingRequest(appointment) {
 
   const response = await request.json();
 
-  showAlertBox(response, "INFO !!!", true);
+  showAlertBox(response, `${isEnglish ? "INFO !!!" : "اشعار !!!"}`, true);
 }
 
 //form validation
@@ -104,10 +118,10 @@ function showAlertBox(message, header, redirect) {
   alertTemplate.style.display = "block";
   alertMessage.innerText = message;
 
-  if (header) {
+  if (header != "ERROR !!!" && header != "خطأ !!!") {
     alertHead.style.backgroundColor = "#ff9800";
-    alertHead.innerText = header;
   }
+  alertHead.innerText = header;
 
   const dismissAlertBtn = document.querySelector("#alert-action-btn");
   dismissAlertBtn.addEventListener("click", (e) => {

@@ -67,7 +67,7 @@ function buildNavTemplate(pageId) {
         ERROR-MESSAGE !!!
       </div>
       <div id="alert-action">
-        <button id="alert-action-btn">OK</button>
+        <button id="alert-action-btn" lang-key="confirm">OK</button>
       </div>
     </div>
   </div>

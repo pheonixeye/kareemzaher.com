@@ -35,39 +35,57 @@
         </div>
         <!-- CALENDER-BACK-->
         <div class="calender-back">
-          <i>&#129333;</i>
-          <input
-            id="name-input"
-            type="text"
-            required
-            placeholder="Enter Name"
-          />
-          <i>&#128241;</i>
-          <input
-            id="mobile-input"
-            type="tel"
-            required
-            placeholder="Enter Mobile Number"
-          />
+          <div class="name-input-div">
+            <p></p>
+            <label lang-key="label-name" class="name-label-text">Name</label>
+            <i>&#129333;</i>
+            <input id="name-input" type="text" required placeholder="ABCD..." />
+          </div>
+          <div class="mobile-input-div">
+            <p></p>
+            <label lang-key="label-mobile" class="mobile-label-text"
+              >Mobile Number</label
+            >
+            <i>&#128241;</i>
+            <input
+              id="mobile-input"
+              type="tel"
+              required
+              placeholder="##-###-###-###"
+            />
+          </div>
           <div class="info">
             <div class="date">
-              <p class="info-date">Date: <span>MMM WKDY ddth, yyyy</span></p>
-              <p class="info-time">Time: <span>06:00 - 09:00 P.M.</span></p>
-            </div>
-            <div class="address">
               <p>
-                Address:
-                <span>Zahraa El Maadi, El Nada Tower, First Floor.</span>
+                <span class="info-date title-date" lang-key="date">Date:</span>
+                <span class="info-date value-date">MMM WKDY ddth, yyyy</span>
+              </p>
+              <p>
+                <span class="info-time title-time" lang-key="time">Time:</span>
+                <span class="info-time value-time"
+                  >06:00 - 09:00 <span lang-key="pm">P.M.</span></span
+                >
               </p>
             </div>
+            <!-- <div class="address">
+              <p>
+                <span lang-key="address:">Address:</span>
+                <span lang-key="address-data"
+                  >Zahraa El Maadi, El Nada Tower, First Floor.</span
+                >
+              </p>
+            </div> -->
             <div class="observations">
-              <p>Additional Info: <span>You be notified by SMS.</span></p>
+              <p>
+                <span lang-key="additional-info">Additional Info:</span>
+                <span lang-key="sms">You be notified by SMS.</span>
+              </p>
             </div>
           </div>
 
           <div class="actions">
-            <button class="save">Confirm</button>
-            <button class="dismiss">Cancel</button>
+            <button class="save" lang-key="confirm">Confirm</button>
+            <button class="dismiss" lang-key="cancel">Cancel</button>
           </div>
         </div>
       </div>
@@ -81,7 +99,5 @@
     <script src="js/calender_update_module.js" type="module"></script>
     <script src="js/book_appointment.js" type="module"></script>
     <script src="localization.js" type="text/javascript"></script>
-    <!--TODO: fix imports-->
-    <!--TODO: can we use TS ??-->
   </body>
 </html>
