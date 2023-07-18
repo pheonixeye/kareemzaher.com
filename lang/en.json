@@ -38,7 +38,10 @@
     "Erection-Test":"Erection-Test",
     "reviews":"Reviews",
     "clinic-services":"Clinic Services",
-    "clinic-hours":"Clinic Hours"
+    "clinic-hours":"Clinic Hours",
+    "doctor-articles":"Doctor Articles",
+    "no-articles":"No Articles yet...",
+    "coming-soon":"Coming Soon..."
 
 
 }

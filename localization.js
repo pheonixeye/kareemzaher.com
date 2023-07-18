@@ -1,6 +1,26 @@
-console.log("localization file connected");
+// console.log("localization file connected");
 
-const defaultLocale = "en";
+// let jsonLocale;
+
+// async function fetchStoredLocale() {
+//   const request = await fetch("/json/lang.json");
+//   jsonLocale = await request.json();
+//   console.log(jsonLocale["lang"]);
+// }
+
+// fetchStoredLocale();
+
+// async function modLocaleInJson(stringLocale) {}
+const storedLocale = window.localStorage.getItem("lang");
+
+const langSwitcher = document.querySelector("#lang-btn");
+
+// console.log(storedLocale);
+
+const defaultLocale = storedLocale ?? "en";
+
+langSwitcher.innerText = defaultLocale == "ar" ? "en" : "ar";
+
 // The active locale
 let locale;
 // Gets filled with active locale translations
@@ -15,6 +35,7 @@ async function setLocale(newLocale) {
   document.documentElement.dir = dir(newLocale);
   // Not necessary for direction flow, but for good measure...
   document.documentElement.lang = newLocale;
+  window.localStorage.setItem("lang", newLocale);
   translatePage();
 }
 // ...
