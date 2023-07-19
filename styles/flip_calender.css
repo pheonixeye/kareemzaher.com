@@ -7,6 +7,7 @@
   border-radius: 4px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   height: 501px;
+  max-height: 550px;
   perspective: 1000;
   transition: transform 0.9s;
   transform-style: preserve-3d;
@@ -142,6 +143,9 @@
 .calender-back {
   height: 100%;
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .calender-front,
 .calender-back {
@@ -226,13 +230,13 @@ i {
   flex-direction: column;
   font-weight: 600;
   font-size: 1em;
-  padding: 10px 10px;
+  padding: 0px 10px;
 }
 
 @media (max-width: 600px) {
   .info {
     font-size: 1em;
-    padding: 10px 10px;
+    padding: 0px 10px;
   }
 }
 
@@ -258,10 +262,10 @@ i {
   bottom: 0;
   border-top: 1px solid rgba(73, 114, 133, 0.6);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   /* position: absolute; */
   width: 100%;
-  padding-top: 30px;
+  /* padding-top: 30px; */
 }
 
 .actions button {

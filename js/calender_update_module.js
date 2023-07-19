@@ -38,7 +38,7 @@ function updateCalenderRealtime() {
     }
   }
   const today = document.querySelector(".is-today");
-  if (today !== undefined) {
+  if (today != undefined) {
     const todayDateData = new Date(
       today.attributes.getNamedItem("data").textContent
     );
@@ -63,7 +63,7 @@ function updateCalenderRealtime() {
     }
   });
   const todayItem = document.querySelector(".is-today");
-  if (todayItem !== undefined) {
+  if (todayItem != undefined) {
     const wdClass = todayItem.classList[1];
     const wd = wdClass[wdClass.length - 1];
     const wdInt = parseInt(wd);

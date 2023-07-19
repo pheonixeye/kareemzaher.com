@@ -143,11 +143,14 @@ weekdayDay.innerHTML = `${
   isEnglishWebsite ? weekDays[date.getDay()].a : weekDays[date.getDay()].t
 } ${date.getDate()}${buildTH(date.getDate())}`;
 
+weekdayDay.setAttribute("weekday", `${weekDays[date.getDay()].a}`);
+weekdayDay.setAttribute("day", `${date.getDate()}`);
 //set month/year of calender header
 monthYear.innerHTML = `${
   isEnglishWebsite ? months[date.getMonth()].a : months[date.getMonth()].t
 } ${date.getFullYear()}`;
-
+monthYear.setAttribute("month", `${months[date.getMonth()].a}`);
+monthYear.setAttribute("year", `${date.getFullYear()}`);
 //set date of date display
 const dateDisplay = document.querySelector(".value-date");
 dateDisplay.innerHTML = `${
@@ -306,7 +309,8 @@ function updateUIonClick(e) {
         ? weekDays[itemDate.getDay()].a
         : weekDays[itemDate.getDay()].t
     } ${itemDate.getDate()}${buildTH(itemDate.getDate())}`;
-
+    weekdayDay.setAttribute("weekday", `${weekDays[itemDate.getDay()].a}`);
+    weekdayDay.setAttribute("day", `${itemDate.getDate()}`);
     //update month && year
 
     monthYear.innerHTML = `${
@@ -314,6 +318,8 @@ function updateUIonClick(e) {
         ? months[itemDate.getMonth()].a
         : months[itemDate.getMonth()].t
     } ${itemDate.getFullYear()}`;
+    monthYear.setAttribute("month", `${months[itemDate.getMonth()].a}`);
+    monthYear.setAttribute("month", `${itemDate.getFullYear()}`);
 
     //update the date on the data entry page
 
@@ -400,7 +406,11 @@ const selectedMonthYearElement = document.querySelector(
 
 async function nextMonth() {
   //TODO:
-  const dataArray = selectedMonthYearElement.innerHTML.split(" ");
+  // const dataArray = selectedMonthYearElement.innerHTML.split(" ");
+  const dataArray = [
+    selectedMonthYearElement.attributes.getNamedItem("month").value,
+    selectedMonthYearElement.attributes.getNamedItem("year").value,
+  ];
   console.log("next: " + dataArray);
 
   const selectedMonth = monthsToInt[dataArray[0]];
@@ -431,7 +441,11 @@ async function nextMonth() {
   }
   console.log(`nextMonth = ${nextMonth}`);
 
-  selectedMonthYearElement.innerHTML = `${months[nextMonth].a} ${selectedYear}`;
+  selectedMonthYearElement.innerHTML = `${
+    isEnglishWebsite ? months[nextMonth].a : months[nextMonth].t
+  } ${selectedYear}`;
+  selectedMonthYearElement.setAttribute("month", `${months[nextMonth].a}`);
+  selectedMonthYearElement.setAttribute("year", `${selectedYear}`);
   const selectedMonthDaysList = dateToDay[nextMonth];
   const previousMonthDaysList = dateToDay[nextMonth - 1];
   const nextMonthDaysList = dateToDay[nextMonth + 1];
@@ -450,11 +464,19 @@ async function nextMonth() {
 }
 
 async function prevMonth() {
-  const dataArray = selectedMonthYearElement.innerHTML.split(" ");
+  const dataArray = [
+    selectedMonthYearElement.attributes.getNamedItem("month").value,
+    selectedMonthYearElement.attributes.getNamedItem("year").value,
+  ];
   console.log("prev: " + dataArray);
   const selectedMonth = monthsToInt[dataArray[0]];
   let selectedYear = dataArray[1];
   if (selectedMonth <= date.getMonth() && selectedYear <= date.getFullYear()) {
+    selectedMonthYearElement.setAttribute(
+      "month",
+      `${months[selectedMonth].a}`
+    );
+    selectedMonthYearElement.setAttribute("year", `${selectedYear}`);
     return;
   }
   itemCounter = 0;
@@ -482,7 +504,11 @@ async function prevMonth() {
     prevMonth = selectedMonth - 1;
   }
   console.log(`prevMonth = ${prevMonth}`);
-  selectedMonthYearElement.innerHTML = `${months[prevMonth].a} ${selectedYear}`;
+  selectedMonthYearElement.innerHTML = `${
+    isEnglishWebsite ? months[prevMonth].a : months[prevMonth].t
+  } ${selectedYear}`;
+  selectedMonthYearElement.setAttribute("month", `${months[prevMonth].a}`);
+  selectedMonthYearElement.setAttribute("year", `${selectedYear}`);
   const selectedMonthDaysList = dateToDay[prevMonth];
   const previousMonthDaysList = dateToDay[prevMonth - 1];
   const nextMonthDaysList = dateToDay[prevMonth + 1];
