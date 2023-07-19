@@ -2,10 +2,12 @@ import updateCalenderRealtime from "./calender_update_module.js";
 import doctorInfo from "./fetch_doctor_data.js";
 import Schedule from "./book_appointment.js";
 
+const schListJson = doctorInfo["schedule"];
+
 //localization
 const html = document.getElementsByTagName("html")[0];
 const lang = html.getAttribute("lang");
-console.log(lang);
+// console.log(lang);
 const isEnglishWebsite = lang == "en";
 
 const prevMonthBtn = document.querySelector("#prev-month-btn");
@@ -337,7 +339,7 @@ function updateUIonClick(e) {
     dateDisplay.setAttribute("reservation-date", `${itemDate.toISOString()}`);
 
     //set schedule for request formulation
-    const scheduleList = doctorInfo["schedule"];
+    const scheduleList = schListJson;
     let selectedSchedule;
     scheduleList.forEach((e) => {
       if (e["intday"] === itemDate.getDay()) {
@@ -510,30 +512,3 @@ function bindNextPrev() {
 }
 
 bindNextPrev();
-
-// function rebuildPlaceholders() {
-//   const nameInput = document.querySelector("#name-input");
-//   const mobileInput = document.querySelector("#mobile-input");
-//   nameInput.setAttribute("placeholder", "");
-//   mobileInput.setAttribute("placeholder", "");
-//   if (isEnglishWebsite) {
-//     nameInput.setAttribute("placeholder", "Enter Your Name");
-//     mobileInput.setAttribute("placeholder", "Enter Your Mobile Number");
-//   } else if (!isEnglishWebsite) {
-//     nameInput.setAttribute("placeholder", "ادخل الاسم");
-//     mobileInput.setAttribute("placeholder", "ادخل رقم الموبايل");
-//   }
-// }
-
-// const langChangeObserver = new MutationObserver((mutations) => {
-//   mutations.forEach((m) => {
-//     if (m.type === "attributes") {
-//       rebuildPlaceholders();
-//       // console.log("language change in calender observer fired...");
-//     }
-//   });
-// });
-
-// langChangeObserver.observe(html, {
-//   attributes: true, //configure it to listen to attribute changes
-// });

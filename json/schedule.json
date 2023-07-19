@@ -1,0 +1,32 @@
+[
+    {
+        "day": "Monday",
+        "intday": 1,
+        "start": 18,
+        "end": 22
+      },
+      {
+        "day": "Tuesday",
+        "intday": 2,
+        "start": 18,
+        "end": 21
+      },
+      {
+        "day": "Wednesday",
+        "intday": 3,
+        "start": 18,
+        "end": 21
+      },
+      {
+        "day": "Thursday",
+        "intday": 4,
+        "start": 18,
+        "end": 21
+      },
+      {
+        "day": "Saturday",
+        "intday": 6,
+        "start": 18,
+        "end": 21
+      }
+]

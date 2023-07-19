@@ -21,4 +21,9 @@ await fetchDoctorData().then((data) => {
   doctorInfo = data;
 });
 
+// let schList = [];
+// await fetch("../json/schedule.json").then((value) => {
+//   schList.fill(value);
+// });
+
 export default doctorInfo;
