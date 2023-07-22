@@ -57,7 +57,16 @@
     "confirm": "Confirm",
     "cancel":"Cancel",
     "label-name" : "Name",
-    "label-mobile" : "Mobile Number"
-
+    "label-mobile" : "Mobile Number",
+    "erection-test" : "Erection Test",
+    "et-p1":"The 15-question International Index of Erectile Function (IIEF) Questionnaire is a validated, multi dimensional, self-administered investigation that has been found useful in the clinical assessment of erectile dysfunction and treatment outcomes in clinical trials.",
+    "et-p2":"A score of 0-5 is awarded to each of the 15 questions that examine the 4 main domains of male sexual function: erectile function, orgasmic function, sexual desire and intercourse satisfaction.",
+    "et-p3":"Clinical Application :",
+    "et-p4":"IIEF assessment is limited by the superficial assessment of psychosexual background and the very limited assessment of partner relationship, both important factors in the presentation of male sexual dysfunction.",
+    "et-p5":"Analysis of the questionnaire should, therefore, be viewed as an adjunct to, rather than a substitute for, a detailed sexual history and examination.",
+    "et-p6":"References : ",
+    "et-p7":"https://pubmed.ncbi.nlm.nih.gov/9187685/",
+    "et-p8":"The international index of erectile function (IIEF): a multidimensional scale for assessment of erectile dysfunction."
+    ,"install":"Install"
 
 }
