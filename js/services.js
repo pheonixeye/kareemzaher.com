@@ -34,7 +34,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
      isEnglish ? dataItem.entitle : dataItem.artitle
    }</h4>
    <button class="img-header-btn"
-   type="button" onclick="">
+   type="button">
      <img
        class="youtube-btn-svg-img"
        src="images_svg/youtube.svg"
@@ -136,6 +136,18 @@ function rebuildServices() {
       serviceItem.style.backgroundColor = "#23a4a0";
     }
   });
+  const btns = document.querySelectorAll(".img-header-btn");
+  btns.forEach((e, index) => {
+    e.onclick = () => {
+      `${window.open(services[index].ytlink, "_blank")}`;
+    };
+    // e.setAttribute("onclick", function () {
+    //   window.open(services[index].ytlink, "_blank");
+    // }); //fail
+    // e.addEventListener("click", (e) => {
+    //   window.open(services[index].ytlink, "_blank");
+    // });
+  });
 }
 
 const lang = html.getAttribute("lang");
@@ -154,9 +166,15 @@ services.forEach((service) => {
 });
 const btns = document.querySelectorAll(".img-header-btn");
 btns.forEach((e, index) => {
-  e.addEventListener("click", (event) => {
-    window.open(services[index].ytlink, "_blank");
-  });
+  e.onclick = () => {
+    `${window.open(services[index].ytlink, "_blank")}`;
+  };
+  // e.setAttribute("onclick", function () {
+  //   window.open(services[index].ytlink, "_blank");
+  // }); //fail
+  // e.addEventListener("click", (e) => {
+  //   window.open(services[index].ytlink, "_blank");
+  // });
 });
 
 let observer = new MutationObserver((mutations) => {
