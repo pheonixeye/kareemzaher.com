@@ -13,7 +13,7 @@ servicesPageContent.style.backgroundColor = "#f6f6f6";
 const services = data;
 
 function buildServiceItemTemplate(dataItem, isEnglish) {
-  const serviceItemTemplate = `
+  const serviceItemTemplate = /*html*/ `
 <div class="service-item" id="service-item-no-${dataItem.id}">
  <div class="service-item-pattern-div">
    <img src="images_webp/pattern.webp" alt="pattern opacity img" />

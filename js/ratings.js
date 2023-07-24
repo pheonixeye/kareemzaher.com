@@ -7,7 +7,7 @@ let currentFragment = 1;
 
 // console.log(ratingsFragments);
 
-const template = `<div class="rating-item">
+const template = /*html*/ `<div class="rating-item">
 <div class="rating-stars no-margin">
   <img src="images_svg/star_full.svg" alt="full star color yellow" />
   <img src="images_svg/star_full.svg" alt="full star color yellow" />
@@ -42,13 +42,13 @@ function buildTemplateRatingItem(rating, index) {
   let starList = [];
   for (let index = 0; index < rating.rating; index++) {
     starList.push(
-      `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
+      /*html*/ `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
     );
   }
   for (let index = 0; index < 5; index++) {
     if (starList.length < 5) {
       starList.push(
-        `<img src="images_svg/star_empty.svg" alt="empty star color grey" />`
+        /*html*/ `<img src="images_svg/star_empty.svg" alt="empty star color grey" />`
       );
     }
   }
@@ -57,7 +57,7 @@ function buildTemplateRatingItem(rating, index) {
     starList = [];
     for (let index = 0; index < 5; index++) {
       starList.push(
-        `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
+        /*html*/ `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
       );
     }
   }
@@ -66,7 +66,7 @@ function buildTemplateRatingItem(rating, index) {
 
   const hasRating = rating.rating != null;
 
-  let templateHTML = `
+  let templateHTML = /*html*/ `
     <div class="rating-item" id="${index}rating">
       <div class="rating-stars no-margin">
         ${starTemplate}
@@ -79,7 +79,7 @@ function buildTemplateRatingItem(rating, index) {
       <p class="date no-margin">${rating.date}</p>
       ${
         hasRating
-          ? `<div class="doctor-rating-number">
+          ? /*html*/ `<div class="doctor-rating-number">
       
       <div class="doctor-rating-number-background">
           <p>${rating.rating}</p>

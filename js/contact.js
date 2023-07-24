@@ -12,7 +12,7 @@ function buildContactTemplate(inFooter) {
   inFooter = inFooter || false;
   const template =
     `${inFooter ? '<h1 lang-key="logo">K.Z. Clinic</h1>' : ""}` +
-    `
+    /*html*/ `
     <ul>
     <h3 lang-key="contact-info">Contact Info</h3>
   <li>

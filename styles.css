@@ -412,6 +412,14 @@ body {
   }
 }
 
+.map-container {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 18px;
+  border-color: grey;
+  border-style: solid;
+}
+
 .map-iframe {
   width: 95%;
   height: 95%;
@@ -432,6 +440,12 @@ body {
 .contact-list {
   grid-column: 3 / 4;
   grid-row: 1 / -1;
+  background-color: white;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 18px;
+  border-color: grey;
+  border-style: solid;
 }
 
 @media (max-width: 600px) {
@@ -498,7 +512,13 @@ body {
   grid-row: 1;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
+  background-color: white;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 18px;
+  border-color: grey;
+  border-style: solid;
 }
 
 @media (max-width: 600px) {

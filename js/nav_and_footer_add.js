@@ -6,7 +6,7 @@ const navPagesIds = [
   "#erection-test-id",
 ];
 
-const footerTemplate = `
+const footerTemplate = /*html*/ `
 <footer class="site-footer">
   <div class="footer-card">
     <div class="footer-contact"></div>
@@ -33,7 +33,7 @@ const footerTemplate = `
   </div>
 </footer>`;
 
-const navTemplate = `
+const navTemplate = /*html*/ `
 <div class="floating-btn-div">
   <button class="lang-btn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#9650;</button>
   <button id="lang-btn" class="lang-btn" type="button">ar</button>
@@ -57,7 +57,7 @@ const navTemplate = `
 
 function buildNavTemplate(pageId) {
   const inAppointments = pageId === navPagesIds[0];
-  const alertTemplate = `
+  const alertTemplate = /*html*/ `
   <div id="alert-overlay">
     <div id="alert-template" class="slit-in-vertical">
       <div id="alert-head"> 
@@ -76,7 +76,7 @@ function buildNavTemplate(pageId) {
   return inAppointments ? alertTemplate + navTemplate : navTemplate;
 }
 
-const socialTemplate = `
+const socialTemplate = /*html*/ `
 <!-- <div> separator </div> -->
     <div class="separator">
       <div></div>

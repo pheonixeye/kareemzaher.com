@@ -12,7 +12,7 @@ import navData from "./navigation_data.js";
 // insert items in bottom footer nav
 
 function buildFooterNavTemplate(navData) {
-  const Template = `
+  const Template = /*html*/ `
     <li>
       <div>
         <a href="${navData.link}" lang-key="${navData.text}">${navData.text}</a>
