@@ -2,6 +2,8 @@ import doctorInfo from "./fetch_doctor_data.js";
 
 // const scheduleList = doctorInfo["schedule"];
 
+import gtag from "./gtag/src/index.js";
+
 const lang = document.querySelector("html").getAttribute("lang");
 
 const isEnglish = lang == "en";
@@ -87,7 +89,6 @@ confirmButton.addEventListener("click", async (e) => {
     Schedule.toJson(selectedScheduleItem)
   );
 
-  // console.log(appointment);
   await sendBookingRequest(appointment);
 });
 
@@ -104,7 +105,23 @@ async function sendBookingRequest(appointment) {
 
   const response = await request.json();
 
+  gtagReportConversion();
+  console.log("gtag-called");
+
   showAlertBox(response, `${isEnglish ? "INFO !!!" : "اشعار !!!"}`, true);
+}
+
+function gtagReportConversion(url) {
+  var callback = function () {
+    if (typeof url != "undefined") {
+      window.location = url;
+    }
+  };
+  gtag("event", "conversion", {
+    send_to: "AW-650293587/Vg-bCMHdicsYENPiirYC",
+    event_callback: callback,
+  });
+  return false;
 }
 
 //form validation

@@ -30,6 +30,22 @@
 
     gtag("config", "G-KP1XD52S9B");
   </script>
+  <!-- Event snippet for book appointment (1) conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof url != "undefined") {
+          window.location = url;
+        }
+      };
+      gtag("event", "conversion", {
+        send_to: "AW-650293587/Vg-bCMHdicsYENPiirYC",
+        event_callback: callback,
+      });
+      return false;
+    }
+  </script>
 
   <body id="index-id">
     <div class="floating-btn-div">
@@ -88,7 +104,7 @@
             <button
               type="button"
               class="btn-hero book-appointment"
-              onclick="window.location = 'appointments.html'"
+              onclick="gtag_report_conversion(); window.location = 'appointments.html';"
               lang-key="book-app"
             >
               Book an Appointment
