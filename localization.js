@@ -17,7 +17,7 @@ const langSwitcher = document.querySelector("#lang-btn");
 
 // console.log(storedLocale);
 
-const defaultLocale = storedLocale ?? "en";
+const defaultLocale = storedLocale ?? "ar";
 
 langSwitcher.innerText = defaultLocale == "ar" ? "en" : "ar";
 
