@@ -20,19 +20,28 @@ const articlesMetaGrid = document.querySelector(".articles-meta-grid");
 
 function buildArticleMetaUI(meta, isEnglish) {
   const date = new Date(meta.createdAt);
-  const dateStringEN = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()} -- ${date.getHours()}:${date.getMinutes()}`;
-  const dateStringAR = `${date.getHours()}:${date.getMinutes()} -- ${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+  const dateStringEN = `${date.getDate()}-${
+    date.getMonth() + 1
+  }-${date.getFullYear()} -- ${date.getHours()}:${date.getMinutes()}`;
+  const dateStringAR = `${date.getHours()}:${date.getMinutes()} -- ${date.getDate()}-${
+    date.getMonth() + 1
+  }-${date.getFullYear()}`;
   const template = `
   <div class="article-meta-container">
-   <div class="article-meta-img">
-     <img
-       src="${meta.thumbnail}"
-       alt="blog article thumbnail"
-     />
-   </div>
+   
+  <div class="article-meta-img">
+    <img
+      src="${meta.thumbnail}"
+      alt="blog article thumbnail"
+    />
+  </div>
    <div class="article-meta-text">
-     <h3>${isEnglish ? meta.title.en : meta.title.ar}</h3>
-     <p>${isEnglish ? meta.description.en : meta.description.ar}</p>
+     <a class="article-meta-nav-link" href="/articles/${meta.articleId}"><h3>${
+    isEnglish ? meta.title.en : meta.title.ar
+  }</h3></a>
+     <p class="article-meta-description-text">${
+       isEnglish ? meta.description.en : meta.description.ar
+     }</p>
      <p><span>${isEnglish ? dateStringEN : dateStringAR}</span></p>
    </div>
  </div>

@@ -21,7 +21,7 @@
 
 .article-meta-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 30px;
   padding: 10px 10px;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
@@ -34,10 +34,12 @@
 
 .article-meta-img {
   flex-basis: 150px;
+  width: 100%;
+  height: 300px;
 }
 @media (min-width: 600px) {
   .articles-meta-img {
-    flex-basis: 400px;
+    flex-basis: 300px;
   }
 }
 
@@ -45,6 +47,23 @@
   flex-basis: auto;
   display: block;
   text-align: start;
+}
+
+.article-meta-nav-link:link {
+  color: white;
+}
+.article-meta-nav-link:hover {
+  color: var(--bevangreen);
+}
+.article-meta-nav-link:visited {
+  color: white;
+}
+
+.article-meta-description-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .article-meta-text p span {

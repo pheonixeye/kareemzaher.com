@@ -54,4 +54,4 @@ function defURI(param) {
   }
 }
 
-export { defURI, uri, ArticleMeta };
+export { defURI, uri, ArticleMeta, Translatable };
