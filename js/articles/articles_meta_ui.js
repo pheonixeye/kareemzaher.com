@@ -36,9 +36,9 @@ function buildArticleMetaUI(meta, isEnglish) {
     />
   </div>
    <div class="article-meta-text">
-     <a class="article-meta-nav-link" href="/articles/${meta.articleId}"><h3>${
-    isEnglish ? meta.title.en : meta.title.ar
-  }</h3></a>
+     <a class="article-meta-nav-link" data="${meta.articleId}" href="/${
+    meta.articleId
+  }"><h3>${isEnglish ? meta.title.en : meta.title.ar}</h3></a>
      <p class="article-meta-description-text">${
        isEnglish ? meta.description.en : meta.description.ar
      }</p>

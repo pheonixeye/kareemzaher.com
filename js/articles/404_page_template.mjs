@@ -1,17 +1,18 @@
+const err404 = /*html*/ `
 <!DOCTYPE html>
 <html lang="ar">
   <head>
     <!--**META-TAGS-->
     <meta
       name="description"
-      content="د. كريم زاهر -  جراحة المسالك البولية و الذكورة -  المقالات"
+      content="د. كريم زاهر -  جراحة المسالك البولية و الذكورة -  خطأ"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - المقالات
+      د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - خطأ
     </title>
-    <link rel=”canonical” href=”https://www.kareemzaher.com/articles” />
+    <link rel=”canonical” href=”https://www.kareemzaher.com/404 />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles/social_links.css" />
     <link rel="stylesheet" href="styles/footer.css" />
@@ -37,9 +38,7 @@
 
   <body id="articles-id">
     <div class="page-content">
-      <h2 lang-key="doctor-articles">Doctor Articles</h2>
-      <br />
-      <div class="articles-meta-grid"></div>
+      <h1>404 - Page Not Found...</h1>
     </div>
 
     <script src="js/nav_and_footer_add.js" type="text/javascript"></script>
@@ -47,8 +46,12 @@
     <script src="js/mobile_nav_fns.js" type="text/javascript"></script>
     <script src="js/contact.js" type="text/javascript"></script>
     <script src="js/footer.js" type="module"></script>
-    <script src="localization.js" type="module"></script>
+    <script src="localization.js" type="text/javascript"></script>
     <script src="js/articles/articles_meta_ui.js" type="module"></script>
     <script src="js/articles/article_ui.js" type="module"></script>
+    <script src="js/articles/server/server.js" type="module"></script>
   </body>
 </html>
+`;
+
+export default err404;
