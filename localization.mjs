@@ -1,30 +1,8 @@
-// console.log("localization file connected");
-
-// let storedLocale;
+// import { fetchStoredLocale, modLocaleInJson } from "./index.js";
 
 let langObject = {
   lang: "ar",
 };
-
-async function fetchStoredLocale() {
-  const request = await fetch("http://127.0.0.1:3000/json/lang.json");
-  const jsonLocale = await request.json();
-  console.log(jsonLocale["lang"]);
-  return jsonLocale["lang"];
-}
-
-async function modLocaleInJson(stringLocale) {
-  const request = await fetch("http://127.0.0.1:3000/lang", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ lang: stringLocale }),
-  });
-  const jsonLocale = await request.json();
-  console.log(jsonLocale["lang"]);
-  return jsonLocale["lang"];
-}
 
 // fetchStoredLocale();
 
@@ -60,7 +38,12 @@ async function setLocale(newLocale) {
   langObject.lang = newLocale;
   console.log(langObject);
   //TODO: modify lang.json
-  await modLocaleInJson(newLocale);
+  await fetch(`/${newLocale}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   translatePage();
 }
 // ...
