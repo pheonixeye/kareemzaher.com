@@ -25,7 +25,7 @@ const days = ["Saturday", "Monday", "Tuesday", "Wednesday", "Thursday"];
 const colors = ["red", "green", "blue", "orange", "purple"];
 
 function buildHourItem(index) {
-  return `<li>
+  return /*html*/ `<li>
   <div class="hours-container">
     <div class="circle-shape" style="background-color: #0070cd">
       <img src="images_svg/calender.svg" alt="calender icon" />

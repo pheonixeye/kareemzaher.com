@@ -1,6 +1,6 @@
 import { ArticleMeta, defURI, uri } from "./articles_meta_base.js";
 
-defURI("dev");
+defURI("prod");
 
 const articlesMeta = [];
 

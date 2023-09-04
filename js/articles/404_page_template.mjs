@@ -38,7 +38,10 @@ const err404 = /*html*/ `
 
   <body id="articles-id">
     <div class="page-content">
-      <h1>404 - Page Not Found...</h1>
+    <div style="align-items:start;">
+        <h1 style="text-align:start;">404</h1>
+        <h2 style="text-align:start; margin-top:0px;" lang-key="page-not-found">Page Not Found...</h2>
+    </div>
     </div>
 
     <script src="js/nav_and_footer_add.js" type="text/javascript"></script>
@@ -46,10 +49,7 @@ const err404 = /*html*/ `
     <script src="js/mobile_nav_fns.js" type="text/javascript"></script>
     <script src="js/contact.js" type="text/javascript"></script>
     <script src="js/footer.js" type="module"></script>
-    <script src="localization.js" type="text/javascript"></script>
-    <script src="js/articles/articles_meta_ui.js" type="module"></script>
-    <script src="js/articles/article_ui.js" type="module"></script>
-    <script src="js/articles/server/server.js" type="module"></script>
+    <script src="localization.mjs" type="module"></script>
   </body>
 </html>
 `;

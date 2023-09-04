@@ -37,7 +37,7 @@ function buildArticleMetaUI(meta, isEnglish) {
   </div>
    <div class="article-meta-text">
      <a class="article-meta-nav-link" data="${meta.articleId}" href="/${
-    meta.articleId == undefined ? "404" : meta.articleId
+    meta.articleId == undefined || meta.articleId == "" ? "404" : meta.articleId
   }"><h3>${isEnglish ? meta.title.en : meta.title.ar}</h3></a>
      <p class="article-meta-description-text">${
        isEnglish ? meta.description.en : meta.description.ar
@@ -50,7 +50,7 @@ function buildArticleMetaUI(meta, isEnglish) {
 }
 
 function clearArticlesMeta() {
-  articlesMetaGrid.innerHTML = "";
+  if (articlesMetaGrid) articlesMetaGrid.innerHTML = "";
 }
 
 function buildArticlesMeta() {
@@ -59,7 +59,9 @@ function buildArticlesMeta() {
 
   clearArticlesMeta();
   articlesMeta.forEach((meta) => {
-    articlesMetaGrid.innerHTML += buildArticleMetaUI(meta, isEnglish);
+    if (articlesMetaGrid) {
+      articlesMetaGrid.innerHTML += buildArticleMetaUI(meta, isEnglish);
+    }
   });
 }
 

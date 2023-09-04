@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 3000;
 app.use(json());
 
 const corsOptions = {
-  origin: "http://127.0.0.1:8888/cpanel-articles-articles/111111/fetch-by-meta",
+  origin:
+    "https://cosmosurgeserver.xyz/cpanel-articles-articles/111111/fetch-by-meta",
   optionsSuccessStatus: 200,
   credentials: true,
 };
@@ -60,7 +61,7 @@ app.put("/:lang", async (req, res) => {
 
 app.listen(PORT, async () => {
   console.log(`App listening on port ${PORT}`);
-  await fetchStoredLocale();
+  // await fetchStoredLocale();
 });
 
 // export { fetchStoredLocale, modLocaleInJson };
