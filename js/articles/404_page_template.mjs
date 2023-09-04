@@ -39,7 +39,7 @@ const err404 = /*html*/ `
   <body id="articles-id">
     <div class="page-content">
     <div style="align-items:start;">
-        <h1 style="text-align:start;">404</h1>
+        <h1 style="text-align:start;" lang-key="error-404">ERROR - 404</h1>
         <h2 style="text-align:start; margin-top:0px;" lang-key="page-not-found">Page Not Found...</h2>
     </div>
     </div>

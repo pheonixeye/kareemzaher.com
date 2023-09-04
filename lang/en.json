@@ -68,6 +68,7 @@
     "et-p7":"https://pubmed.ncbi.nlm.nih.gov/9187685/",
     "et-p8":"The international index of erectile function (IIEF): a multidimensional scale for assessment of erectile dysfunction."
     ,"install":"Install",
-    "page-not-found":"Page Not Found..."
+    "page-not-found":"Page Not Found...",
+    "error-404":"ERROR - 404"
 
 }
