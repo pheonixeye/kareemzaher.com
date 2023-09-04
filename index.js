@@ -26,18 +26,21 @@ app.use(urlencoded({ extended: true }));
 
 app.use(express.static("."));
 
+let langObj = { lang: "ar" };
+
 async function fetchStoredLocale() {
-  const buffer = fs.readFileSync("./json/lang.json");
-  const stringBuffer = buffer.toString();
-  const langObj = JSON.parse(stringBuffer);
-  // console.log(langObj["lang"]);
+  // const buffer = fs.readFileSync("./json/lang.json");
+  // const stringBuffer = buffer.toString();
+  // const langObj = JSON.parse(stringBuffer);
+  // // console.log(langObj["lang"]);
   return langObj["lang"];
 }
 
-async function modLocaleInJson(stringLocale) {
-  const langObj = JSON.stringify({ lang: stringLocale });
-  await fs.writeFileSync(`./json/lang.json`, langObj);
+async function modLocale(stringLocale) {
+  langObj = { lang: stringLocale };
+  // await fs.writeFileSync(`./json/lang.json`, langObj);
   // console.log("updated language json file");
+  return langObj["lang"];
 }
 
 app.get("/:articleId", cors(corsOptions), async (req, res) => {
@@ -55,7 +58,7 @@ app.get("/:articleId", cors(corsOptions), async (req, res) => {
 app.put("/:lang", async (req, res) => {
   console.log(req.path);
   const lang = req.params.lang;
-  await modLocaleInJson(lang);
+  await modLocale(lang);
   res.status(200).send("OK");
 });
 
