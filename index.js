@@ -4,9 +4,7 @@ import { fetchArticleByMeta } from "./js/articles/article_fetch.js";
 import buildArticlePage from "./js/articles/article_page_template.mjs";
 import err404 from "./js/articles/404_page_template.mjs";
 import { Article } from "./js/articles/article_base.js";
-import fs from "fs";
-// import path from "path";
-
+import cookieSession from "cookie-session";
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -26,26 +24,42 @@ app.use(urlencoded({ extended: true }));
 
 app.use(express.static("."));
 
-let langObj = { lang: "ar" };
+app.use(
+  cookieSession({
+    name: "lang",
+    keys: ["ar"],
+  })
+);
 
-async function fetchStoredLocale() {
-  // const buffer = fs.readFileSync("./json/lang.json");
-  // const stringBuffer = buffer.toString();
-  // const langObj = JSON.parse(stringBuffer);
-  // // console.log(langObj["lang"]);
-  return langObj["lang"];
-}
+// app.use(function (req, res, next) {
+//   // by using cookie-parser
+//   if (!req.cookies) {
+//     res.cookie("lang", "ar");
+//   }
 
-async function modLocale(stringLocale) {
-  langObj = { lang: stringLocale };
-  // await fs.writeFileSync(`./json/lang.json`, langObj);
-  // console.log("updated language json file");
-  return langObj["lang"];
-}
+//   next();
+// });
+
+// let langObj = { lang: "ar" };
+
+// async function fetchStoredLocale() {
+//   // const buffer = fs.readFileSync("./json/lang.json");
+//   // const stringBuffer = buffer.toString();
+//   // const langObj = JSON.parse(stringBuffer);
+//   // // console.log(langObj["lang"]);
+//   return langObj["lang"];
+// }
+
+// async function modLocale(stringLocale) {
+//   langObj = { lang: stringLocale };
+//   // await fs.writeFileSync(`./json/lang.json`, langObj);
+//   // console.log("updated language json file");
+//   return langObj["lang"];
+// }
 
 app.get("/:articleId", cors(corsOptions), async (req, res) => {
   const articleId = req.params.articleId;
-  const isEnglish = (await fetchStoredLocale()) == "en";
+  const isEnglish = req.cookies.lang == "en";
   // console.log(isEnglish);
   try {
     const article = await fetchArticleByMeta(articleId);
@@ -56,9 +70,10 @@ app.get("/:articleId", cors(corsOptions), async (req, res) => {
 });
 
 app.put("/:lang", async (req, res) => {
-  console.log(req.path);
+  // console.log(req.path);
   const lang = req.params.lang;
-  await modLocale(lang);
+  // await modLocale(lang);
+  res.cookie("lang", lang);
   res.status(200).send("OK");
 });
 

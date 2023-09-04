@@ -8,7 +8,7 @@ async function fetchArticlesMeta() {
   try {
     const response = await fetch(uri);
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     articlesMeta.push(...ArticleMeta.toArticleMetaListFromJson(...json));
   } catch (error) {
     console.log(error);
