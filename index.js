@@ -11,6 +11,8 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static("./"));
+
 app.use(json());
 
 const corsOptions = {
@@ -25,8 +27,6 @@ app.use(cors());
 app.use(compression());
 
 app.use(urlencoded({ extended: true }));
-
-app.use(express.static("."));
 
 app.use(
   cookieSession({
@@ -91,6 +91,7 @@ app.put("/:lang", async (req, res) => {
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.use(function (req, res) {
+  console.log(`Path Not Found: ${req.path}`);
   res.status(404).send(err404);
 });
 
