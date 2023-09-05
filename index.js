@@ -5,6 +5,7 @@ import err404 from "./js/articles/404_page_template.mjs";
 import { Article } from "./js/articles/article_base.js";
 import cookieSession from "cookie-session";
 import axios from "axios";
+import compression from "compression";
 
 const app = express();
 
@@ -20,6 +21,8 @@ const corsOptions = {
 };
 
 app.use(cors());
+
+app.use(compression());
 
 app.use(urlencoded({ extended: true }));
 
