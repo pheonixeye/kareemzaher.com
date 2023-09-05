@@ -1,7 +1,9 @@
 import { fetchArticleByMeta } from "./js/articles/article_fetch.js";
 
 const path = window.location.pathname;
-const articleId = path.replace("/", "");
+const segments = path.split("/");
+const lastSegment = segments[segments.length - 1];
+const articleId = lastSegment;
 // console.log(articleId);
 const article = await fetchArticleByMeta(articleId);
 const pageContent = document.querySelector(".page-content");

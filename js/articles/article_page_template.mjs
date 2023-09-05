@@ -48,12 +48,12 @@ function buildArticlePage(article, isEnglish) {
         د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - المقالات
       </title>
       <link rel=”canonical” href=”https://www.kareemzaher.com/articles” />
-      <link rel="stylesheet" href="styles.css" />
-      <link rel="stylesheet" href="styles/social_links.css" />
-      <link rel="stylesheet" href="styles/footer.css" />
-      <link rel="stylesheet" href="styles/page_content.css" />
-      <link rel="stylesheet" href="styles/floating_btn.css" />
-      <link rel="stylesheet" href="styles/articles_meta.css" />
+      <link rel="stylesheet" href="../styles.css" />
+      <link rel="stylesheet" href="../styles/social_links.css" />
+      <link rel="stylesheet" href="../styles/footer.css" />
+      <link rel="stylesheet" href="../styles/page_content.css" />
+      <link rel="stylesheet" href="../styles/floating_btn.css" />
+      <link rel="stylesheet" href="../styles/articles_meta.css" />
       <link rel="favicon" type="image/x-icon" href="favicon.ico"/>
       <style>
         .margin{
@@ -95,13 +95,13 @@ function buildArticlePage(article, isEnglish) {
         ${paragraphList}
       </div>
   
-      <script src="js/nav_and_footer_add.js" type="text/javascript"></script>
-      <script src="js/build_navbar.js" type="module"></script>
-      <script src="js/mobile_nav_fns.js" type="text/javascript"></script>
-      <script src="js/contact.js" type="text/javascript"></script>
-      <script src="js/footer.js" type="module"></script>
-      <script src="localization.mjs" type="module"></script>
-      <script src="localization_helper_article.mjs" type="module"></script>
+      <script src="../js/nav_and_footer_add.js" type="text/javascript"></script>
+      <script src="../js/build_navbar.js" type="module"></script>
+      <script src="../js/mobile_nav_fns.js" type="text/javascript"></script>
+      <script src="../js/contact.js" type="text/javascript"></script>
+      <script src="../js/footer.js" type="module"></script>
+      <script src="../localization.mjs" type="module"></script>
+      <script src="../localization_helper_article.mjs" type="module"></script>
     </body>
   </html>
   `;
