@@ -4,6 +4,7 @@ import buildArticlePage from "./js/articles/article_page_template.mjs";
 import err404 from "./js/articles/404_page_template.mjs";
 import { Article } from "./js/articles/article_base.js";
 import cookieSession from "cookie-session";
+import axios from "axios";
 
 const app = express();
 
@@ -33,17 +34,16 @@ app.use(
 
 async function fetchArticleByMeta(articleId) {
   try {
-    const response = await fetch(corsOptions.origin, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ article_id: articleId }),
-    });
-    const json = await response.json();
-    // console.log(json);
-    return Article.fromJSON(json);
-    // return requestedArticle;
+    const response = await axios.post(
+      "https://cosmosurgeserver.xyz/cpanel-articles-articles/111111/fetch-by-meta",
+      { article_id: articleId },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return Article.fromJSON(response.data);
   } catch (error) {
     console.log(error);
     throw error;
