@@ -83,13 +83,13 @@ app.put("/:lang", async (req, res) => {
 });
 
 //The 404 Route (ALWAYS Keep this as the last route)
-// app.use(function (req, res) {
-//   res.status(404).sendFile("404.html", { root: "./" });
-// });
-
-app.all("*", (req, res) => {
+app.use(function (req, res) {
   res.status(404).send(err404);
 });
+
+// app.all("*", (req, res) => {
+//   res.status(404).send(err404);
+// });
 
 app.listen(PORT, async () => {
   console.log(`App listening on port ${PORT}`);
