@@ -15,7 +15,7 @@ const corsOptions = {
   origin:
     "https://cosmosurgeserver.xyz/cpanel-articles-articles/111111/fetch-by-meta",
   optionsSuccessStatus: 200,
-  credentials: true,
+  // credentials: true,
 };
 
 app.use(cors());
