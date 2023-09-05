@@ -2,7 +2,7 @@ import { fetchArticleByMeta } from "./js/articles/article_fetch.js";
 
 const path = window.location.pathname;
 const articleId = path.replace("/", "");
-console.log(articleId);
+// console.log(articleId);
 const article = await fetchArticleByMeta(articleId);
 const pageContent = document.querySelector(".page-content");
 

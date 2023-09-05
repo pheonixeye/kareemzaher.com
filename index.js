@@ -5,6 +5,7 @@ import buildArticlePage from "./js/articles/article_page_template.mjs";
 import err404 from "./js/articles/404_page_template.mjs";
 import { Article } from "./js/articles/article_base.js";
 import cookieSession from "cookie-session";
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -59,7 +60,19 @@ app.use(
 
 app.get("/:articleId", cors(corsOptions), async (req, res) => {
   const articleId = req.params.articleId;
-  const isEnglish = req.cookies.lang == "en";
+  const cookieString = req.headers.cookie;
+  const cookieList = cookieString.split(";");
+  const cookies = new Map();
+
+  // Loop through the myCookies array
+  for (let cookie of cookieList) {
+    // Split the elements at "="
+    cookie = cookie.split("=");
+
+    // Set the first element as key and second element as value
+    cookies.set(cookie[0], cookie[1]);
+  }
+  const isEnglish = cookies["lang"] == "en";
   // console.log(isEnglish);
   try {
     const article = await fetchArticleByMeta(articleId);
@@ -75,6 +88,15 @@ app.put("/:lang", async (req, res) => {
   // await modLocale(lang);
   res.cookie("lang", lang);
   res.status(200).send("OK");
+});
+
+//The 404 Route (ALWAYS Keep this as the last route)
+// app.use(function (req, res) {
+//   res.status(404).sendFile("404.html", { root: "./" });
+// });
+
+app.all("*", (req, res) => {
+  res.status(404).send(err404);
 });
 
 app.listen(PORT, async () => {

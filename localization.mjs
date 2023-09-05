@@ -15,7 +15,7 @@ let storedLocale;
 
 let myCookies = document.cookie;
 myCookies = myCookies.split(";");
-let cookies = new Map();
+const cookies = new Map();
 
 // Loop through the myCookies array
 for (let cookie of myCookies) {
