@@ -53,18 +53,22 @@ async function fetchArticleByMeta(articleId) {
 app.get("/:articleId", cors(corsOptions), async (req, res) => {
   const articleId = req.params.articleId;
   const cookieString = req.headers.cookie;
-  const cookieList = cookieString.split(";");
   const cookies = new Map();
 
-  // Loop through the myCookies array
-  for (let cookie of cookieList) {
-    // Split the elements at "="
-    cookie = cookie.split("=");
+  if (cookieString) {
+    const cookieList = cookieString.split(";");
 
-    // Set the first element as key and second element as value
-    cookies.set(cookie[0], cookie[1]);
+    // Loop through the myCookies array
+    for (let cookie of cookieList) {
+      // Split the elements at "="
+      cookie = cookie.split("=");
+
+      // Set the first element as key and second element as value
+      cookies.set(cookie[0], cookie[1]);
+    }
   }
-  const isEnglish = cookies["lang"] == "en";
+
+  const isEnglish = cookies["lang"] && cookies["lang"] == "en";
   // console.log(isEnglish);
   try {
     const article = await fetchArticleByMeta(articleId);
