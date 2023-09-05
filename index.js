@@ -1,6 +1,5 @@
 import express, { json, urlencoded } from "express";
 import cors from "cors";
-import { fetchArticleByMeta } from "./js/articles/article_fetch.js";
 import buildArticlePage from "./js/articles/article_page_template.mjs";
 import err404 from "./js/articles/404_page_template.mjs";
 import { Article } from "./js/articles/article_base.js";
@@ -32,31 +31,24 @@ app.use(
   })
 );
 
-// app.use(function (req, res, next) {
-//   // by using cookie-parser
-//   if (!req.cookies) {
-//     res.cookie("lang", "ar");
-//   }
-
-//   next();
-// });
-
-// let langObj = { lang: "ar" };
-
-// async function fetchStoredLocale() {
-//   // const buffer = fs.readFileSync("./json/lang.json");
-//   // const stringBuffer = buffer.toString();
-//   // const langObj = JSON.parse(stringBuffer);
-//   // // console.log(langObj["lang"]);
-//   return langObj["lang"];
-// }
-
-// async function modLocale(stringLocale) {
-//   langObj = { lang: stringLocale };
-//   // await fs.writeFileSync(`./json/lang.json`, langObj);
-//   // console.log("updated language json file");
-//   return langObj["lang"];
-// }
+async function fetchArticleByMeta(articleId) {
+  try {
+    const response = await fetch(corsOptions.origin, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ article_id: articleId }),
+    });
+    const json = await response.json();
+    // console.log(json);
+    return Article.fromJSON(json);
+    // return requestedArticle;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
 
 app.get("/:articleId", cors(corsOptions), async (req, res) => {
   const articleId = req.params.articleId;
