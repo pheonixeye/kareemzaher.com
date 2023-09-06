@@ -15,9 +15,13 @@ function buildParagraphElement(paragraph, isEnglish) {
 function buildArticlePage(article, isEnglish) {
   // console.log(article);
   const imgElement =
-    article.articleimage == undefined
+    article.articleImage == undefined || article.articleImage == ""
       ? `<div></div>`
-      : `<img src = ${article.articleimage} alt = "article main image"></img>`;
+      : `<div style="height:300px; width:100vw; display:flex; justify-content: center;align-items: center;">
+      <img src = ${article.articleImage} alt = "article main image" 
+      style="margin:auto; height:290px;">
+      </img>
+      </div>`;
   const date = new Date(article.timeofpub);
   const dateStringEN = `${date.getDate()}-${
     date.getMonth() + 1

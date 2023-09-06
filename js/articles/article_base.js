@@ -53,7 +53,7 @@ class Article {
       Translatable.fromJSON(json.title),
       Translatable.fromJSON(json.shortdescription),
       json.tags,
-      json.articleImage,
+      json.articleimage,
       ArticleParagraph.toParagraphListFromJson(...json.paragraphs)
     );
   }
