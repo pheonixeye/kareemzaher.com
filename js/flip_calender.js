@@ -116,7 +116,7 @@ for (let i = 0; i < Object.keys(months).length; i++) {
   dateToDay[i] = [];
 
   for (let j = 1; j < Object.values(months)[i].d + 1; j++) {
-    const date_ = new Date(thisYear, i, j);
+    const date_ = new Date(thisYear, i, j, 19);
     const weekday = date_.getDay();
     const weekdayString = weekDays[weekday].a;
     const weekdayInitials = weekDays[weekday].b;
@@ -340,9 +340,9 @@ function updateUIonClick(e) {
       }` +
       " " +
       `${itemDate.getFullYear()}`;
-
     //set data for request fomulation
-    dateDisplay.setAttribute("reservation-date", `${itemDate.toISOString()}`);
+    const d = new Date(itemDate.toLocaleString());
+    dateDisplay.setAttribute("reservation-date", `${d.toISOString()}`);
 
     //set schedule for request formulation
     const scheduleList = schListJson;
@@ -354,7 +354,7 @@ function updateUIonClick(e) {
           e["intday"],
           e["start"],
           e["end"]
-        ).toString();
+        );
       }
     });
     dateDisplay.setAttribute("schedule-day", `${selectedSchedule}`);

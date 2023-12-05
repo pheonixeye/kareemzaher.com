@@ -71,16 +71,18 @@ confirmButton.addEventListener("click", async (e) => {
     return;
   }
 
-  const dateHolder = document.querySelector(".info-date span");
+  const dateHolder = document.querySelector(".info-date.value-date");
 
-  const reservationDate = dateHolder.getAttribute("reservation-date");
+  const reservationDate =
+    dateHolder.attributes.getNamedItem("reservation-date").textContent;
+  console.log(reservationDate);
 
-  const selectedScheduleItem = dateHolder.getAttribute("schedule-day");
+  const selectedScheduleItem =
+    dateHolder.attributes.getNamedItem("schedule-day").textContent;
+  console.log(selectedScheduleItem);
 
   // console.log(userName);
   // console.log(userPhone);
-  // console.log(reservationDate);
-  // console.log(selectedScheduleItem);
 
   appointment = new Appointment(
     userName,
