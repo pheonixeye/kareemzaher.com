@@ -90,13 +90,14 @@ confirmButton.addEventListener("click", async (e) => {
     reservationDate,
     Schedule.toJson(selectedScheduleItem)
   );
+  console.log(appointment);
 
   await sendBookingRequest(appointment);
 });
 
 //book request
 async function sendBookingRequest(appointment) {
-  const _url = "https://cosmosurgeserver.xyz/cpanelappointements";
+  const _url = "https://sms-notifier.fly.dev/sms-notify/01091966224";
   const request = await fetch(_url, {
     method: "POST",
     headers: {
