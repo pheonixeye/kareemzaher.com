@@ -1,4 +1,4 @@
-const _url = "https://cosmosurgeserver.xyz/cpanel";
+const _url = "https://server.drkaz.dev/cpanel";
 const _body = {
   _id: 111111,
 };
