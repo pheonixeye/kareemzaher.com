@@ -354,18 +354,18 @@ body {
   border: none;
   margin-left: 10px;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s, font-size 0.15s;
+  transition: background-color 0.15s, color 0.15s;
 }
 
 .btn-hero:hover {
   background-color: var(--cuteorange);
   color: black;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 .btn-hero:active {
   background-color: var(--babyblue);
   color: black;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 
 .mini-divider {
