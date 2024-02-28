@@ -27,7 +27,7 @@ class Schedule {
 
 class Appointment {
   constructor(name, phone, date, schedule) {
-    this.docid = 111111;
+    this.docid = 0;
     this.docname = "kareem zaher";
     this.clinic = "urology";
     this.name = name;
