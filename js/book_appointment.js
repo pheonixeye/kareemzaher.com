@@ -98,7 +98,7 @@ confirmButton.addEventListener("click", async (e) => {
 //book request
 async function sendBookingRequest(appointment) {
   //TODO: change to clinic number
-  const _url = "https://sms-notifier.fly.dev/sms-notify/01021646574";
+  const _url = "https://notifier.drkaz.dev?topic=01091966224";
   const request = await fetch(_url, {
     method: "POST",
     headers: {
