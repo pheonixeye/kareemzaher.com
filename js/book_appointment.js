@@ -103,6 +103,7 @@ async function sendBookingRequest(appointment) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "https://kareemzaher.com",
     },
     body: JSON.stringify(appointment),
   });
