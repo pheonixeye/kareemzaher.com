@@ -107,12 +107,16 @@ async function sendBookingRequest(appointment) {
     body: JSON.stringify(appointment),
   });
 
-  const response = await request.json();
+  // const response = await request.json();
 
   gtagReportConversion();
   console.log("gtag-called");
 
-  showAlertBox(response, `${isEnglish ? "INFO !!!" : "اشعار !!!"}`, true);
+  showAlertBox(
+    `${isEnglish ? "Booking Request Sent." : "تم ارسال طلب الحجز"}`,
+    `${isEnglish ? "INFO !!!" : "اشعار !!!"}`,
+    true
+  );
 }
 
 function gtagReportConversion(url) {
