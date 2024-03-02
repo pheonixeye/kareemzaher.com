@@ -1,4 +1,4 @@
-import doctorInfo from "./fetch_doctor_data.js";
+// import doctorInfo from "./fetch_doctor_data.js";
 
 // const scheduleList = doctorInfo["schedule"];
 
@@ -6,7 +6,7 @@ import gtag from "./gtag/src/index.js";
 
 const lang = document.querySelector("html").getAttribute("lang");
 
-const isEnglish = lang == "en";
+const isEnglish = lang === "en";
 
 class Schedule {
   constructor(day, intday, start, end) {

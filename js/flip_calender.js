@@ -1,8 +1,9 @@
 import updateCalenderRealtime from "./calender_update_module.js";
-import doctorInfo from "./fetch_doctor_data.js";
+// import doctorInfo from "./fetch_doctor_data.js";
+import ScheduleList from "./schedule.js";
 import Schedule from "./book_appointment.js";
 
-const schListJson = doctorInfo["schedule"];
+const schListJson = ScheduleList;
 
 //localization
 const html = document.getElementsByTagName("html")[0];

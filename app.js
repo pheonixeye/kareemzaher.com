@@ -21,7 +21,7 @@ function slideImages() {
 // slideImages();
 
 //insert list of days function
-const days = ["Saturday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+const days = ["Saturday", "Tuesday", "Wednesday", "Thursday"];
 const colors = ["red", "green", "blue", "orange", "purple"];
 
 function buildHourItem(index) {
@@ -31,7 +31,7 @@ function buildHourItem(index) {
       <img src="images_svg/calender.svg" alt="calender icon" />
     </div>
     <h3 lang-key="${days[index]}">${days[index]}</h3>
-    <h5>6:00 <span lang-key="pm">P.M.</span> - 10:00 <span lang-key="pm">P.M.</span></h5>
+    <h5>7:00 <span lang-key="pm">P.M.</span> - 10:00 <span lang-key="pm">P.M.</span></h5>
   </div>
 </li>`;
 }

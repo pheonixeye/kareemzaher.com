@@ -1,8 +1,8 @@
-import doctorInfo from "./fetch_doctor_data.js";
+import ScheduleList from "./schedule.js";
+// import doctorInfo from "./fetch_doctor_data.js";
 
-const schedule = doctorInfo["schedule"];
 const intDaysList = [];
-schedule.forEach((e) => intDaysList.push(e["intday"]));
+ScheduleList.forEach((e) => intDaysList.push(e["intday"]));
 
 // console.log(schedule);
 function updateCalenderRealtime() {
@@ -14,8 +14,8 @@ function updateCalenderRealtime() {
     const wd = wdClass[wdClass.length - 1];
     const wdInt = parseInt(wd);
     e.classList.add("not-available");
-    for (let index = 0; index < schedule.length; index++) {
-      const element = schedule[index];
+    for (let index = 0; index < ScheduleList.length; index++) {
+      const element = ScheduleList[index];
       const intDay = element["intday"];
       if (
         wdInt === intDay &&
@@ -38,11 +38,11 @@ function updateCalenderRealtime() {
     }
   }
   const today = document.querySelector(".is-today");
-  if (today != undefined) {
+  if (today !== undefined) {
     const todayDateData = new Date(
       today.attributes.getNamedItem("data").textContent
     );
-    schedule.forEach((e) => {
+    ScheduleList.forEach((e) => {
       const intday = e["intday"];
       if (todayDateData.getDay() === intday) {
         today.classList.remove("not-available");
@@ -63,7 +63,7 @@ function updateCalenderRealtime() {
     }
   });
   const todayItem = document.querySelector(".is-today");
-  if (todayItem != undefined) {
+  if (todayItem !== undefined) {
     const wdClass = todayItem.classList[1];
     const wd = wdClass[wdClass.length - 1];
     const wdInt = parseInt(wd);
