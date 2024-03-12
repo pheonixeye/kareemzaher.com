@@ -99,7 +99,7 @@ confirmButton.addEventListener("click", async (e) => {
 async function sendBookingRequest(appointment) {
   //TODO: change to clinic number
   const _url = "https://notifier.drkaz.dev?topic=01091966224";
-  const request = await fetch(_url, {
+  await fetch(_url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
