@@ -1,11 +1,11 @@
 .floating-btn-div {
   width: 100px;
-  height: 150px;
+  height: 200px;
   position: fixed;
   display: flex;
   flex-direction: column;
   z-index: 6 !important;
-  top: calc(90% - 100px);
+  top: calc(90% - 150px);
   left: calc(98% - 100px);
   right: calc(98% - 100px);
   align-items: center;

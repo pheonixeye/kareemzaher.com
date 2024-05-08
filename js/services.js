@@ -88,19 +88,23 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
      </li>
      ${
        dataItem.info[3] != undefined
-         ? `<li>
-           <div class="info-item-header-div">
-             <div class="info-item-img-container">
-               <img src="images_svg/bullet.svg" alt=" bullet svg" />
+         ? /*html*/ `<li>
+             <div class="info-item-header-div">
+               <div class="info-item-img-container">
+                 <img src="images_svg/bullet.svg" alt=" bullet svg" />
+               </div>
+               <h4>
+                 ${
+                   isEnglish
+                     ? dataItem.info[3].entitle
+                     : dataItem.info[3].artitle
+                 }
+               </h4>
              </div>
-             <h4>${
-               isEnglish ? dataItem.info[3].entitle : dataItem.info[3].artitle
-             }</h4>
-           </div>
-           <p>${
-             isEnglish ? dataItem.info[3].entext : dataItem.info[3].artext
-           }</p>
-         </li>`
+             <p>
+               ${isEnglish ? dataItem.info[3].entext : dataItem.info[3].artext}
+             </p>
+           </li>`
          : ""
      }
    </ul>

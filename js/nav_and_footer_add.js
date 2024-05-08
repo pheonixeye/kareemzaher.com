@@ -35,6 +35,13 @@ const footerTemplate = /*html*/ `
 
 const navTemplate = /*html*/ `
 <div class="floating-btn-div">
+  <button class="lang-btn" type="button" onclick="window.open('https://wa.me/+201021646574','_blank')">
+  <img
+  src="images_svg/wa.svg"
+  alt="whatsapp icon"
+  width="30"
+  height="25"
+/></button>
   <button class="lang-btn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#9650;</button>
   <button id="lang-btn" class="lang-btn" type="button">ar</button>
 </div>
@@ -125,7 +132,7 @@ facebookButton.addEventListener("click", (e) => {
 });
 playstoreButton.addEventListener("click", (e) => {
   window.open(
-    "https://play.google.com/store/apps/details?id=com.kareemzaher.iief15&hl=en&gl=US",
+    "https://play.google.com/store/apps/details?id=drkareemzaher.erectiontest&hl=ar",
     "_blank"
   );
 });

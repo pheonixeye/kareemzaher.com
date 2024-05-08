@@ -7,6 +7,7 @@ class NavData {
 }
 
 const navData = [
+  //TODO: add 2nd link articles
   new NavData("Home", "./", "index-id"),
   new NavData("Appointments", "appointments.html", "appointments-id"),
   new NavData("Services", "services.html", "services-id"),
