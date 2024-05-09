@@ -406,7 +406,7 @@ const selectedMonthYearElement = document.querySelector(
 );
 
 async function nextMonth() {
-  //TODO:
+  //todo:
   // const dataArray = selectedMonthYearElement.innerHTML.split(" ");
   const dataArray = [
     selectedMonthYearElement.attributes.getNamedItem("month").value,

@@ -1,4 +1,4 @@
-import { devUrl, prodUrl } from "./js/urls.js";
+import { url } from "./js/urls.js";
 // console.log("localization file connected");
 
 // let jsonLocale;
@@ -10,8 +10,6 @@ import { devUrl, prodUrl } from "./js/urls.js";
 // }
 
 // fetchStoredLocale();
-// const devUrl = `http://${document.location.hostname}:5500`;
-// const prodUrl = `https://${document.location.hostname}`;
 
 // async function modLocaleInJson(stringLocale) {}
 const storedLocale = window.localStorage.getItem("lang");
@@ -22,7 +20,7 @@ const langSwitcher = document.querySelector("#lang-btn");
 
 const defaultLocale = storedLocale ?? "ar";
 
-langSwitcher.innerText = defaultLocale == "ar" ? "en" : "ar";
+langSwitcher.innerText = defaultLocale === "ar" ? "en" : "ar";
 
 // The active locale
 let locale;
@@ -53,7 +51,7 @@ function translateElement(element) {
 }
 
 async function fetchTranslationsFor(newLocale) {
-  const response = await fetch(`${devUrl}/lang/${newLocale}.json`);
+  const response = await fetch(`${url}/lang/${newLocale}.json`);
   return await response.json();
 }
 
@@ -68,7 +66,7 @@ function bindLocaleSwitcher() {
     const newlocale = switcher.innerText;
     // Set the locale to the selected option[value]
     setLocale(newlocale);
-    switcher.innerText = newlocale == "ar" ? "en" : "ar";
+    switcher.innerText = newlocale === "ar" ? "en" : "ar";
   };
 }
 
@@ -77,3 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setLocale(initialLocale);
   bindLocaleSwitcher();
 });
+
+//TODO: get rid of starting in english then switching to arabic in each navigation

@@ -1,5 +1,5 @@
 import data from "../json/ratings.json" assert { type: "json" };
-
+import { url } from "./urls.js";
 const ratings = data;
 const length = ratings.length;
 const ratingsFragments = Math.floor(length / 5);
@@ -9,11 +9,11 @@ let currentFragment = 1;
 
 const template = /*html*/ `<div class="rating-item">
 <div class="rating-stars no-margin">
-  <img src="images_svg/star_full.svg" alt="full star color yellow" />
-  <img src="images_svg/star_full.svg" alt="full star color yellow" />
-  <img src="images_svg/star_full.svg" alt="full star color yellow" />
-  <img src="images_svg/star_full.svg" alt="full star color yellow" />
-  <img src="images_svg/star_full.svg" alt="full star color yellow" />
+  <img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />
+  <img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />
+  <img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />
+  <img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />
+  <img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />
 </div>
 <p class="overall-rating no-margin">Overall Rating</p>
 <p class="comment no-margin">ياريت يبقي فيه سونار في العياده</p>
@@ -33,7 +33,8 @@ function calculateDivHeightAndItemCount(fragment) {
   const ratingsContainer = document.querySelector(".clinic-rating");
   ratingsContainer.style.gridTemplateRows = `repeat(${fragment * 5}, "165px")`;
   ratingsContainer.style.height = `${fragment * 5 * 185 + 70}px`;
-  // console.log(getComputedStyle(ratingsContainer)["grid-template-rows"]); //TODO: remove
+  //todo: remove
+  // console.log(getComputedStyle(ratingsContainer)["grid-template-rows"]);
 }
 
 calculateDivHeightAndItemCount(currentFragment);
@@ -42,13 +43,13 @@ function buildTemplateRatingItem(rating, index) {
   let starList = [];
   for (let index = 0; index < rating.rating; index++) {
     starList.push(
-      /*html*/ `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
+      /*html*/ `<img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />`
     );
   }
   for (let index = 0; index < 5; index++) {
     if (starList.length < 5) {
       starList.push(
-        /*html*/ `<img src="images_svg/star_empty.svg" alt="empty star color grey" />`
+        /*html*/ `<img src="${url}/images_svg/star_empty.svg" alt="empty star color grey" />`
       );
     }
   }
@@ -57,7 +58,7 @@ function buildTemplateRatingItem(rating, index) {
     starList = [];
     for (let index = 0; index < 5; index++) {
       starList.push(
-        /*html*/ `<img src="images_svg/star_full.svg" alt="full star color yellow" />`
+        /*html*/ `<img src="${url}/images_svg/star_full.svg" alt="full star color yellow" />`
       );
     }
   }

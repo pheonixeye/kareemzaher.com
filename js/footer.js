@@ -1,6 +1,6 @@
 // import doctorInfo from "../js/fetch_doctor_data.js";
 import navData from "./navigation_data.js";
-
+import { url } from "./urls.js";
 // const imgData = doctorInfo["avatar"];
 // const imgPrefix = "data:image/png;base64,";
 // let image = new Image();
@@ -12,7 +12,7 @@ import navData from "./navigation_data.js";
 // insert items in bottom footer nav
 
 function buildFooterNavTemplate(navData) {
-  if (navData.link === "thankyou.html") {
+  if (navData.link === `${url}/thankyou.html`) {
     return "";
   }
   const Template = /*html*/ `

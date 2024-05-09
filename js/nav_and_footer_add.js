@@ -1,3 +1,5 @@
+import { url } from "./urls.js";
+
 const navPagesIds = [
   "#appointments-id",
   "#services-id",
@@ -16,7 +18,7 @@ const footerTemplate = /*html*/ `
     <div class="footer-about">
       <h1 lang-key="about">About</h1>
       <div class="doctor-img-holder">
-        <img id="doctor-img" src="images_webp/doctor.webp" alt="doctor image" />
+        <img id="doctor-img" src="${url}/images_webp/doctor.webp" alt="doctor image" />
       </div>
       <h2 lang-key="docname">Dr. Kareem Zaher</h2>
       <h3 lang-key="doctitle">Uro-Andrology Specialist Surgeon</h3>
@@ -38,7 +40,7 @@ const navTemplate = /*html*/ `
 <div class="floating-btn-div">
   <button class="lang-btn" type="button" onclick="window.open('https://wa.me/+201021646574','_blank')">
   <img
-  src="images_svg/wa.svg"
+  src="${url}/images_svg/wa.svg"
   alt="whatsapp icon"
   width="30"
   height="25"
@@ -95,14 +97,14 @@ const socialTemplate = /*html*/ `
     <div class="follow-us">
       <div class="glass-btn blue-btn">
         <img
-          src="images_svg/facebook.svg"
+          src="${url}/images_svg/facebook.svg"
           alt="facebook"
           style="width: 5.5em"
         />
       </div>
       <div class="glass-btn amber-btn">
         <img
-          src="images_svg/playstore.svg"
+          src="${url}/images_svg/playstore.svg"
           alt="erection-test-app"
           style="width: 5.5em"
         />

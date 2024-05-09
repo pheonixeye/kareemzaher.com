@@ -3,6 +3,7 @@
 // const scheduleList = doctorInfo["schedule"];
 
 import gtag from "./gtag/src/index.js";
+import { url } from "./urls.js";
 
 const lang = document.querySelector("html").getAttribute("lang");
 
@@ -153,7 +154,7 @@ function showAlertBox(message, header, redirect) {
     alertOverlay.style.display = "none";
     alertTemplate.style.display = "none";
     if (redirect) {
-      location.href = "/thankyou.html";
+      location.href = `${url}/thankyou.html`;
     }
   });
 }

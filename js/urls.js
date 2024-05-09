@@ -1,4 +1,4 @@
-const devUrl = `http://${document.location.hostname}:5500`;
-const prodUrl = `https://${document.location.hostname}`;
+const url = `http://${document.location.hostname}:5500`;
+// const url = `https://${document.location.hostname}`;
 
-export { devUrl, prodUrl };
+export { url };

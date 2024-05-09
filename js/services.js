@@ -1,5 +1,5 @@
 import data from "../json/services.json" assert { type: "json" };
-
+import { url } from "./urls.js";
 console.log("services connected");
 
 const servicesPageContent = document.querySelector(
@@ -16,7 +16,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
   const serviceItemTemplate = /*html*/ `
 <div class="service-item" id="service-item-no-${dataItem.id}">
  <div class="service-item-pattern-div">
-   <img src="images_webp/pattern.webp" alt="pattern opacity img" />
+   <img src="${url}/images_webp/pattern.webp" alt="pattern opacity img" />
  </div>
  <div class="service-item-img-div">
    <h3>${isEnglish ? dataItem.entitle : dataItem.artitle}</h3>
@@ -37,7 +37,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
    type="button">
      <img
        class="youtube-btn-svg-img"
-       src="images_svg/youtube.svg"
+       src="${url}/images_svg/youtube.svg"
        alt="youtube video link"
      />
    </button>
@@ -52,7 +52,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
      <li>
        <div class="info-item-header-div">
          <div class="info-item-img-container">
-           <img src="images_svg/bullet.svg" alt=" bullet svg" />
+           <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
          </div>
          <h4>${
            isEnglish ? dataItem.info[0].entitle : dataItem.info[0].artitle
@@ -63,7 +63,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
      <li>
        <div class="info-item-header-div">
          <div class="info-item-img-container">
-           <img src="images_svg/bullet.svg" alt=" bullet svg" />
+           <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
          </div>
          <h4>${
            isEnglish ? dataItem.info[1].entitle : dataItem.info[1].artitle
@@ -76,7 +76,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
      <li>
        <div class="info-item-header-div">
          <div class="info-item-img-container">
-           <img src="images_svg/bullet.svg" alt=" bullet svg" />
+           <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
          </div>
          <h4>${
            isEnglish ? dataItem.info[2].entitle : dataItem.info[2].artitle
@@ -91,7 +91,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
          ? /*html*/ `<li>
              <div class="info-item-header-div">
                <div class="info-item-img-container">
-                 <img src="images_svg/bullet.svg" alt=" bullet svg" />
+                 <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
                </div>
                <h4>
                  ${
