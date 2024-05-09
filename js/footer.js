@@ -12,6 +12,9 @@ import navData from "./navigation_data.js";
 // insert items in bottom footer nav
 
 function buildFooterNavTemplate(navData) {
+  if (navData.link === "thankyou.html") {
+    return "";
+  }
   const Template = /*html*/ `
     <li>
       <div>

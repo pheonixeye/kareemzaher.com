@@ -3,6 +3,7 @@ import navData from "./navigation_data.js";
 function buildTemplate(isMobile) {
   isMobile = isMobile || false;
   const templateList = [];
+
   for (let index = 0; index < navData.length; index++) {
     if (isMobile) {
       templateList.push(
@@ -14,6 +15,7 @@ function buildTemplate(isMobile) {
       );
     }
   }
+  templateList.pop();
   const template = templateList.join(" ");
   return template;
 }

@@ -14,6 +14,7 @@ const navData = [
   new NavData("Articles", "articles.html", "articles-id"),
   new NavData("Reviews", "reviews.html", "reviews-id"),
   new NavData("Erection-Test", "erection_test.html", "erection-test-id"),
+  new NavData("Booking Complete", "thankyou.html", "thankyou-id"),
 ];
 
 export default navData;

@@ -1,0 +1,32 @@
+{
+    
+"id" : 0,    
+"title":"article 0 title",
+"description" : "article 0 description",
+"imgUrl" : "https://google.com",
+"filePath" : "articles/article0.html",
+"longTitle" : "Non est velit cillum ullamco non est dolore consectetur elit officia quis.",   
+"longDescription" : "Et velit aliqua irure culpa. Officia velit labore ea reprehenderit deserunt amet pariatur cillum elit eu. Qui nostrud qui deserunt in ut dolor magna reprehenderit cillum irure. Occaecat exercitation mollit ut ut sunt irure. Mollit eiusmod laboris nostrud veniam aliquip nostrud commodo sint adipisicing ex quis.",
+"paragraphs" : [
+    {
+        "title" : "Pariatur incididunt veniam veniam sint et exercitation excepteur.",
+        "body" : "Aliqua adipisicing eiusmod exercitation voluptate ipsum ex et id minim pariatur voluptate aute. Velit Lorem velit magna mollit occaecat proident culpa tempor ex officia nulla magna deserunt. Aliquip esse consequat et labore adipisicing enim ipsum nisi enim ullamco officia. Deserunt dolore adipisicing pariatur mollit id consectetur sunt anim ullamco duis amet ea ea irure. Pariatur id officia pariatur proident anim id consectetur esse excepteur duis ipsum consectetur adipisicing. Et dolore in velit sit fugiat ipsum cupidatat incididunt anim.",
+        "imgUrl":"https://google.com"
+    },
+    {
+        "title" : "Irure aute amet fugiat qui aliqua.",
+        "body" : "Anim do ex cillum aliqua est. Nisi est ut esse duis adipisicing dolor laboris eiusmod minim do Lorem qui. Culpa laboris ad tempor magna est occaecat voluptate sit cillum duis culpa Lorem ad. Consequat ut eiusmod commodo exercitation amet sunt velit magna amet voluptate quis sit aute. Aliqua ipsum mollit ad reprehenderit nostrud. Incididunt Lorem elit consectetur elit proident eiusmod non.",
+        "imgUrl":"https://google.com"
+    },
+    {
+        "title" : "Ad dolore eu magna veniam laborum duis et do dolore duis minim magna sint quis.",
+        "body" : "Ipsum qui ut mollit cupidatat in ipsum. Lorem nisi eu veniam nulla reprehenderit pariatur. Labore dolore aliqua culpa officia magna. Fugiat in Lorem aliqua voluptate in et amet id ad consequat eu id ut eiusmod. Commodo esse laboris labore tempor excepteur exercitation elit sunt consequat aliquip pariatur magna proident excepteur. Aliqua incididunt sint eu laboris non esse ad voluptate sit laborum amet. Anim ea enim voluptate reprehenderit consequat commodo sit labore pariatur aliquip reprehenderit duis ipsum nostrud. Ullamco minim voluptate incididunt ea anim. Lorem consectetur irure culpa mollit mollit nisi. In pariatur eiusmod cupidatat do in velit. Aliquip anim occaecat ad magna. Irure reprehenderit est enim sint elit velit elit. Lorem eu laboris laboris tempor consequat in velit Lorem non enim voluptate enim labore.",
+        "imgUrl":"https://google.com"
+    },
+    {
+        "title" : "Ut aute nisi culpa consequat consectetur in labore.",
+        "body" : "Officia voluptate ea tempor eu Lorem enim quis duis. Sunt esse veniam non nulla elit. Et aliqua veniam incididunt officia.",
+        "imgUrl":"https://google.com"
+    }
+]   
+}

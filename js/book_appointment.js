@@ -153,7 +153,7 @@ function showAlertBox(message, header, redirect) {
     alertOverlay.style.display = "none";
     alertTemplate.style.display = "none";
     if (redirect) {
-      location.href = "/";
+      location.href = "/thankyou.html";
     }
   });
 }

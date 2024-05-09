@@ -66,7 +66,9 @@
     "et-p5":"Analysis of the questionnaire should, therefore, be viewed as an adjunct to, rather than a substitute for, a detailed sexual history and examination.",
     "et-p6":"References : ",
     "et-p7":"https://pubmed.ncbi.nlm.nih.gov/9187685/",
-    "et-p8":"The international index of erectile function (IIEF): a multidimensional scale for assessment of erectile dysfunction."
-    ,"install":"Install"
-
+    "et-p8":"The international index of erectile function (IIEF): a multidimensional scale for assessment of erectile dysfunction.",
+    "install":"Install",
+    "thank-you" : "Thank You For Booking.",
+    "booking-confirmed" : "Your Booking will Be confirmed By SMS, or You Can Contact Us On Whatsapp.",
+    "nice-day" : "Have a Nice Day."
 }

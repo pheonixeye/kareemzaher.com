@@ -1,0 +1,38 @@
+[
+ {
+    "id" : 0,    
+    "title":"article 0 title",
+    "description" : "article 0 description",
+    "imgUrl" : "https://google.com",
+    "filePath" : "articles/article0.html"
+ },   
+  
+ {
+    "id" : 1,    
+    "title":"article 1 title",
+    "description" : "article 1 description",
+    "imgUrl" : "https://google.com",
+    "filePath" : "articles/article1.html"
+ },   
+ {
+    "id" : 2,    
+    "title":"article 2 title",
+    "description" : "article 2 description",
+    "imgUrl" : "https://google.com",
+    "filePath" : "articles/article2.html"
+ },   
+ {
+    "id" : 3,    
+    "title":"article 3 title",
+    "description" : "article 3 description",
+    "imgUrl" : "https://google.com",
+    "filePath" : "articles/article4.html"
+ },
+ {
+    "id" : 4,    
+    "title":"article 4 title",
+    "description" : "article 4 description",
+    "imgUrl" : "https://google.com",
+    "filePath" : "articles/article4.html"
+ }
+]

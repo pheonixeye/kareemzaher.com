@@ -1,3 +1,4 @@
+import { devUrl, prodUrl } from "./js/urls.js";
 // console.log("localization file connected");
 
 // let jsonLocale;
@@ -9,6 +10,8 @@
 // }
 
 // fetchStoredLocale();
+// const devUrl = `http://${document.location.hostname}:5500`;
+// const prodUrl = `https://${document.location.hostname}`;
 
 // async function modLocaleInJson(stringLocale) {}
 const storedLocale = window.localStorage.getItem("lang");
@@ -50,7 +53,7 @@ function translateElement(element) {
 }
 
 async function fetchTranslationsFor(newLocale) {
-  const response = await fetch(`lang/${newLocale}.json`);
+  const response = await fetch(`${devUrl}/lang/${newLocale}.json`);
   return await response.json();
 }
 

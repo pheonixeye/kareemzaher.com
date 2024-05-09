@@ -4,6 +4,7 @@ const navPagesIds = [
   "#articles-id",
   "#reviews-id",
   "#erection-test-id",
+  "#thankyou-id",
 ];
 
 const footerTemplate = /*html*/ `
