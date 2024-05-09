@@ -225,7 +225,19 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <p lang-key="copyright">Copyright - KareemZaher.com</p>
       </div>
     </footer>
-
+    <script>
+      const facebookButton = document.querySelector(".glass-btn.blue-btn");
+      const playstoreButton = document.querySelector(".glass-btn.amber-btn");
+      facebookButton.addEventListener("click", (e) => {
+        window.open("https://www.facebook.com/kzuroclinic", "_blank");
+      });
+      playstoreButton.addEventListener("click", (e) => {
+        window.open(
+          "https://play.google.com/store/apps/details?id=drkareemzaher.erectiontest&hl=ar",
+          "_blank"
+        );
+      });
+    </script>
     <script src="app.js" type="module"></script>
     <script src="js/build_navbar.js" type="module"></script>
     <script src="js/mobile_nav_fns.js" type="module"></script>
