@@ -58,7 +58,7 @@ const navTemplate = /*html*/ `
     <ul id="desktop-nav"></ul>
   </nav>
   <div class="mobile-nav">
-    <button class="mobile-nav-btn" onclick="openNav()">
+    <button class="mobile-nav-btn" >
       <span>&#9776;</span>
     </button>
   </div>

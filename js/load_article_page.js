@@ -33,15 +33,14 @@ const articleParagraphsContainer = document.getElementById(
 
 function _buildTemplate(data) {
   articleImgPlaceHolder.src = data.imgUrl;
-  articleTitlePlaceHolder.innerText = data.longTitle;
-  articleDescriptionPlaceHolder.innerText = data.longDescription;
+  articleTitlePlaceHolder.innerText = data.title;
+  articleDescriptionPlaceHolder.innerText = data.description;
   const paragraphs = Array.from(data.paragraphs);
   paragraphs.forEach((p, i) => {
     articleParagraphsContainer.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       /*html*/ `
         <div>
-            <img src='${p.imgUrl}' alt='p-image${i}' width='250' height='250'>
             <h3>${p.title}</h3>
             <p>${p.body}</p>
         </div>
@@ -52,6 +51,6 @@ function _buildTemplate(data) {
 
 await _fetchArticleData().then((data) => _buildTemplate(data));
 
-//TODO: style page
-//TODO: add metadata
-//TODO: publish
+//todo: style page
+//todo: add metadata
+//todo: publish

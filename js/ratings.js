@@ -1,6 +1,5 @@
-import data from "../json/ratings.json" assert { type: "json" };
+import { ratings } from "./ratings_data.js";
 import { url } from "./urls.js";
-const ratings = data;
 const length = ratings.length;
 const ratingsFragments = Math.floor(length / 5);
 let currentFragment = 1;
@@ -67,20 +66,18 @@ function buildTemplateRatingItem(rating, index) {
 
   const hasRating = rating.rating != null;
 
-  let templateHTML = /*html*/ `
+  const templateHTML = /*html*/ `
     <div class="rating-item" id="${index}rating">
       <div class="rating-stars no-margin">
         ${starTemplate}
       </div>
       <p class="overall-rating no-margin" lang-key="overall-rating">Overall Rating</p>
       <p class="comment no-margin">${rating.comment}</p>
-      <p class="user no-margin">${rating.user_name}  ${
-    rating.user_age == undefined ? "" : rating.user_age + "years old"
-  } </p>
+      <p class="user no-margin">${rating.user_name}  ${rating.user_age == undefined ? "" : rating.user_age + "years old"
+    } </p>
       <p class="date no-margin">${rating.date}</p>
-      ${
-        hasRating
-          ? /*html*/ `<div class="doctor-rating-number">
+      ${hasRating
+      ? /*html*/ `<div class="doctor-rating-number">
       
       <div class="doctor-rating-number-background">
           <p>${rating.rating}</p>
@@ -89,8 +86,8 @@ function buildTemplateRatingItem(rating, index) {
       <div class="doctor-rating-text">
         <p lang-key="doctor-rating">Doctor rating</p>
       </div>`
-          : ``
-      }
+      : ``
+    }
       
     </div>
     `;
@@ -106,7 +103,7 @@ function addRatingsToRatingDiv(fragment) {
       "beforeend",
       buildTemplateRatingItem(ratings[index], index)
     );
-    let ratingItem = document.getElementById(`${index}rating`);
+    const ratingItem = document.getElementById(`${index}rating`);
     ratingItem.style.gridRow = `${index + 1}/${index + 2}`;
   }
 }

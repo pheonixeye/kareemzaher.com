@@ -1,0 +1,17 @@
+#article-long-title {
+    text-align: center;
+    padding: 10px;
+}
+
+#article-long-description {
+    text-align: center;
+    padding: 10px;
+}
+
+#article-paragraphs-container div h3 {
+    margin-inline: 10px;
+}
+
+#article-paragraphs-container div p {
+    margin-inline: 10px;
+}

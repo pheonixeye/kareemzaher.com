@@ -1,93 +1,79 @@
 <!DOCTYPE html>
-<html lang="ar">
-  <head>
-    <!--**META_TAGS-->
-    <meta
-      name="description"
-      content="د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - حجز موعد"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - حجز موعد
-    </title>
-    <link rel=”canonical” href=”https://www.kareemzaher.com/appointments” />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="styles/social_links.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/page_content.css" />
-    <link rel="stylesheet" href="styles/floating_btn.css" />
-    <link rel="stylesheet" href="styles/flip_calender.css" />
-    <link rel="stylesheet" href="styles/alert_template.css" />
-    <link rel="favicon" type="image/x-icon" href="favicon.ico" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-KP1XD52S9B"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+<html lang="ar" dir="rtl">
 
-    gtag("config", "G-KP1XD52S9B");
-  </script>
+<head>
+  <!--**META_TAGS-->
+  <meta name="description" content="د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - حجز موعد" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    د. كريم زاهر - اخصائي جراحة المسالك البولية و الذكورة - حجز موعد
+  </title>
+  <link rel=”canonical” href=”https://www.kareemzaher.com/appointments” />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/social_links.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/page_content.css" />
+  <link rel="stylesheet" href="styles/floating_btn.css" />
+  <link rel="stylesheet" href="styles/flip_calender.css" />
+  <link rel="stylesheet" href="styles/alert_template.css" />
+  <link rel="favicon" type="image/x-icon" href="favicon.ico" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KP1XD52S9B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  <body id="appointments-id">
-    <div class="page-content">
-      <div id="calender" class="calender">
-        <!-- CALENDER-FRONT-->
-        <div id="calender-front" class="calender-front">
-          <div id="current-date" class="current-date">
-            <h1 id="calender-header-weekday-day"></h1>
-            <button id="prev-month-btn" type="button" class="date-nav-btn">
-              &#9664;
-            </button>
-            <h1 id="calender-header-month-year"></h1>
-            <button id="next-month-btn" type="button" class="date-nav-btn">
-              &#9658;
-            </button>
-          </div>
-          <div id="current-month" class="current-month"></div>
+  gtag("config", "G-KP1XD52S9B");
+</script>
+
+<body id="appointments-id">
+  <div class="page-content">
+    <div id="calender" class="calender">
+      <!-- CALENDER-FRONT-->
+      <div id="calender-front" class="calender-front">
+        <div id="current-date" class="current-date">
+          <h1 id="calender-header-weekday-day"></h1>
+          <button id="prev-month-btn" type="button" class="date-nav-btn">
+            &#9664;
+          </button>
+          <h1 id="calender-header-month-year"></h1>
+          <button id="next-month-btn" type="button" class="date-nav-btn">
+            &#9658;
+          </button>
         </div>
-        <!-- CALENDER-BACK-->
-        <div class="calender-back">
-          <div class="name-input-div">
-            <p></p>
-            <label lang-key="label-name" class="name-label-text">Name</label>
-            <i>&#129333;</i>
-            <input id="name-input" type="text" required placeholder="ABCD..." />
+        <div id="current-month" class="current-month"></div>
+      </div>
+      <!-- CALENDER-BACK-->
+      <div class="calender-back">
+        <div class="name-input-div">
+          <p></p>
+          <label lang-key="label-name" class="name-label-text">Name</label>
+          <i>&#129333;</i>
+          <input id="name-input" type="text" required placeholder="ABCD..." />
+        </div>
+        <div class="mobile-input-div">
+          <p></p>
+          <label lang-key="label-mobile" class="mobile-label-text">Mobile Number</label>
+          <i>&#128241;</i>
+          <input id="mobile-input" type="tel" required placeholder="##-###-###-###" />
+        </div>
+        <div class="info">
+          <div class="date">
+            <p>
+              <span class="info-date title-date" lang-key="date">Date:</span>
+              <span class="info-date value-date">MMM WKDY ddth, yyyy</span>
+            </p>
+            <p>
+              <span class="info-time title-time" lang-key="time">Time:</span>
+              <span class="info-time value-time">06:00 - 09:00 <span lang-key="pm">P.M.</span></span>
+            </p>
           </div>
-          <div class="mobile-input-div">
-            <p></p>
-            <label lang-key="label-mobile" class="mobile-label-text"
-              >Mobile Number</label
-            >
-            <i>&#128241;</i>
-            <input
-              id="mobile-input"
-              type="tel"
-              required
-              placeholder="##-###-###-###"
-            />
-          </div>
-          <div class="info">
-            <div class="date">
-              <p>
-                <span class="info-date title-date" lang-key="date">Date:</span>
-                <span class="info-date value-date">MMM WKDY ddth, yyyy</span>
-              </p>
-              <p>
-                <span class="info-time title-time" lang-key="time">Time:</span>
-                <span class="info-time value-time"
-                  >06:00 - 09:00 <span lang-key="pm">P.M.</span></span
-                >
-              </p>
-            </div>
-            <!-- <div class="address">
+          <!-- <div class="address">
               <p>
                 <span lang-key="address:">Address:</span>
                 <span lang-key="address-data"
@@ -95,29 +81,30 @@
                 >
               </p>
             </div> -->
-            <div class="observations">
-              <p>
-                <span lang-key="additional-info">Additional Info:</span>
-                <span lang-key="sms">You be notified by SMS.</span>
-              </p>
-            </div>
+          <div class="observations">
+            <p>
+              <span lang-key="additional-info">Additional Info:</span>
+              <span lang-key="sms">You be notified by SMS.</span>
+            </p>
           </div>
+        </div>
 
-          <div class="actions">
-            <button class="save" lang-key="confirm">Confirm</button>
-            <button class="dismiss" lang-key="cancel">Cancel</button>
-          </div>
+        <div class="actions">
+          <button class="save" lang-key="confirm">Confirm</button>
+          <button class="dismiss" lang-key="cancel">Cancel</button>
         </div>
       </div>
     </div>
-    <script src="js/nav_and_footer_add.js" type="module"></script>
-    <script src="js/build_navbar.js" type="module"></script>
-    <script src="js/mobile_nav_fns.js" type="module"></script>
-    <script src="js/contact.js" type="module"></script>
-    <script src="js/footer.js" type="module"></script>
-    <script src="js/flip_calender.js" type="module"></script>
-    <script src="js/calender_update_module.js" type="module"></script>
-    <script src="js/book_appointment.js" type="module"></script>
-    <script src="localization.js" type="module"></script>
-  </body>
+  </div>
+  <script src="js/nav_and_footer_add.js" type="module"></script>
+  <script src="js/build_navbar.js" type="module"></script>
+  <script src="js/mobile_nav_fns.js" type="module"></script>
+  <script src="js/contact.js" type="module"></script>
+  <script src="js/footer.js" type="module"></script>
+  <script src="js/flip_calender.js" type="module"></script>
+  <script src="js/calender_update_module.js" type="module"></script>
+  <script src="js/book_appointment.js" type="module"></script>
+  <script src="localization.js" type="module"></script>
+</body>
+
 </html>

@@ -1,4 +1,5 @@
-import data from "../json/services.json" assert { type: "json" };
+/* eslint-disable no-unused-expressions */
+import { services } from "./services_data.js";
 import { url } from "./urls.js";
 console.log("services connected");
 
@@ -10,7 +11,7 @@ const html = document.querySelector("html");
 
 servicesPageContent.style.backgroundColor = "#f6f6f6";
 
-const services = data;
+// const services = data;
 
 function buildServiceItemTemplate(dataItem, isEnglish) {
   const serviceItemTemplate = /*html*/ `
@@ -30,9 +31,8 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
      src="${dataItem.img}"
      alt="service img"
    />
-   <h4 class="img-header-h4">${
-     isEnglish ? dataItem.entitle : dataItem.artitle
-   }</h4>
+   <h4 class="img-header-h4">${isEnglish ? dataItem.entitle : dataItem.artitle
+    }</h4>
    <button class="img-header-btn"
    type="button">
      <img
@@ -54,9 +54,8 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
          <div class="info-item-img-container">
            <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
          </div>
-         <h4>${
-           isEnglish ? dataItem.info[0].entitle : dataItem.info[0].artitle
-         }</h4>
+         <h4>${isEnglish ? dataItem.info[0].entitle : dataItem.info[0].artitle
+    }</h4>
        </div>
        <p>${isEnglish ? dataItem.info[0].entext : dataItem.info[0].artext}</p>
      </li>
@@ -65,9 +64,8 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
          <div class="info-item-img-container">
            <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
          </div>
-         <h4>${
-           isEnglish ? dataItem.info[1].entitle : dataItem.info[1].artitle
-         }</h4>
+         <h4>${isEnglish ? dataItem.info[1].entitle : dataItem.info[1].artitle
+    }</h4>
        </div>
        <p>
        ${isEnglish ? dataItem.info[1].entext : dataItem.info[1].artext}
@@ -78,35 +76,32 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
          <div class="info-item-img-container">
            <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
          </div>
-         <h4>${
-           isEnglish ? dataItem.info[2].entitle : dataItem.info[2].artitle
-         }</h4>
+         <h4>${isEnglish ? dataItem.info[2].entitle : dataItem.info[2].artitle
+    }</h4>
        </div>
        <p>
        ${isEnglish ? dataItem.info[2].entext : dataItem.info[2].artext}
        </p>
      </li>
-     ${
-       dataItem.info[3] != undefined
-         ? /*html*/ `<li>
+     ${dataItem.info[3] != undefined
+      ? /*html*/ `<li>
              <div class="info-item-header-div">
                <div class="info-item-img-container">
                  <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
                </div>
                <h4>
-                 ${
-                   isEnglish
-                     ? dataItem.info[3].entitle
-                     : dataItem.info[3].artitle
-                 }
+                 ${isEnglish
+        ? dataItem.info[3].entitle
+        : dataItem.info[3].artitle
+      }
                </h4>
              </div>
              <p>
                ${isEnglish ? dataItem.info[3].entext : dataItem.info[3].artext}
              </p>
            </li>`
-         : ""
-     }
+      : ""
+    }
    </ul>
  </div>
 </div>

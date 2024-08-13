@@ -10,10 +10,10 @@ function closeNav() {
   overlayNav.style.width = "0%";
   overlayNav.classList.toggle("is-open");
 }
+const menuButton = document.querySelector(".mobile-nav-btn");
 
 document.addEventListener("click", (e) => {
   // console.log(e.target.id);
-  const menuButton = document.querySelector(".mobile-nav-btn");
   if (
     overlayNav.classList.contains("is-open") &&
     !e.target.isEqualNode(menuButton) &&
@@ -23,3 +23,17 @@ document.addEventListener("click", (e) => {
     closeNav();
   }
 });
+
+menuButton.addEventListener('click', (e) => {
+  openNav();
+});
+
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  const closeMenuButton = document.querySelector(".overlay-nav .close-btn");
+  closeMenuButton.addEventListener("click", (e) => {
+    closeNav();
+  });
+});
+
+
