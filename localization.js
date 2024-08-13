@@ -78,17 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //TODO: get rid of starting in english then switching to arabic in each navigation
 
-function activateArticlesNavigationGuard() {
-  window.addEventListener("DOMContentLoaded", (e) => {
-    if (
-      window.location.href === `${url}/articles/` ||
-      window.location.href === `${url}/articles`
-    ) {
-      window.location.href = `${url}/articles.html`;
-      return;
-    }
-    return;
-  });
-}
+// function activateArticlesNavigationGuard() {
+// window.addEventListener("DOMContentLoaded", (e) => {
+//   if (
+//     window.location.href === `${url}/articles/` ||
+//     window.location.href === `${url}/articles`
+//   ) {
+//     window.location.href = `${url}/articles.html`;
+//     return;
+//   }
+//   return;
+// });
+// }
 
 // activateArticlesNavigationGuard();
