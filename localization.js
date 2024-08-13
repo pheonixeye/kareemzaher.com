@@ -90,4 +90,4 @@ function activateArticlesNavigationGuard() {
   });
 }
 
-activateArticlesNavigationGuard();
+// activateArticlesNavigationGuard();
