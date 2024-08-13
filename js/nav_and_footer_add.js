@@ -49,7 +49,7 @@ const navTemplate = /*html*/ `
   <button id="lang-btn" class="lang-btn" type="button">ar</button>
 </div>
 <div id="overlay-nav" class="overlay-nav">
-<button type="button" class="closebtn" onclick="closeNav()">X</button>
+<button type="button" id='close-nav-btn' class="closebtn">X</button>
   <div class="overlay-content" id="overlay-content"></div>
 </div>
 <div class="nav-bar">

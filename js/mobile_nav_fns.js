@@ -30,7 +30,7 @@ menuButton.addEventListener('click', (e) => {
 
 
 document.addEventListener('DOMContentLoaded', (e) => {
-  const closeMenuButton = document.querySelector(".overlay-nav .close-btn");
+  const closeMenuButton = document.querySelector("#close-nav-btn");
   closeMenuButton.addEventListener("click", (e) => {
     closeNav();
   });
