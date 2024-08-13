@@ -85,7 +85,7 @@ function activateArticlesNavigationGuard() {
       window.location.href === `${url}/articles`
     ) {
       window.location.href = `${url}/articles.html`;
-      console.log(window.location.href);
+      return;
     }
   });
 }

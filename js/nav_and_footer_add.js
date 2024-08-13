@@ -135,7 +135,7 @@ facebookButton.addEventListener("click", (e) => {
 });
 playstoreButton.addEventListener("click", (e) => {
   window.open(
-    "https://play.google.com/store/apps/details?id=drkareemzaher.erectiontest&hl=ar",
+    `https://play.google.com/store/apps/details?id=com.kareemzaher.iief15&hl=${window.localStorage.getItem("lang")}`,
     "_blank"
   );
 });
