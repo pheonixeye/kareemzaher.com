@@ -87,6 +87,7 @@ function activateArticlesNavigationGuard() {
       window.location.href = `${url}/articles.html`;
       return;
     }
+    return;
   });
 }
 
