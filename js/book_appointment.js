@@ -97,7 +97,11 @@ confirmButton.addEventListener("click", async (e) => {
 
 async function getApiKey() {
   const url = 'https://brevo-auth.drkazgm.workers.dev/';
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+  },);
   return await response.json().key;
 }
 
