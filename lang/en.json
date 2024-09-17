@@ -52,7 +52,7 @@
     "date" : "Date : ",
     "time" : "Time : ",
     "address:":"Address : ",
-    "sms" : "You be notified by SMS.",
+    "sms" : "You Will Be Contacted By Our Reception Team.",
     "additional-info" : "Additional Info : ",
     "confirm": "Confirm",
     "cancel":"Cancel",
@@ -69,6 +69,6 @@
     "et-p8":"The international index of erectile function (IIEF): a multidimensional scale for assessment of erectile dysfunction.",
     "install":"Install",
     "thank-you" : "Thank You For Booking.",
-    "booking-confirmed" : "Your Booking will Be confirmed By SMS, or You Can Contact Us On Whatsapp.",
+    "booking-confirmed" : "Your Booking will Be confirmed By Our Reception Team, or You Can Contact Us On Whatsapp.",
     "nice-day" : "Have a Nice Day."
 }

@@ -62,10 +62,9 @@ confirmButton.addEventListener("click", async (e) => {
   } else if (!userPhone || userPhone.length !== 11 || !reg.test(userPhone)) {
     //show modal error
     showAlertBox(
-      `${
-        isEnglish
-          ? "Kindly Enter a Valid Mobile Number..."
-          : "برجاء ادخال رقم موبايل صحيح ..."
+      `${isEnglish
+        ? "Kindly Enter a Valid Mobile Number..."
+        : "برجاء ادخال رقم موبايل صحيح ..."
       }`,
       `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`
     );
@@ -96,22 +95,53 @@ confirmButton.addEventListener("click", async (e) => {
   await sendBookingRequest(appointment);
 });
 
+async function getApiKey() {
+  const url = 'https://brevo-auth.drkazgm.workers.dev/';
+  const response = await fetch(url);
+  return await response.json().key;
+}
+
 //book request
 async function sendBookingRequest(appointment) {
   //TODO: change to clinic number
-  const _url = "https://notifier.drkaz.dev?topic=01091966224";
+  const _url = "https://api.brevo.com/v3/smtp/email";
+  const _preBody = {
+    sender: {
+      name: "bookings",
+      email: "bookings@kareemzaher.com"
+    },
+    to: [
+      {
+        email: "drkazgm@gmail.com",
+        name: "Kareem Zaher Clinic"
+      }
+    ],
+    subject: "Hello world",
+    htmlContent: `
+    <html>
+      <head></head>
+      <body>
+        <p>Hello,</p>
+        <p>This is my first transactional email sent from Brevo.</p>
+      </body>
+    </html>`,
+  };
+  const apiKey = await getApiKey();
+
   await fetch(_url, {
     method: "POST",
     headers: {
+      accept: "application/json",
       "Content-Type": "application/json",
+      "api-key": apiKey,
     },
-    body: JSON.stringify(appointment),
+    body: JSON.stringify(_preBody),
   });
 
   // const response = await request.json();
 
-  gtagReportConversion();
-  console.log("gtag-called");
+  // gtagReportConversion();
+  // console.log("gtag-called");
 
   showAlertBox(
     `${isEnglish ? "Booking Request Sent." : "تم ارسال طلب الحجز"}`,
