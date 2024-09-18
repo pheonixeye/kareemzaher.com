@@ -3,13 +3,13 @@ import { url } from "../js/urls.js";
 async function _fetchArticleData() {
   const loc = window.location.href;
 
-  console.log(loc);
+  // console.log(loc);
 
   const pathSegments = loc.split("/");
 
   const article = Array.from(pathSegments).at(pathSegments.length - 1);
 
-  console.log(article);
+  // console.log(article);
 
   const jsonFile = article.split(".")[0].toString() + ".json";
 

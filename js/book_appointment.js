@@ -75,11 +75,11 @@ confirmButton.addEventListener("click", async (e) => {
 
   const reservationDate =
     dateHolder.attributes.getNamedItem("reservation-date").textContent;
-  console.log(reservationDate);
+  // console.log(reservationDate);
 
   const selectedScheduleItem =
     dateHolder.attributes.getNamedItem("schedule-day").textContent;
-  console.log(selectedScheduleItem);
+  // console.log(selectedScheduleItem);
 
   // console.log(userName);
   // console.log(userPhone);
@@ -90,7 +90,7 @@ confirmButton.addEventListener("click", async (e) => {
     reservationDate,
     Schedule.toJson(selectedScheduleItem)
   );
-  console.log(appointment);
+  // console.log(appointment);
 
   await sendBookingRequest(appointment);
 });
@@ -103,7 +103,6 @@ async function getApiKey() {
     },
   },);
   const json = await response.json();
-  console.log(json);
   return await json.key;
 }
 

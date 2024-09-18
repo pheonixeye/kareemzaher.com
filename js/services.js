@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { services } from "./services_data.js";
 import { url } from "./urls.js";
-console.log("services connected");
+// console.log("services connected");
 
 const servicesPageContent = document.querySelector(
   "#services-id .page-content"
@@ -176,11 +176,11 @@ btns.forEach((e, index) => {
   // });
 });
 
-let observer = new MutationObserver((mutations) => {
+const observer = new MutationObserver((mutations) => {
   mutations.forEach((m) => {
     if (m.type === "attributes") {
       rebuildServices();
-      console.log("observer fired...");
+      // console.log("observer fired...");
     }
   });
 });
