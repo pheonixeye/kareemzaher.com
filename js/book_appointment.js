@@ -102,7 +102,9 @@ async function getApiKey() {
       'Access-Control-Allow-Origin': '*'
     },
   },);
-  return await response.json().key;
+  const json = await response.json();
+  console.log(json);
+  return await json.key;
 }
 
 //book request
