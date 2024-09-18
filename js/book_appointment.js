@@ -127,8 +127,8 @@ async function sendBookingRequest(appointment) {
     <html>
       <head></head>
       <body>
-        <p>Hello,</p>
-        <p>This is my first transactional email sent from Brevo.</p>
+        <p>New Booking ${new Date().toLocaleString()}</p>
+        <p>${appointment.toString()}</p>
       </body>
     </html>`,
   };
