@@ -14,4 +14,11 @@ export const articlesMeta = [
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1723749395/Premature-Ejaculation-800x480_bittax.webp",
       filePath: "articles/article1.html"
    },
+   {
+      id: 2,
+      title: 'حصوات المسالك البولية: الدليل الكامل لفهم الأسباب، الأعراض، طرق التشخيص والعلاج',
+      description: 'في هذا المقال التوعوي الشامل، سنُسلّط الضوء على أسباب الحصوات، أعراضها، طرق التشخيص، العلاج، والوقاية، وسنوضح متى يجب زيارة دكتور مسالك في المعادي للحصول على الرعاية المناسبة.',
+      imgUrl: "https://asset.cloudinary.com/dw5zbj6pk/4e17d2a1bbee32761ed5592ae02a25a1",
+      filePath: "articles/article2.html"
+   },
 ];
