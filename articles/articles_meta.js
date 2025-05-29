@@ -21,4 +21,11 @@ export const articlesMeta = [
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748118798/kidney-stones_zkemaj.gif",
       filePath: "articles/article2.html"
    },
+   {
+      id: 3,
+      title: 'دوالي الخصية: فهم الحالة وخيارات العلاج الجراحي',
+      description: 'دوالي الخصية هي حالة تحدث عندما تتوسع الأوردة داخل كيس الصفن (الكيس الذي يحتوي على الخصيتين). تشبه هذه الحالة دوالي الساقين، ولكنها تحدث في منطقة الخصيتين. تؤثر دوالي الخصية على حوالي 15% من الرجال البالغين، وقد تكون سببًا في مشاكل الخصوبة لدى بعضهم.',
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748549946/%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A_zccfna.png",
+      filePath: "articles/article3.html"
+   },
 ];
