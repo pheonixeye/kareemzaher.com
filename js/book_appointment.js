@@ -9,6 +9,61 @@ const lang = document.querySelector("html").getAttribute("lang");
 
 const isEnglish = lang === "en";
 
+const sch = [
+  {
+    "created_at": "2025-06-11 21:31:58.27528+00",
+    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
+    "weekday_en": "Saturday",
+    "weekday_ar": "السبت",
+    "intday": 6,
+    "start_min": 0,
+    "start_hour": 19,
+    "end_min": 0,
+    "end_hour": 22,
+    "available": true,
+    "id": "0a569ca0-4199-4d33-9ead-79d928585bf1"
+  },
+  {
+    "created_at": "2025-06-11 21:32:19.099256+00",
+    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
+    "weekday_en": "Wednesday",
+    "weekday_ar": "الاربعاء",
+    "intday": 3,
+    "start_min": 0,
+    "start_hour": 19,
+    "end_min": 0,
+    "end_hour": 22,
+    "available": true,
+    "id": "46b66fd9-22c6-44b4-9dd5-f8dbb299762d"
+  },
+  {
+    "created_at": "2025-06-11 21:32:31.946799+00",
+    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
+    "weekday_en": "Thursday",
+    "weekday_ar": "الخميس",
+    "intday": 4,
+    "start_min": 0,
+    "start_hour": 19,
+    "end_min": 0,
+    "end_hour": 22,
+    "available": true,
+    "id": "615d5495-cf8c-4399-95f2-5104dd477df3"
+  },
+  {
+    "created_at": "2025-06-11 21:32:09.530985+00",
+    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
+    "weekday_en": "Tuesday",
+    "weekday_ar": "الثلاثاء",
+    "intday": 2,
+    "start_min": 0,
+    "start_hour": 19,
+    "end_min": 0,
+    "end_hour": 22,
+    "available": true,
+    "id": "85cc5b2c-0662-42f8-a8a1-02919066aeb6"
+  }
+];
+
 class Schedule {
   constructor(day, intday, start, end) {
     this.day = day;
@@ -28,13 +83,29 @@ class Schedule {
 
 class Appointment {
   constructor(name, phone, date, schedule) {
-    this.docid = 0;
+    this.docid = 'ce5d632d-4613-4b5b-962b-b2099f67510b';
     this.docname = "kareem zaher";
     this.clinic = "urology";
     this.name = name;
     this.phone = phone;
     this.date = date;
     this.schedule = schedule;
+  }
+
+  toString() {
+    return JSON.stringify(this);
+  }
+}
+
+
+class SPAppointment {
+  constructor(name, phone, date, schedule_id) {
+    this.doc_id = 'e42e55de-c305-448a-8961-085a38357341';
+    this.clinic_id = "ca0d0cad-3947-4df8-992c-386aec701810";
+    this.schedule_id = schedule_id;
+    this.name = name;
+    this.phone = phone;
+    this.date = date;
   }
 
   toString() {
@@ -77,72 +148,40 @@ confirmButton.addEventListener("click", async (e) => {
     dateHolder.attributes.getNamedItem("reservation-date").textContent;
   // console.log(reservationDate);
 
-  const selectedScheduleItem =
-    dateHolder.attributes.getNamedItem("schedule-day").textContent;
+  const selectedScheduleItem = JSON.parse(dateHolder.attributes.getNamedItem("schedule-day").value);
   // console.log(selectedScheduleItem);
 
   // console.log(userName);
   // console.log(userPhone);
 
-  appointment = new Appointment(
+  appointment = new SPAppointment(
     userName,
     userPhone,
     reservationDate,
-    Schedule.toJson(selectedScheduleItem)
+    sch.find((item) => item.weekday_en === selectedScheduleItem.day).id,
   );
   // console.log(appointment);
 
   await sendBookingRequest(appointment);
 });
 
-async function getApiKey() {
-  const url = 'https://brevo-auth.drkazgm.workers.dev/';
-  const response = await fetch(url, {
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-  },);
-  const json = await response.json();
-  return await json.key;
-}
+
 
 //book request
 async function sendBookingRequest(appointment) {
   //TODO: change to clinic number
-  const _url = "https://api.brevo.com/v3/smtp/email";
-  const _preBody = {
-    sender: {
-      name: "bookings",
-      email: "bookings@kareemzaher.com"
-    },
-    to: [
-      {
-        email: "drkazgm@gmail.com",
-        name: "Kareem Zaher Clinic"
-      }
-    ],
-    subject: "Hello world",
-    htmlContent: `
-    <html>
-      <head></head>
-      <body>
-        <p>New Booking ${new Date().toLocaleString()}</p>
-        <p>${appointment.toString()}</p>
-      </body>
-    </html>`,
-  };
-  const apiKey = await getApiKey();
+  const _url = "https://gdyvzmapooavxnaehhas.supabase.co/functions/v1/add-booking";
 
-  await fetch(_url, {
+  fetch(_url, {
     method: "POST",
     headers: {
-      accept: "application/json",
+      "accept": "application/json",
       "Content-Type": "application/json",
-      "api-key": apiKey,
+      "origin": 'https://kareemzaher.com'
     },
-    body: JSON.stringify(_preBody),
+    body: JSON.stringify(appointment),
   });
-
+  // console.log(response.json());
   // const response = await request.json();
 
   // gtagReportConversion();
