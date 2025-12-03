@@ -39,9 +39,14 @@
           Erection Test
         </h1>
         <img class="et-header-icon" src="favicon.ico" alt="app image icon" />
-        <button class="et-header-btn" lang-key="install" onclick="openInstallApp()">
-          Install
-        </button>
+        <div class="et-header-btn-div">
+          <button class="et-header-btn2" lang-key="install" onclick="openInstallApp()">
+            Install
+          </button>
+          <button class="et-header-btn1" lang-key="online-test" onclick="takeTestOnline()">
+            Online Test
+          </button>
+        </div>
       </div>
     </div>
     <div class="et-paragraphs-div-container">
@@ -106,6 +111,12 @@
     function openInstallApp() {
       window.open(
         `https://play.google.com/store/apps/details?id=com.kareemzaher.iief15&hl=${window.localStorage.getItem("lang")}`,
+        "_blank"
+      );
+    }
+    function takeTestOnline() {
+      window.open(
+        `https://iief15.kareemzaher.com/#/${window.localStorage.getItem("lang")}`,
         "_blank"
       );
     }

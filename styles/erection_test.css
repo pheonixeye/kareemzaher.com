@@ -11,6 +11,12 @@
   border-style: solid;
 }
 
+@media (max-width: 600px) {
+  .et-header-div {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
 .et-header-div-container {
   padding: 20px 20px;
   width: 100%;
@@ -22,9 +28,41 @@
   margin: auto;
 }
 
-.et-header-btn {
-  grid-row: 2 /3;
+.et-header-btn-div {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr;
+  grid-template-rows: 1fr;
   grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+@media (max-width: 600px) {
+  .et-header-btn-div {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.et-header-btn1 {
+  grid-row: 1 /1;
+  grid-column: 1 / 2;
+  margin: 20px 40px;
+  background-color: #01875f;
+  height: 48px;
+  width: 204px;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: white;
+  border-color: white;
+  border-width: 0px;
+  cursor: pointer;
+}
+
+.et-header-btn2 {
+  grid-row: 1 /1;
+  grid-column: 2 / 3;
   margin: 20px 40px;
   background-color: #01875f;
   height: 48px;
@@ -44,8 +82,19 @@
     height: 100px;
     width: 100px;
   }
-  .et-header-btn {
+
+  .et-header-btn1 {
     margin: auto;
+    grid-column: 1 / 1;
+    grid-row: 1 /2;
+
+
+  }
+
+  .et-header-btn2 {
+    margin: auto;
+    grid-column: 1 / 1;
+    grid-row: 2 /2;
   }
 }
 
