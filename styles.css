@@ -739,7 +739,9 @@ body {
 
 /* Generic Section Title Styling */
 .section-title {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
   grid-column: 1 / -1;
   width: 100%;
@@ -750,7 +752,7 @@ body {
   color: var(--bevanblue);
   margin-bottom: 10px;
   position: relative;
-  display: inline-block;
+  text-align: center;
   margin-top: 20px;
   font-weight: bold;
 }
