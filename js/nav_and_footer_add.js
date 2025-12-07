@@ -16,7 +16,7 @@ const footerTemplate = /*html*/ `
   </div>
   <div class="footer-card">
     <div class="footer-about">
-      <h1 lang-key="about">About</h1>
+      <h2 lang-key="about">About</h2>
       <div class="doctor-img-holder">
         <img id="doctor-img" src="${url}/images_webp/doctor.webp" alt="doctor image" />
       </div>
@@ -27,7 +27,7 @@ const footerTemplate = /*html*/ `
   </div>
   <div class="footer-card">
     <div class="footer-nav">
-      <h1 lang-key="site-map">Site Map</h1>
+      <h2 lang-key="site-map">Site Map</h2>
       <ul class="site-map-list"></ul>
     </div>
   </div>
@@ -53,7 +53,7 @@ const navTemplate = /*html*/ `
   <div class="overlay-content" id="overlay-content"></div>
 </div>
 <div class="nav-bar">
-  <h1 lang-key="logo">K.Z. Clinic</h1>
+  <div class="site-logo" lang-key="logo">K.Z. Clinic</div>
   <nav class="desktop-nav">
     <ul id="desktop-nav"></ul>
   </nav>
