@@ -1,0 +1,67 @@
+/* Patient Guide (FAQ) Section */
+.patient-guide-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.patient-guide-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--bevanblue);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+[dir="rtl"] .accordion-header {
+    text-align: right;
+}
+
+.accordion-header:hover {
+    background-color: #f9f9f9;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--bevangreen);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(45deg);
+    /* Turns + to x roughly, or just rotates */
+    color: var(--cuteorange);
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: white;
+}
+
+.accordion-body p {
+    padding: 0 20px 20px 20px;
+    color: var(--linkcolor);
+    line-height: 1.6;
+    margin: 0;
+}

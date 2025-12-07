@@ -54,6 +54,9 @@
   <link rel="stylesheet" href="styles/social_links.css" />
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" href="styles/floating_btn.css" />
+  <link rel="stylesheet" href="styles/services_grid.css" />
+  <link rel="stylesheet" href="styles/latest_articles.css" />
+  <link rel="stylesheet" href="styles/patient_guide.css" />
   <link rel="favicon" type="image/x-icon" href="favicon.ico" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SLJ86T2515">
@@ -126,11 +129,104 @@
       </div>
     </div>
   </div>
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="section-title">
+      <h2 lang-key="our-services">Our Services</h2>
+    </div>
+    <div id="services-grid" class="services-grid"></div>
+  </section>
+  <!-- Latest Articles Section -->
+  <section class="latest-articles-section">
+    <div class="section-title">
+      <h2 lang-key="latest-articles">Latest Articles</h2>
+    </div>
+    <div id="latest-articles-grid" class="latest-articles-grid"></div>
+  </section>
+
+  <!-- Patient Guide (FAQ) Section -->
+  <section class="patient-guide-section">
+    <div class="section-title">
+      <h2 lang-key="patient-guide">Patient Guide (FAQ)</h2>
+    </div>
+    <div class="patient-guide-content">
+      <div class="accordion-item">
+        <button class="accordion-header" lang-key="faq-q1"></button>
+        <div class="accordion-body">
+          <p lang-key="faq-a1"></p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" lang-key="faq-q2"></button>
+        <div class="accordion-body">
+          <p lang-key="faq-a2"></p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" lang-key="faq-q3"></button>
+        <div class="accordion-body">
+          <p lang-key="faq-a3"></p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" lang-key="faq-q4"></button>
+        <div class="accordion-body">
+          <p lang-key="faq-a4"></p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" lang-key="faq-q5"></button>
+        <div class="accordion-body">
+          <p lang-key="faq-a5"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Where is Dr. Kareem Zaher’s clinic located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our urology and andrology clinic is conveniently located in Zahraa El Maadi, Cairo, specifically in the 13th Sector at El Nada Tower (1st Floor). We serve patients from across Maadi, Cairo, and surrounding governates seeking specialized urinary and male reproductive care."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the best treatment for kidney stones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best treatment depends on the size and location of the stone. Dr. Kareem Zaher specializes in minimally invasive solutions, including Laser Lithotripsy and Endoscopic removal. These modern techniques allow for faster recovery and less pain compared to traditional open surgeries. We assess each case individually to recommend the safest path."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do you treat Erectile Dysfunction (ED) and male infertility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. As a specialized Andrologist, Dr. Kareem provides comprehensive care for men's health issues. This includes the diagnosis and treatment of Erectile Dysfunction (ED), premature ejaculation, and Male Infertility (such as Varicocele surgery). We also offer advanced options like penile implants for severe cases."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are the options for treating an enlarged prostate (BPH)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Benign Prostatic Hyperplasia (BPH) is common in men as they age. We offer a range of treatments from medication management to endoscopic prostate surgery (TURP) and laser vaporization. Our goal is to improve urinary flow and quality of life with minimal side effects."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do I need a referral to book an appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No referral is necessary. You can book an appointment directly through our website or by calling our clinic in Maadi. We strive to offer flexible evening clinic hours (7:00 PM – 10:00 PM) to accommodate your work schedule."
+        }
+      }]
+    }
+  </script>
   <!-- <div> separator </div> -->
-  <div class="separator">
-    <div></div>
-    <h4 lang-key="contact">Contact</h4>
-    <div></div>
+  <div class="section-title">
+    <h2 lang-key="contact">Contact</h2>
   </div>
   <!-- <div> 2nd home div MAP - CONTACT - HOURS </div> -->
   <div class="contact-map-hours">
@@ -150,10 +246,8 @@
     </div>
   </div>
   <!-- <div> separator </div> -->
-  <div class="separator">
-    <div></div>
-    <h4 lang-key="reviews">Reviews</h4>
-    <div></div>
+  <div class="section-title">
+    <h2 lang-key="reviews">Reviews</h2>
   </div>
   <!-- <div> clinic RATING </div> -->
   <div class="clinic-rating"></div>
@@ -163,10 +257,8 @@
     </button>
   </div>
   <!-- <div> separator </div> -->
-  <div class="separator">
-    <div></div>
-    <h4 lang-key="social">Social</h4>
-    <div></div>
+  <div class="section-title">
+    <h2 lang-key="social">Social</h2>
   </div>
   <!-- <div> clinic FOLLOW-US </div> -->
   <div class="follow-us">
@@ -227,6 +319,9 @@
   <script src="js/contact.js" type="module"></script>
   <script src="js/fetch_doctor_data.js" type="module"></script>
   <script src="js/footer.js" type="module"></script>
+  <script src="js/services_grid.js" type="module"></script>
+  <script src="js/latest_articles.js" type="module"></script>
+  <script src="js/patient_guide.js" type="module"></script>
   <script src="localization.js" type="module"></script>
 </body>
 

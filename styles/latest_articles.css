@@ -1,0 +1,134 @@
+/* Latest Articles Section */
+.latest-articles-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--lightgrey) 0%, #ffffff 100%);
+}
+
+.latest-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    /* Slightly softer than services */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    cursor: pointer;
+    /* Whole card clickable */
+    text-decoration: none;
+    /* For the anchor wrap */
+    height: 100%;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.article-card-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.article-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-card-image img {
+    transform: scale(1.05);
+}
+
+.article-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.article-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--darkgrey);
+    margin-bottom: 15px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.article-card:hover .article-card-title {
+    color: var(--bevanblue);
+}
+
+.article-card-description {
+    color: var(--linkcolor);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+    /* Pushes button (if any) down, but we might just use card click */
+}
+
+.read-article-btn {
+    color: var(--bevanblue);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-article-btn::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+[dir="rtl"] .read-article-btn::after {
+    content: '←';
+}
+
+.article-card:hover .read-article-btn::after {
+    transform: translateX(5px);
+}
+
+[dir="rtl"] .article-card:hover .read-article-btn::after {
+    transform: translateX(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .latest-articles-section {
+        padding: 30px 15px;
+    }
+
+    .latest-articles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .latest-articles-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* Max 4 per row */
+    }
+}

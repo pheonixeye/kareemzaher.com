@@ -88,10 +88,8 @@ function buildNavTemplate(pageId) {
 
 const socialTemplate = /*html*/ `
 <!-- <div> separator </div> -->
-    <div class="separator">
-      <div></div>
-      <h4 lang-key="social">Social</h4>
-      <div></div>
+    <div class="section-title">
+      <h2 lang-key="social">Social</h2>
     </div>
     <!-- <div> clinic FOLLOW-US </div> -->
     <div class="follow-us">
@@ -116,6 +114,52 @@ const socialTemplate = /*html*/ `
     </div>
 `;
 
+
+const days = ["Saturday", "Tuesday", "Wednesday", "Thursday"];
+
+function buildScheduleList() {
+  let html = '';
+  days.forEach(day => {
+    html += `<li>
+    <div class="hours-container">
+      <div class="circle-shape" style="background-color: #0070cd">
+        <img src="${url}/images_svg/calender.svg" alt="calender icon" />
+      </div>
+      <h3 lang-key="${day}">${day}</h3>
+      <h5>
+        7:00 <span lang-key="pm">P.M.</span> - 10:00
+        <span lang-key="pm">P.M.</span>
+      </h5>
+    </div>
+  </li>`;
+  });
+  return html;
+}
+
+const contactMapHoursTemplate = /*html*/ `
+  <!-- Contact Section -->
+  <div class="section-title">
+    <h2 lang-key="contact">Contact</h2>
+  </div>
+  <div class="contact-map-hours">
+    <div class="map-container">
+      <iframe class="map-iframe" title="clinic-location-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.333464319708!2d31.313541674747775!3d29.969845222102883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145839cdf3fc8a2d%3A0x7f601d548cf1ffd4!2z2K8gLyDZg9ix2YrZhSDYstin2YfYsSAtINin2K7Ytdin2KbZiiDYrNix2KfYrdipINin2YTZhdiz2KfZhNmDINin2YTYqNmI2YTZitipINmIINin2YTYsNmD2YjYsdipINmIINin2YTYudmC2YU!5e0!3m2!1sen!2seg!4v1688337423723!5m2!1sen!2seg"
+        style="border: 0" allowfullscreen="" target="_parent" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="contact-list">
+      <!--! Content populated by contact.js !-->
+    </div>
+    <div class="clinic-hours">
+      <ul id="clinic-hours-list">
+        <h3 lang-key="clinic-hours">Clinic Hours</h3>
+        ${buildScheduleList()}
+      </ul>
+    </div>
+  </div>
+`;
+
 for (let index = 0; index < navPagesIds.length; index++) {
   const pageBody = document.querySelector(`${navPagesIds[index]}`);
   if (pageBody != undefined) {
@@ -123,6 +167,7 @@ for (let index = 0; index < navPagesIds.length; index++) {
       "afterbegin",
       buildNavTemplate(navPagesIds[index])
     );
+    pageBody.insertAdjacentHTML("beforeend", contactMapHoursTemplate);
     pageBody.insertAdjacentHTML("beforeend", socialTemplate);
     pageBody.insertAdjacentHTML("beforeend", footerTemplate);
   }

@@ -110,7 +110,7 @@ function buildServiceItemTemplate(dataItem, isEnglish) {
   return serviceItemTemplate;
 }
 
-const pageTitle = document.querySelector(".services-main-title");
+const pageTitle = document.querySelector("#services-title");
 
 function rebuildServices() {
   const lang = html.getAttribute("lang");
@@ -123,7 +123,7 @@ function rebuildServices() {
     s.remove();
     separatorsToBeRemoved[index].remove();
   });
-  services.forEach((service) => {
+  [...services].reverse().forEach((service) => {
     pageTitle.insertAdjacentHTML(
       "afterend",
       buildServiceItemTemplate(service, lang == "en")
@@ -137,21 +137,47 @@ function rebuildServices() {
   });
   const btns = document.querySelectorAll(".img-header-btn");
   btns.forEach((e, index) => {
+    // Correct index lookup since DOM order is now 0..4 but btns querySelectorAll order matches DOM
+    // wait, if services are inserted 0..4 (top to bottom), btns[0] is service 0.
+    // services[index] refers to data array.
+    // So if DOM is 0..4, btns[0] corresponds to service[0].
+
+    // However, let's just make sure the iteration is correct.
+    // The previously existing code used index from forEach.
+    // But btns are queried from DOM.
+    // If I reverse the insertion loop, the DOM elements order is 0, 1, 2, 3, 4.
+    // content: Title -> 0 -> 1 -> 2 -> 3 -> 4.
+    // So document.querySelectorAll returns [btn0, btn1, btn2, btn3, btn4].
+    // So btns[index] matches services[index].
+
     e.onclick = () => {
       `${window.open(services[index].ytlink, "_blank")}`;
     };
-    // e.setAttribute("onclick", function () {
-    //   window.open(services[index].ytlink, "_blank");
-    // }); //fail
-    // e.addEventListener("click", (e) => {
-    //   window.open(services[index].ytlink, "_blank");
-    // });
   });
+}
+
+function scrollToHash() {
+  if (window.location.hash) {
+    const id = window.location.hash.substring(1);
+    const element = document.getElementById(id);
+    if (element) {
+      setTimeout(() => {
+        const headerOffset = 100; // Adjust for header or visual spacing
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 600); // Increased delay slightly to ensure layout stability
+    }
+  }
 }
 
 const lang = html.getAttribute("lang");
 
-services.forEach((service) => {
+[...services].reverse().forEach((service) => {
   pageTitle.insertAdjacentHTML(
     "afterend",
     buildServiceItemTemplate(service, lang == "en")
@@ -168,13 +194,10 @@ btns.forEach((e, index) => {
   e.onclick = () => {
     `${window.open(services[index].ytlink, "_blank")}`;
   };
-  // e.setAttribute("onclick", function () {
-  //   window.open(services[index].ytlink, "_blank");
-  // }); //fail
-  // e.addEventListener("click", (e) => {
-  //   window.open(services[index].ytlink, "_blank");
-  // });
 });
+
+// Check for hash on initial load after content is built
+scrollToHash();
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((m) => {
