@@ -29,14 +29,13 @@ const template = /*html*/ `<div class="rating-item">
 </div>`;
 
 function calculateDivHeightAndItemCount(fragment) {
-  const ratingsContainer = document.querySelector(".clinic-rating");
-  ratingsContainer.style.gridTemplateRows = `repeat(${fragment * 5}, "165px")`;
-  ratingsContainer.style.height = `${fragment * 5 * 185 + 70}px`;
-  //todo: remove
-  // console.log(getComputedStyle(ratingsContainer)["grid-template-rows"]);
+  // Logic removed as CSS handles height
+  // const ratingsContainer = document.querySelector(".clinic-rating");
+  // ratingsContainer.style.gridTemplateRows = `repeat(${fragment * 5}, "165px")`;
+  // ratingsContainer.style.height = `${fragment * 5 * 185 + 70}px`;
 }
 
-calculateDivHeightAndItemCount(currentFragment);
+// calculateDivHeightAndItemCount(currentFragment);
 
 function buildTemplateRatingItem(rating, index) {
   let starList = [];
@@ -66,13 +65,33 @@ function buildTemplateRatingItem(rating, index) {
 
   const hasRating = rating.rating != null;
 
+  const commentText = rating.comment;
+  const isLong = commentText && commentText.length > 100;
+
+  // Wrap comment for grid positioning
+  let commentBlock = '';
+  if (isLong) {
+    commentBlock = `
+      <div class="comment-wrapper no-margin">
+         <p class="comment review-text-clamped no-margin">${commentText}</p>
+         <button class="review-read-more">Read More</button>
+      </div>
+      `;
+  } else {
+    commentBlock = `
+      <div class="comment-wrapper no-margin">
+         <p class="comment no-margin">${commentText}</p>
+      </div>
+      `;
+  }
+
   const templateHTML = /*html*/ `
     <div class="rating-item" id="${index}rating">
       <div class="rating-stars no-margin">
         ${starTemplate}
       </div>
       <p class="overall-rating no-margin" lang-key="overall-rating">Overall Rating</p>
-      <p class="comment no-margin">${rating.comment}</p>
+      ${commentBlock}
       <p class="user no-margin">${rating.user_name}  ${rating.user_age == undefined ? "" : rating.user_age + "years old"
     } </p>
       <p class="date no-margin">${rating.date}</p>
@@ -98,13 +117,14 @@ function addRatingsToRatingDiv(fragment) {
   fragment = fragment || 1;
   const ratingsContainer = document.querySelector(".clinic-rating");
 
-  for (let index = fragment - 1; index < fragment * 5; index++) {
+  for (let index = (fragment - 1) * 5; index < fragment * 5; index++) {
     ratingsContainer.insertAdjacentHTML(
       "beforeend",
       buildTemplateRatingItem(ratings[index], index)
     );
-    const ratingItem = document.getElementById(`${index}rating`);
-    ratingItem.style.gridRow = `${index + 1}/${index + 2}`;
+    // Removed fixed grid row assignment
+    // const ratingItem = document.getElementById(`${index}rating`);
+    // ratingItem.style.gridRow = `${index + 1}/${index + 2}`;
   }
 }
 
@@ -116,7 +136,7 @@ const readMoreBtn = document.querySelector(".read-more-btn");
 function loadMoreRatings() {
   if (currentFragment < ratingsFragments) {
     currentFragment++;
-    calculateDivHeightAndItemCount(currentFragment);
+    // calculateDivHeightAndItemCount(currentFragment);
     addRatingsToRatingDiv(currentFragment);
   } else {
     readMoreBtn.style.display = "none";
@@ -126,4 +146,14 @@ function loadMoreRatings() {
 
 readMoreBtn.addEventListener("click", () => {
   loadMoreRatings();
+});
+
+// Event Delegation for Comment Read More
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".review-read-more")) {
+    const btn = e.target;
+    const text = btn.previousElementSibling;
+    text.classList.toggle("review-text-clamped");
+    btn.textContent = text.classList.contains("review-text-clamped") ? "Read More" : "Show Less";
+  }
 });
