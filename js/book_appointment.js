@@ -11,57 +11,57 @@ const isEnglish = lang === "en";
 
 const sch = [
   {
-    "created_at": "2025-06-11 21:31:58.27528+00",
-    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
-    "weekday_en": "Saturday",
-    "weekday_ar": "السبت",
-    "intday": 6,
-    "start_min": 0,
-    "start_hour": 19,
-    "end_min": 0,
-    "end_hour": 22,
-    "available": true,
-    "id": "0a569ca0-4199-4d33-9ead-79d928585bf1"
+    created_at: "2025-06-11 21:31:58.27528+00",
+    clinic_id: "ca0d0cad-3947-4df8-992c-386aec701810",
+    weekday_en: "Saturday",
+    weekday_ar: "السبت",
+    intday: 6,
+    start_min: 0,
+    start_hour: 19,
+    end_min: 0,
+    end_hour: 22,
+    available: true,
+    id: "0a569ca0-4199-4d33-9ead-79d928585bf1",
   },
   {
-    "created_at": "2025-06-11 21:32:19.099256+00",
-    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
-    "weekday_en": "Wednesday",
-    "weekday_ar": "الاربعاء",
-    "intday": 3,
-    "start_min": 0,
-    "start_hour": 19,
-    "end_min": 0,
-    "end_hour": 22,
-    "available": true,
-    "id": "46b66fd9-22c6-44b4-9dd5-f8dbb299762d"
+    created_at: "2025-06-11 21:32:19.099256+00",
+    clinic_id: "ca0d0cad-3947-4df8-992c-386aec701810",
+    weekday_en: "Wednesday",
+    weekday_ar: "الاربعاء",
+    intday: 3,
+    start_min: 0,
+    start_hour: 19,
+    end_min: 0,
+    end_hour: 22,
+    available: true,
+    id: "46b66fd9-22c6-44b4-9dd5-f8dbb299762d",
   },
   {
-    "created_at": "2025-06-11 21:32:31.946799+00",
-    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
-    "weekday_en": "Thursday",
-    "weekday_ar": "الخميس",
-    "intday": 4,
-    "start_min": 0,
-    "start_hour": 19,
-    "end_min": 0,
-    "end_hour": 22,
-    "available": true,
-    "id": "615d5495-cf8c-4399-95f2-5104dd477df3"
+    created_at: "2025-06-11 21:32:31.946799+00",
+    clinic_id: "ca0d0cad-3947-4df8-992c-386aec701810",
+    weekday_en: "Thursday",
+    weekday_ar: "الخميس",
+    intday: 4,
+    start_min: 0,
+    start_hour: 19,
+    end_min: 0,
+    end_hour: 22,
+    available: true,
+    id: "615d5495-cf8c-4399-95f2-5104dd477df3",
   },
   {
-    "created_at": "2025-06-11 21:32:09.530985+00",
-    "clinic_id": "ca0d0cad-3947-4df8-992c-386aec701810",
-    "weekday_en": "Tuesday",
-    "weekday_ar": "الثلاثاء",
-    "intday": 2,
-    "start_min": 0,
-    "start_hour": 19,
-    "end_min": 0,
-    "end_hour": 22,
-    "available": true,
-    "id": "85cc5b2c-0662-42f8-a8a1-02919066aeb6"
-  }
+    created_at: "2025-06-11 21:32:09.530985+00",
+    clinic_id: "ca0d0cad-3947-4df8-992c-386aec701810",
+    weekday_en: "Tuesday",
+    weekday_ar: "الثلاثاء",
+    intday: 2,
+    start_min: 0,
+    start_hour: 19,
+    end_min: 0,
+    end_hour: 22,
+    available: true,
+    id: "85cc5b2c-0662-42f8-a8a1-02919066aeb6",
+  },
 ];
 
 class Schedule {
@@ -83,7 +83,7 @@ class Schedule {
 
 class Appointment {
   constructor(name, phone, date, schedule) {
-    this.docid = 'ce5d632d-4613-4b5b-962b-b2099f67510b';
+    this.docid = "ce5d632d-4613-4b5b-962b-b2099f67510b";
     this.docname = "kareem zaher";
     this.clinic = "urology";
     this.name = name;
@@ -97,10 +97,9 @@ class Appointment {
   }
 }
 
-
 class SPAppointment {
   constructor(name, phone, date, schedule_id) {
-    this.doc_id = 'e42e55de-c305-448a-8961-085a38357341';
+    this.doc_id = "e42e55de-c305-448a-8961-085a38357341";
     this.clinic_id = "ca0d0cad-3947-4df8-992c-386aec701810";
     this.schedule_id = schedule_id;
     this.name = name;
@@ -127,17 +126,18 @@ confirmButton.addEventListener("click", async (e) => {
     //show modal error
     showAlertBox(
       `${isEnglish ? "Kindly Enter Your name..." : "برجاء ادخال الاسم..."}`,
-      `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`
+      `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`,
     );
     return;
   } else if (!userPhone || userPhone.length !== 11 || !reg.test(userPhone)) {
     //show modal error
     showAlertBox(
-      `${isEnglish
-        ? "Kindly Enter a Valid Mobile Number..."
-        : "برجاء ادخال رقم موبايل صحيح ..."
+      `${
+        isEnglish
+          ? "Kindly Enter a Valid Mobile Number..."
+          : "برجاء ادخال رقم موبايل صحيح ..."
       }`,
-      `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`
+      `${isEnglish ? "ERROR !!!" : "خطأ !!!"}`,
     );
     return;
   }
@@ -148,7 +148,9 @@ confirmButton.addEventListener("click", async (e) => {
     dateHolder.attributes.getNamedItem("reservation-date").textContent;
   // console.log(reservationDate);
 
-  const selectedScheduleItem = JSON.parse(dateHolder.attributes.getNamedItem("schedule-day").value);
+  const selectedScheduleItem = JSON.parse(
+    dateHolder.attributes.getNamedItem("schedule-day").value,
+  );
   // console.log(selectedScheduleItem);
 
   // console.log(userName);
@@ -165,19 +167,17 @@ confirmButton.addEventListener("click", async (e) => {
   await sendBookingRequest(appointment);
 });
 
-
-
 //book request
 async function sendBookingRequest(appointment) {
   //TODO: change to clinic number
-  const _url = "https://gdyvzmapooavxnaehhas.supabase.co/functions/v1/add-booking";
+  const _url = "https://n8n.prkln.app/webhook/sms";
 
   fetch(_url, {
     method: "POST",
     headers: {
-      "accept": "application/json",
+      accept: "application/json",
+      origin: "https://kareemzaher.com",
       "Content-Type": "application/json",
-      "origin": 'https://kareemzaher.com'
     },
     body: JSON.stringify(appointment),
   });
@@ -190,7 +190,7 @@ async function sendBookingRequest(appointment) {
   showAlertBox(
     `${isEnglish ? "Booking Request Sent." : "تم ارسال طلب الحجز"}`,
     `${isEnglish ? "INFO !!!" : "اشعار !!!"}`,
-    true
+    true,
   );
 }
 
