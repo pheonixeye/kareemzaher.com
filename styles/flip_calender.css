@@ -6,8 +6,8 @@
   background: #2b4450;
   border-radius: 4px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  height: 501px;
-  max-height: 550px;
+  height: 601px;
+  max-height: 650px;
   perspective: 1000;
   transition: transform 0.9s;
   transform-style: preserve-3d;
@@ -26,6 +26,7 @@
   justify-content: space-between;
   padding: 20px 40px;
 }
+
 @media (max-width: 600px) {
   .current-date {
     padding: 10px 20px;
@@ -57,6 +58,7 @@
 .date-nav-btn:hover {
   background-color: var(--cuteorange);
 }
+
 .date-nav-btn:active {
   background-color: var(--babyblue);
 }
@@ -88,6 +90,7 @@
   padding-right: 20px;
   color: #dfebed;
 }
+
 @media (max-width: 600px) {
   .weekday-list-item {
     padding: 20px 5px;
@@ -147,10 +150,12 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
 .calender-front,
 .calender-back {
   backface-visibility: hidden;
 }
+
 .flip {
   transform: rotateY(180deg);
 }
@@ -159,6 +164,7 @@
 .calender-back {
   padding: 10px 10px;
 }
+
 .calender-back input {
   background: none;
   /* border: none; */
@@ -177,6 +183,7 @@
   grid-template-columns: 50px 1fr;
   grid-template-rows: 50px 1fr;
 }
+
 .mobile-input-div {
   display: grid;
   grid-template-columns: 50px 1fr;
@@ -188,6 +195,7 @@
   color: white;
   align-self: center;
 }
+
 .calender-back input::placeholder {
   color: white;
 }
@@ -203,6 +211,7 @@
     padding: 10px 0px;
   }
 }
+
 i {
   font-size: 40px;
   font-style: normal;

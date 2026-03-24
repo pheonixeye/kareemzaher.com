@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
+
 .main-component {
   margin: 0px;
   display: grid;
@@ -21,6 +23,11 @@ body {
   overflow-x: hidden;
   /* width: 100vw; */
   font-family: "Roboto", sans-serif;
+}
+
+:lang(ar),
+:lang(ar) * {
+  font-family: "Cairo", sans-serif;
 }
 
 .overlay-nav {
