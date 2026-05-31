@@ -1,17 +1,140 @@
+/* Modern Article Page Styling */
+
+#articles-id * {
+    box-sizing: border-box;
+}
+
+#articles-id {
+    background-color: var(--lightgrey);
+}
+
+#articles-id .page-content {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 50px 40px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+    height: auto;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
+}
+
+/* Hide br tags to allow CSS to control spacing */
+#articles-id .page-content > br {
+    display: none;
+}
+
+/* Featured Article Image */
+#article-img-file {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+#article-img-file:hover {
+    transform: scale(1.02);
+}
+
+/* Article Title */
 #article-long-title {
+    color: var(--bevanblue);
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.4;
     text-align: center;
-    padding: 10px;
+    margin: 0;
+    padding: 0 10px 20px;
 }
 
+/* Article Description */
 #article-long-description {
+    color: var(--linkcolor);
+    font-size: 1.3rem;
+    line-height: 1.8;
     text-align: center;
-    padding: 10px;
+    font-weight: 400;
+    margin: 0 0 50px 0;
+    padding: 0 30px 40px;
+    border-bottom: 2px solid var(--lightgrey);
 }
 
+/* Paragraphs Container */
+#article-paragraphs-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Individual Paragraph Block */
+#article-paragraphs-container div {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 14px;
+    border-right: 5px solid var(--bevangreen);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+#article-paragraphs-container div:hover {
+    transform: translateX(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-right-color: var(--cuteorange);
+}
+
+/* Paragraph Titles */
 #article-paragraphs-container div h3 {
-    margin-inline: 10px;
+    color: var(--darkblue);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
+/* Paragraph Text */
 #article-paragraphs-container div p {
-    margin-inline: 10px;
+    color: var(--darkgrey);
+    font-size: 1.2rem;
+    line-height: 2;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #articles-id .page-content {
+        margin: 20px 15px;
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    #article-long-title {
+        font-size: 2rem;
+    }
+
+    #article-long-description {
+        font-size: 1.15rem;
+        padding: 0 10px 30px;
+        margin-bottom: 30px;
+    }
+
+    #article-paragraphs-container div {
+        padding: 20px;
+        border-right-width: 4px;
+    }
+
+    #article-paragraphs-container div h3 {
+        font-size: 1.4rem;
+    }
+
+    #article-paragraphs-container div p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
 }

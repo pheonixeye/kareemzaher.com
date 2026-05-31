@@ -1,37 +1,60 @@
 .floating-btn-div {
-  width: 100px;
-  height: 200px;
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 6 !important;
-  top: calc(90% - 150px);
-  left: calc(98% - 100px);
-  right: calc(98% - 100px);
+  z-index: 100 !important;
+  bottom: 25px;
+  right: 25px;
+  gap: 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .floating-btn-div {
+    bottom: 20px;
+    right: 20px;
+    gap: 12px;
+  }
 }
 
 .lang-btn {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   color: white;
   background-color: var(--bevangreen);
-  border: 0px none transparent;
-  box-shadow: 1px 1px grey;
-  transition: all 0.15s;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.lang-btn img {
+  width: 28px;
+  height: auto;
+  display: block;
 }
 
 .lang-btn:hover {
   background-color: var(--cuteorange);
-  box-shadow: 2px 2px var(--babyblue);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(247, 133, 54, 0.4);
 }
+
 .lang-btn:active {
   background-color: var(--babyblue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 208, 239, 0.4);
 }

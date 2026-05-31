@@ -2,25 +2,27 @@
 import { articlesMeta } from "../articles/articles_meta.js";
 
 function _buildArticleMetaContainer(meta) {
-  //todo:STYLE PAGE TO DISPLAY PROPERLY
   return /*html*/ `
-  <div class='articles-meta-outside-container'>
-    <ul class='articles-meta-list'>
-      <div class='articles-meta-inside-container'>
-      <img src='${meta.imgUrl}' alt='paragraph image'>
+  <div class='article-card'>
+    <a href='${meta.filePath}' class='article-card-image'>
+      <img src='${meta.imgUrl}' alt='${meta.title}'>
+    </a>
+    <div class='article-card-content'>
       <h2><a href='${meta.filePath}'>${meta.title}</a></h2>
       <p>${meta.description}</p>
-      </div>
-    </ul>
+      <a href='${meta.filePath}' class='read-more-link'>اقرأ المقال</a>
+    </div>
   </div>
   `;
 }
 
 const articlesContainer = document.getElementById("article-meta-container");
 
-articlesMeta.forEach((meta) => {
-  articlesContainer.insertAdjacentHTML(
-    "beforeend",
-    _buildArticleMetaContainer(meta)
-  );
-});
+if (articlesContainer) {
+  articlesMeta.forEach((meta) => {
+    articlesContainer.insertAdjacentHTML(
+      "beforeend",
+      _buildArticleMetaContainer(meta)
+    );
+  });
+}

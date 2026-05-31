@@ -1,157 +1,85 @@
 /* eslint-disable no-unused-expressions */
 import { services } from "./services_data.js";
 import { url } from "./urls.js";
-// console.log("services connected");
 
 const servicesPageContent = document.querySelector(
   "#services-id .page-content"
 );
 
 const html = document.querySelector("html");
-
-servicesPageContent.style.backgroundColor = "#f6f6f6";
-
-// const services = data;
-
-function buildServiceItemTemplate(dataItem, isEnglish) {
-  const serviceItemTemplate = /*html*/ `
-<div class="service-item" id="service-item-no-${dataItem.id}">
- <div class="service-item-pattern-div">
-   <img src="${url}/images_webp/pattern.webp" alt="pattern opacity img" />
- </div>
- <div class="service-item-img-div">
-   <h3>${isEnglish ? dataItem.entitle : dataItem.artitle}</h3>
-   <img
-     id="service-img-svg"
-     src="${dataItem.svg}"
-     alt="service no 0 svg"
-   />
-   <img
-     id="service-img-gif"
-     src="${dataItem.img}"
-     alt="service img"
-   />
-   <h4 class="img-header-h4">${isEnglish ? dataItem.entitle : dataItem.artitle
-    }</h4>
-   <button class="img-header-btn"
-   type="button">
-     <img
-       class="youtube-btn-svg-img"
-       src="${url}/images_svg/youtube.svg"
-       alt="youtube video link"
-     />
-   </button>
-   <div class="img-paragraph-div">
-     <p>
-      ${isEnglish ? dataItem.enparagraph : dataItem.arparagraph}
-     </p>
-   </div>
- </div>
- <div class="service-item-info-div">
-   <ul>
-     <li>
-       <div class="info-item-header-div">
-         <div class="info-item-img-container">
-           <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
-         </div>
-         <h4>${isEnglish ? dataItem.info[0].entitle : dataItem.info[0].artitle
-    }</h4>
-       </div>
-       <p>${isEnglish ? dataItem.info[0].entext : dataItem.info[0].artext}</p>
-     </li>
-     <li>
-       <div class="info-item-header-div">
-         <div class="info-item-img-container">
-           <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
-         </div>
-         <h4>${isEnglish ? dataItem.info[1].entitle : dataItem.info[1].artitle
-    }</h4>
-       </div>
-       <p>
-       ${isEnglish ? dataItem.info[1].entext : dataItem.info[1].artext}
-       </p>
-     </li>
-     <li>
-       <div class="info-item-header-div">
-         <div class="info-item-img-container">
-           <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
-         </div>
-         <h4>${isEnglish ? dataItem.info[2].entitle : dataItem.info[2].artitle
-    }</h4>
-       </div>
-       <p>
-       ${isEnglish ? dataItem.info[2].entext : dataItem.info[2].artext}
-       </p>
-     </li>
-     ${dataItem.info[3] != undefined
-      ? /*html*/ `<li>
-             <div class="info-item-header-div">
-               <div class="info-item-img-container">
-                 <img src="${url}/images_svg/bullet.svg" alt=" bullet svg" />
-               </div>
-               <h4>
-                 ${isEnglish
-        ? dataItem.info[3].entitle
-        : dataItem.info[3].artitle
-      }
-               </h4>
-             </div>
-             <p>
-               ${isEnglish ? dataItem.info[3].entext : dataItem.info[3].artext}
-             </p>
-           </li>`
-      : ""
-    }
-   </ul>
- </div>
-</div>
-<div class="services-separator"></div>
-`;
-  return serviceItemTemplate;
-}
-
 const pageTitle = document.querySelector("#services-title");
 
+let servicesContainer = document.querySelector(".services-container");
+if (!servicesContainer) {
+  servicesContainer = document.createElement("div");
+  servicesContainer.className = "services-container";
+  pageTitle.insertAdjacentElement("afterend", servicesContainer);
+}
+
+function buildServiceItemTemplate(dataItem, isEnglish) {
+  return /*html*/ `
+<div class="service-item" id="service-item-no-${dataItem.id}">
+  <div class="service-card">
+    <div class="service-media">
+      <img
+        class="service-main-img"
+        src="${url}/${dataItem.img}"
+        alt="${isEnglish ? dataItem.entitle : dataItem.artitle}"
+      />
+      <div class="service-media-overlay">
+        <button class="youtube-btn" type="button" aria-label="Watch video" data-ytlink="${dataItem.ytlink}">
+          <svg class="youtube-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+          </svg>
+           <span class="youtube-btn-text">${isEnglish ? 'Watch Video' : 'شاهد الفيديو'}</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="service-content">
+      <div class="service-header">
+        <img class="service-icon" src="${url}/${dataItem.svg}" alt="icon" />
+        <h3 class="service-title">${isEnglish ? dataItem.entitle : dataItem.artitle}</h3>
+      </div>
+      
+      <p class="service-description">
+        ${isEnglish ? dataItem.enparagraph : dataItem.arparagraph}
+      </p>
+      
+      <div class="service-features">
+        ${dataItem.info.map(infoItem => `
+          <div class="feature-item">
+             <div class="feature-icon-wrapper">
+               <svg class="feature-bullet" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+             </div>
+             <div class="feature-text">
+               <h4>${isEnglish ? infoItem.entitle : infoItem.artitle}</h4>
+               <p>${isEnglish ? infoItem.entext : infoItem.artext}</p>
+             </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+}
+
 function rebuildServices() {
-  const lang = html.getAttribute("lang");
+  const isEnglish = html.getAttribute("lang") === "en";
+  servicesContainer.innerHTML = '';
 
-  const servicesToBeRemoved = document.querySelectorAll(".service-item");
-  const separatorsToBeRemoved = document.querySelectorAll(
-    ".services-separator"
-  );
-  servicesToBeRemoved.forEach((s, index) => {
-    s.remove();
-    separatorsToBeRemoved[index].remove();
-  });
-  [...services].reverse().forEach((service) => {
-    pageTitle.insertAdjacentHTML(
-      "afterend",
-      buildServiceItemTemplate(service, lang == "en")
+  services.forEach((service) => {
+    servicesContainer.insertAdjacentHTML(
+      "beforeend",
+      buildServiceItemTemplate(service, isEnglish)
     );
-    if (service.id % 2 === 0) {
-      const serviceItem = document.querySelector(
-        `#service-item-no-${service.id}`
-      );
-      serviceItem.style.backgroundColor = "#23a4a0";
-    }
   });
-  const btns = document.querySelectorAll(".img-header-btn");
-  btns.forEach((e, index) => {
-    // Correct index lookup since DOM order is now 0..4 but btns querySelectorAll order matches DOM
-    // wait, if services are inserted 0..4 (top to bottom), btns[0] is service 0.
-    // services[index] refers to data array.
-    // So if DOM is 0..4, btns[0] corresponds to service[0].
-
-    // However, let's just make sure the iteration is correct.
-    // The previously existing code used index from forEach.
-    // But btns are queried from DOM.
-    // If I reverse the insertion loop, the DOM elements order is 0, 1, 2, 3, 4.
-    // content: Title -> 0 -> 1 -> 2 -> 3 -> 4.
-    // So document.querySelectorAll returns [btn0, btn1, btn2, btn3, btn4].
-    // So btns[index] matches services[index].
-
-    e.onclick = () => {
-      `${window.open(services[index].ytlink, "_blank")}`;
+  
+  const btns = servicesContainer.querySelectorAll(".youtube-btn");
+  btns.forEach(btn => {
+    btn.onclick = () => {
+      window.open(btn.getAttribute("data-ytlink"), "_blank");
     };
   });
 }
@@ -162,7 +90,7 @@ function scrollToHash() {
     const element = document.getElementById(id);
     if (element) {
       setTimeout(() => {
-        const headerOffset = 100; // Adjust for header or visual spacing
+        const headerOffset = 100;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -170,116 +98,22 @@ function scrollToHash() {
           top: offsetPosition,
           behavior: "smooth"
         });
-      }, 600); // Increased delay slightly to ensure layout stability
+      }, 600);
     }
   }
 }
 
-const lang = html.getAttribute("lang");
-
-[...services].reverse().forEach((service) => {
-  pageTitle.insertAdjacentHTML(
-    "afterend",
-    buildServiceItemTemplate(service, lang == "en")
-  );
-  if (service.id % 2 === 0) {
-    const serviceItem = document.querySelector(
-      `#service-item-no-${service.id}`
-    );
-    serviceItem.style.backgroundColor = "#23a4a0";
-  }
-});
-const btns = document.querySelectorAll(".img-header-btn");
-btns.forEach((e, index) => {
-  e.onclick = () => {
-    `${window.open(services[index].ytlink, "_blank")}`;
-  };
-});
-
-// Check for hash on initial load after content is built
+// Initial build
+rebuildServices();
 scrollToHash();
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((m) => {
-    if (m.type === "attributes") {
+    if (m.type === "attributes" && m.attributeName === "lang") {
       rebuildServices();
-      // console.log("observer fired...");
     }
   });
 });
 observer.observe(html, {
-  attributes: true, //configure it to listen to attribute changes
+  attributes: true
 });
-// <!-- <div class="service-item">
-//         <div class="service-item-pattern-div">
-//           <img src="images_webp/pattern.webp" alt="pattern opacity img" />
-//         </div>
-//         <div class="service-item-img-div">
-//           <h3>Microscopic Varicocelectomy</h3>
-//           <img
-//             id="service-img-svg"
-//             src="images_svg/0.svg"
-//             alt="service no 0 svg"
-//           />
-//           <img
-//             id="service-img-gif"
-//             src="images_webp/0.webp"
-//             alt="service img"
-//           />
-//           <h4 class="img-header-h4">Microscopic Varicocelectomy</h4>
-//           <button class="img-header-btn">
-//             <img
-//               class="youtube-btn-svg-img"
-//               src="images_svg/youtube.svg"
-//               alt="youtube video link"
-//             />
-//           </button>
-//           <div class="img-paragraph-div">
-//             <p>
-//               Varicocelectomy is a surgery performed to remove enlarged veins in
-//               the spermatic cord. The procedure is done to restore proper blood
-//               flow to your reproductive organs. When a varicocele develops in
-//               your scrotum, it can block blood flow to the rest of your
-//               reproductive system.
-//             </p>
-//           </div>
-//         </div>
-//         <div class="service-item-info-div">
-//           <ul>
-//             <li>
-//               <div class="info-item-header-div">
-//                 <div class="info-item-img-container">
-//                   <img src="images_svg/bullet.svg" alt=" bullet svg" />
-//                 </div>
-//                 <h4>Infertility</h4>
-//               </div>
-//               <p>Varicocelectomy may reverse Subfertility in certain cases.</p>
-//             </li>
-//             <li>
-//               <div class="info-item-header-div">
-//                 <div class="info-item-img-container">
-//                   <img src="images_svg/bullet.svg" alt=" bullet svg" />
-//                 </div>
-//                 <h4>Testicular Pain</h4>
-//               </div>
-//               <p>
-//                 A high grade Varicocele maybe the cause of persistent dull
-//                 aching testicular pain.
-//               </p>
-//             </li>
-//             <li>
-//               <div class="info-item-header-div">
-//                 <div class="info-item-img-container">
-//                   <img src="images_svg/bullet.svg" alt=" bullet svg" />
-//                 </div>
-//                 <h4>Surgery</h4>
-//               </div>
-//               <p>
-//                 Microscopic Selection of veins allow for better surgical results
-//                 with minimal or no postoperative pain.
-//               </p>
-//             </li>
-//           </ul>
-//         </div>
-//       </div> -->
-//       <div class="services-separator"></div>

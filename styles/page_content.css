@@ -8,4 +8,5 @@
   max-width: 100%;
   width: 100%;
   background-color: var(--lightgrey);
+  box-sizing: border-box;
 }

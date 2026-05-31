@@ -28,4 +28,32 @@ export const articlesMeta = [
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748549946/%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A_zccfna.png",
       filePath: "articles/article3.html"
    },
+   {
+      id: 4,
+      title: 'حصوة الحالب: الأعراض والأسباب وطرق العلاج الحديثة والوقاية من تكرار الحصوات',
+      description: 'حصوة الحالب من أكثر أمراض المسالك البولية شيوعًا، وقد تسبب ألمًا شديدًا ومفاجئًا يؤثر على حياة المريض اليومية. في هذا الدليل الشامل نتعرف على أسباب حصوات الحالب وأعراضها وطرق تشخيصها والعلاجات الحديثة المتاحة وكيفية الوقاية من تكرارها مستقبلاً.',
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780237922/Gemini_Generated_Image_tukm4ytukm4ytukm_fyhfla.png",
+      filePath: "articles/article4.html"
+   },
+   {
+      id: 5,
+      title: "سلس البول عند النساء: الأسباب والأعراض وطرق العلاج الحديثة والوقاية",
+      description: "سلس البول عند النساء من المشكلات الشائعة التي قد تؤثر على الثقة بالنفس والحياة اليومية. تعرفي على أسباب تسرب البول عند النساء، وأنواع السلس البولي، وطرق العلاج الحديثة، وكيفية الوقاية وتحسين جودة الحياة.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239304/Gemini_Generated_Image_kdznt9kdznt9kdzn_wwak58.png",
+      filePath: "articles/article5.html"
+   },
+   {
+      id: 6,
+      title: "علاج تضخم البروستاتا: الأسباب والأعراض وأحدث طرق العلاج بدون جراحة وبالجراحة",
+      description: "تضخم البروستاتا من أكثر المشكلات شيوعًا لدى الرجال مع التقدم في العمر، وقد يسبب ضعف تدفق البول وكثرة التبول والاستيقاظ المتكرر ليلًا. تعرف على أعراض تضخم البروستاتا وأسبابها وأحدث طرق العلاج الدوائي والجراحي وكيفية اختيار العلاج المناسب.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239758/Gemini_Generated_Image_u0kao4u0kao4u0ka_dnwfie.png",
+      filePath: "articles/article6.html"
+   },
+   {
+      id: 7,
+      title: "سرعة القذف: التقييم الطبي وأحدث طرق العلاج وإدارة الحالة لتحسين الحياة الزوجية",
+      description: "سرعة القذف من أكثر المشكلات الجنسية شيوعًا لدى الرجال، وقد تؤثر على الثقة بالنفس والرضا عن العلاقة الزوجية. تعرف على أسباب سرعة القذف وكيفية تقييم الحالة وأحدث طرق العلاج الدوائي والسلوكي والنصائح التي تساعد على تحسين التحكم في القذف.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780241828/Gemini_Generated_Image_qxuzowqxuzowqxuz_erdvcn.png",
+      filePath: "articles/article7.html"
+   }
 ];

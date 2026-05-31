@@ -7,14 +7,14 @@
 }
 
 :root {
-  --darkblue: #0070cd;
-  --babyblue: #00d0ef;
-  --bevanblue: #246885;
-  --darkgrey: #222222;
-  --cuteorange: #f78536;
-  --linkcolor: #777777;
-  --lightgrey: #f6f6f6;
-  --bevangreen: #23a4a0;
+  --darkblue: #005a9c;
+  --babyblue: #00b0cc;
+  --bevanblue: #1a5067;
+  --darkgrey: #1c1c1c;
+  --cuteorange: #d96b1e;
+  --linkcolor: #666666;
+  --lightgrey: #efefef;
+  --bevangreen: #188b87;
 }
 
 html,
