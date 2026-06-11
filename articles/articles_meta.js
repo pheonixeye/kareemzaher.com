@@ -55,5 +55,26 @@ export const articlesMeta = [
       description: "سرعة القذف من أكثر المشكلات الجنسية شيوعًا لدى الرجال، وقد تؤثر على الثقة بالنفس والرضا عن العلاقة الزوجية. تعرف على أسباب سرعة القذف وكيفية تقييم الحالة وأحدث طرق العلاج الدوائي والسلوكي والنصائح التي تساعد على تحسين التحكم في القذف.",
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780241828/Gemini_Generated_Image_qxuzowqxuzowqxuz_erdvcn.png",
       filePath: "articles/article7.html"
+   },
+   {
+      id: 8,
+      title: "متى يجب زيارة دكتور المسالك البولية؟ الدليل الشامل لأعراض المسالك البولية عند الرجال والنساء",
+      description: "تعرف على أهم أعراض أمراض المسالك البولية والذكورة التي تستدعي زيارة دكتور مسالك بولية، مثل حرقان البول، نزول الدم في البول، ألم الخصية، حصوات الكلى، تضخم البروستاتا، وضعف الانتصاب، مع أحدث وسائل التشخيص والعلاج.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1781207301/article8_cluhwy.png",
+      filePath: "articles/article8.html"
+   },
+   {
+      id: 9,
+      title: "نزول دم في البول: هل هو خطير؟ الأسباب، طرق التشخيص، ومتى يجب زيارة دكتور المسالك البولية",
+      description: "تعرف على أسباب نزول دم في البول عند الرجال والنساء، ومتى يكون خطيرًا، وكيف يتم تشخيصه وعلاجه، وما هي الحالات التي تستدعي زيارة دكتور المسالك البولية بشكل عاجل.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781208407/article9_irrbvz.png",
+      filePath: "articles/article9.html"
+   },
+   {
+      id: 10,
+      title: "ألم الخصية: الأسباب ومتى يكون طارئًا؟ الدليل الشامل لفهم ألم الخصيتين وطرق العلاج",
+      description: "تعرف على أسباب ألم الخصية، ومتى يكون حالة طارئة تستدعي التدخل السريع، وكيف يتم التشخيص والعلاج، مع نصائح مهمة للحفاظ على صحة الخصيتين والخصوبة.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781209221/article10_fo4xkx.png",
+      filePath: "articles/article10.html"
    }
 ];
