@@ -76,5 +76,12 @@ export const articlesMeta = [
       description: "تعرف على أسباب ألم الخصية، ومتى يكون حالة طارئة تستدعي التدخل السريع، وكيف يتم التشخيص والعلاج، مع نصائح مهمة للحفاظ على صحة الخصيتين والخصوبة.",
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781209221/article10_fo4xkx.png",
       filePath: "articles/article10.html"
+   },
+   {
+      id: 11,
+      title: "أعراض تضخم البروستاتا عند الرجال بعد سن الخمسين: متى تستدعي زيارة الطبيب؟",
+      description: "تعرف على أعراض تضخم البروستاتا الحميد عند الرجال بعد سن الخمسين، وأسباب حدوثه، ومتى يجب زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج بأحدث الوسائل الطبية.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781380392/article11_lushys.png",
+      filePath: "articles/article11.html"
    }
 ];
