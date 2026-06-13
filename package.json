@@ -1,0 +1,7 @@
+{
+  "name": "kareemzaher.com",
+  "private": true,
+  "scripts": {
+    "build": "node build_articles.js"
+  }
+}
