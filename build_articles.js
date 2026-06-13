@@ -56,6 +56,32 @@ function generateArticleHtml(article) {
   const today = new Date().toISOString().split("T")[0];
   const datePublished = article.datePublished || today;
 
+  let faqSchemaScript = "";
+  if (Array.isArray(article.faq) && article.faq.length > 0) {
+    const faqEntities = article.faq.map(item => {
+      return `      {
+        "@type": "Question",
+        "name": "${escapeJsonString(item.question)}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "${escapeJsonString(item.answer)}"
+        }
+      }`;
+    });
+
+    faqSchemaScript = `
+  <!-- Schema.org JSON-LD - FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+${faqEntities.join(",\n")}
+    ]
+  }
+  </script>`;
+  }
+
   return `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -98,14 +124,22 @@ function generateArticleHtml(article) {
     "url": "${canonicalUrl}",
     "author": {
       "@type": "Person",
-      "name": "د. كريم زاهر"
+      "name": "د. كريم زاهر",
+      "jobTitle": "استشاري جراحة المسالك البولية والذكورة",
+      "url": "https://kareemzaher.com"
     },
     "datePublished": "${datePublished}",
     "dateModified": "${today}",
+    "inLanguage": "ar",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://kareemzaher.com/articles/${article.id}.html"
+    },
     "image": "${escapeJsonString(article.imgUrl)}",
     "publisher": {
       "@type": "Organization",
-      "name": "عيادة د. كريم زاهر",
+      "name": "عيادة الدكتور كريم زاهر",
+      "description": "استشاري جراحة المسالك البولية والذكورة",
       "logo": {
         "@type": "ImageObject",
         "url": "${SITE_URL}/images_webp/doctor.webp"
@@ -113,6 +147,7 @@ function generateArticleHtml(article) {
     }
   }
   </script>
+${faqSchemaScript}
 
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../styles/social_links.css" />
@@ -120,6 +155,7 @@ function generateArticleHtml(article) {
   <link rel="stylesheet" href="../styles/page_content.css" />
   <link rel="stylesheet" href="../styles/floating_btn.css" />
   <link rel="stylesheet" href="../styles/article_page.css" />
+  <link rel="stylesheet" href="../styles/breadcrumb.css" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
 
   <!-- Google tag (gtag.js) -->
@@ -141,6 +177,9 @@ function generateArticleHtml(article) {
 
 <body id="articles-id">
   <div class="page-content">
+    <nav class="breadcrumb">
+      <a href="../index.html" lang-key="Home">Home</a> &gt; <a href="../articles.html" lang-key="Articles">Articles</a> &gt; <span>${escapeHtml(article.title)}</span>
+    </nav>
     <br />
     <img id="article-img-file" src="" alt="article main image" width="300" height="300" />
     <h1 id="article-long-title">articleLongTitle</h1>

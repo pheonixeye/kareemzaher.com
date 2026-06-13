@@ -1,0 +1,30 @@
+.breadcrumb {
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: var(--linkcolor);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.breadcrumb a {
+  color: var(--darkblue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--babyblue);
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: var(--linkcolor);
+}
