@@ -83,5 +83,12 @@ export const articlesMeta = [
       description: "تعرف على أعراض تضخم البروستاتا الحميد عند الرجال بعد سن الخمسين، وأسباب حدوثه، ومتى يجب زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج بأحدث الوسائل الطبية.",
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781380392/article11_lushys.png",
       filePath: "articles/article11.html"
+   },
+   {
+      id: 12,
+      title: "كثرة التبول عند الرجال: الأسباب والعلاج",
+      description: "تعرف على أسباب كثرة التبول عند الرجال، ومتى تستدعي زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج باستخدام أحدث الوسائل الطبية.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781726241/article12_fsbbre.png",
+      filePath: "articles/article12.html"
    }
 ];

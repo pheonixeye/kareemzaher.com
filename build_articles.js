@@ -133,7 +133,7 @@ ${faqEntities.join(",\n")}
     "inLanguage": "ar",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://kareemzaher.com/articles/${article.id}.html"
+      "@id": "https://kareemzaher.com/articles/article${article.id}.html"
     },
     "image": "${escapeJsonString(article.imgUrl)}",
     "publisher": {
