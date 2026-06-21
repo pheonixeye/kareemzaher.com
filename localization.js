@@ -1,81 +1,113 @@
 import { url } from "./js/urls.js";
-// console.log("localization file connected");
 
-// let jsonLocale;
-
-// async function fetchStoredLocale() {
-//   const request = await fetch("/json/lang.json");
-//   jsonLocale = await request.json();
-//   console.log(jsonLocale["lang"]);
-// }
-
-// fetchStoredLocale();
-
-// async function modLocaleInJson(stringLocale) {}
+// ─── Default locale ────────────────────────────────────────────────────────────
 const storedLocale = window.localStorage.getItem("lang");
-
-const langSwitcher = document.querySelector("#lang-btn");
-
-// console.log(storedLocale);
-
 const defaultLocale = storedLocale ?? "ar";
 
+// Flip the button label to show the *other* available language
+const langSwitcher = document.querySelector("#lang-btn");
 langSwitcher.innerText = defaultLocale === "ar" ? "en" : "ar";
 
-// The active locale
+// ─── State ─────────────────────────────────────────────────────────────────────
 let locale;
-// Gets filled with active locale translations
 let translations = {};
 
-async function setLocale(newLocale) {
-  if (newLocale === locale) return;
-  const newTranslations = await fetchTranslationsFor(newLocale);
-  locale = newLocale;
-  translations = newTranslations;
-  // Set <html dir> attribute
-  document.documentElement.dir = dir(newLocale);
-  // Not necessary for direction flow, but for good measure...
-  document.documentElement.lang = newLocale;
-  window.localStorage.setItem("lang", newLocale);
-  translatePage();
-}
-// ...
-function dir(locale) {
-  return locale === "ar" ? "rtl" : "ltr";
+// Cache of original Arabic text keyed by lang-key.
+// Populated once from the pre-authored DOM so we can restore Arabic
+// without a network request when the user switches back.
+const arCache = {};
+
+// ─── Helpers ───────────────────────────────────────────────────────────────────
+function dir(loc) {
+  return loc === "ar" ? "rtl" : "ltr";
 }
 
+function applyLocaleMetadata(loc) {
+  document.documentElement.dir = dir(loc);
+  document.documentElement.lang = loc;
+  window.localStorage.setItem("lang", loc);
+}
+
+async function fetchTranslationsFor(loc) {
+  const response = await fetch(`${url}/lang/${loc}.json`);
+  return response.json();
+}
+
+// ─── Cache the Arabic DOM text on first paint ──────────────────────────────────
+function buildArCache() {
+  document.querySelectorAll("[lang-key]").forEach((el) => {
+    const key = el.getAttribute("lang-key");
+    if (key && !arCache[key]) {
+      arCache[key] = el.innerText;
+    }
+  });
+}
+
+// ─── Translation ───────────────────────────────────────────────────────────────
 function translateElement(element) {
   const key = element.getAttribute("lang-key");
   const translation = translations[key];
-  element.innerText = translation;
-}
-
-async function fetchTranslationsFor(newLocale) {
-  const response = await fetch(`${url}/lang/${newLocale}.json`);
-  return await response.json();
+  if (translation !== undefined) {
+    element.innerText = translation;
+  }
 }
 
 function translatePage() {
   document.querySelectorAll("[lang-key]").forEach(translateElement);
 }
 
+// Restore Arabic text from the in-memory cache (no network call needed)
+function restoreArabic() {
+  document.querySelectorAll("[lang-key]").forEach((el) => {
+    const key = el.getAttribute("lang-key");
+    if (arCache[key] !== undefined) {
+      el.innerText = arCache[key];
+    }
+  });
+}
+
+// ─── Core setLocale ────────────────────────────────────────────────────────────
+async function setLocale(newLocale) {
+  if (newLocale === locale) return;
+
+  applyLocaleMetadata(newLocale);
+
+  if (newLocale === "ar") {
+    // Arabic is baked into the DOM — just restore from cache, no fetch needed
+    locale = newLocale;
+    translations = {};
+    restoreArabic();
+    return;
+  }
+
+  // For any other locale, fetch and apply translations
+  translations = await fetchTranslationsFor(newLocale);
+  locale = newLocale;
+  translatePage();
+}
+
+// ─── Language switcher binding ──────────────────────────────────────────────────
 function bindLocaleSwitcher() {
-  const switcher = document.querySelector("#lang-btn");
-  //   switcher.innerText = initialValue;
-  switcher.onclick = (e) => {
-    const newlocale = switcher.innerText;
-    // Set the locale to the selected option[value]
-    setLocale(newlocale);
-    switcher.innerText = newlocale === "ar" ? "en" : "ar";
+  langSwitcher.onclick = () => {
+    const newLocale = langSwitcher.innerText; // shows the locale we're switching TO
+    setLocale(newLocale);
+    langSwitcher.innerText = newLocale === "ar" ? "en" : "ar";
   };
 }
 
+// ─── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
-  const initialLocale = defaultLocale;
-  setLocale(initialLocale);
+  // Snapshot the Arabic text before any translation runs
+  buildArCache();
+
+  if (defaultLocale === "ar") {
+    // DOM is already in Arabic — just set metadata, no DOM changes
+    locale = "ar";
+    applyLocaleMetadata("ar");
+  } else {
+    // User previously switched to English; honour that preference
+    setLocale(defaultLocale);
+  }
+
   bindLocaleSwitcher();
 });
-
-//TODO: get rid of starting in english then switching to arabic in each navigation
-
-

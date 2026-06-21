@@ -205,7 +205,7 @@ ${faqSchemaScript}
 <body id="articles-id">
   <div class="page-content">
     <nav class="breadcrumb">
-      <a href="../index.html" lang-key="Home">Home</a> &gt; <a href="../articles.html" lang-key="Articles">Articles</a> &gt; <span>${escapeHtml(article.title)}</span>
+      <a href="../index.html" lang-key="Home">الرئيسية</a> &gt; <a href="../articles.html" lang-key="Articles">المقالات</a> &gt; <span>${escapeHtml(article.title)}</span>
     </nav>
     <br />
     <img id="article-img-file" src="" alt="article main image" width="300" height="300" />

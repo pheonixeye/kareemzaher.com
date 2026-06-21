@@ -13,23 +13,23 @@ function blackStyleString(inFooter) {
 function buildContactTemplate(inFooter) {
   inFooter = inFooter || false;
   const template =
-    `${inFooter ? '<h1 lang-key="logo">K.Z. Clinic</h1>' : ""}` +
+    `${inFooter ? '<h1 lang-key="logo">عيادة د / كريم زاهر</h1>' : ""}` +
     /*html*/ `
     <ul>
-    <h3 lang-key="contact-info">Contact Info</h3>
+    <h3 lang-key="contact-info">بيانات التواصل</h3>
   <li>
     <div>
       <img src="${url}/images_svg/location_on.svg" alt="location pin icon" />
-      <h4 class="contact-link-title" lang-key="address">Address</h4>
+      <h4 class="contact-link-title" lang-key="address">العنوان</h4>
     </div>
     <a href="${clinicLocation}" target="_blank" class="contact-link-data ${blackStyleString(
       inFooter
-    )}" lang-key="address-data">Zahraa El Maadi, El Nada Tower, First Floor.</a>
+    )}" lang-key="address-data">زهراء المعادي - الشطر الثالث عشر - برج الندي - الدور الاول</a>
   </li>
   <li>
     <div>
       <img src="${url}/images_svg/landline.svg" alt="landline icon" />
-      <h4 class="contact-link-title" lang-key="phone">Phone</h4>
+      <h4 class="contact-link-title" lang-key="phone">التليفون</h4>
     </div>
     <a href="tel:${phone}" class="contact-link-data ${blackStyleString(
       inFooter
@@ -38,7 +38,7 @@ function buildContactTemplate(inFooter) {
   <li>
     <div>
       <img src="${url}/images_svg/mobile.svg" alt="mobile icon" />
-      <h4 class="contact-link-title" lang-key="mobile">Mobile</h4>
+      <h4 class="contact-link-title" lang-key="mobile">الموبايل</h4>
     </div>
     <a href="tel:${mobile}" class="contact-link-data ${blackStyleString(
       inFooter
@@ -47,7 +47,7 @@ function buildContactTemplate(inFooter) {
   <li>
     <div>
       <img src="${url}/images_svg/email.svg" alt="email icon" />
-      <h4 class="contact-link-title" lang-key="email">Email</h4>
+      <h4 class="contact-link-title" lang-key="email">البريد الالكتروني</h4>
     </div>
     <a href="mailto:${email}" class="contact-link-data ${blackStyleString(
       inFooter

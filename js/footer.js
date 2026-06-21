@@ -18,7 +18,7 @@ function buildFooterNavTemplate(navData) {
   const Template = /*html*/ `
     <li>
       <div>
-        <a href="${navData.link}" lang-key="${navData.text}">${navData.text}</a>
+        <a href="${navData.link}" lang-key="${navData.text}">${navData.arText || navData.text}</a>
       </div>
     </li>`;
   return Template;

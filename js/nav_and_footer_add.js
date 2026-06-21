@@ -16,23 +16,23 @@ const footerTemplate = /*html*/ `
   </div>
   <div class="footer-card">
     <div class="footer-about">
-      <h2 lang-key="about">About</h2>
+      <h2 lang-key="about">عن الدكتور</h2>
       <div class="doctor-img-holder">
         <img id="doctor-img" src="${url}/images_webp/doctor.webp" alt="doctor image" />
       </div>
-      <h2 lang-key="docname">Dr. Kareem Zaher</h2>
-      <h3 lang-key="doctitle">Uro-Andrology Specialist Surgeon</h3>
-      <h3 lang-key="t4">E.U.A Member</h3>
+      <h2 lang-key="docname">د / كريم زاهر</h2>
+      <h3 lang-key="doctitle">استشاري جراحة المسالك البولية و الذكورة</h3>
+      <h3 lang-key="t4">عضو الجمعية الاوروبية لجراحة المسالك البولية</h3>
     </div>
   </div>
   <div class="footer-card">
     <div class="footer-nav">
-      <h2 lang-key="site-map">Site Map</h2>
+      <h2 lang-key="site-map">خريطة الموقع</h2>
       <ul class="site-map-list"></ul>
     </div>
   </div>
   <div class="copyright">
-    <p lang-key="copyright">Copyright - KareemZaher.com</p>
+    <p lang-key="copyright">جميع حقوق النسخ محفوظة - kareemzaher.com</p>
   </div>
 </footer>`;
 
@@ -53,7 +53,7 @@ const navTemplate = /*html*/ `
   <div class="overlay-content" id="overlay-content"></div>
 </div>
 <div class="nav-bar">
-  <div class="site-logo" lang-key="logo">K.Z. Clinic</div>
+  <div class="site-logo" lang-key="logo">عيادة د / كريم زاهر</div>
   <nav class="desktop-nav">
     <ul id="desktop-nav"></ul>
   </nav>
@@ -77,7 +77,7 @@ function buildNavTemplate(pageId) {
         ERROR-MESSAGE !!!
       </div>
       <div id="alert-action">
-        <button id="alert-action-btn" lang-key="confirm">OK</button>
+        <button id="alert-action-btn" lang-key="confirm">تاكيد</button>
       </div>
     </div>
   </div>
@@ -89,7 +89,7 @@ function buildNavTemplate(pageId) {
 const socialTemplate = /*html*/ `
 <!-- <div> separator </div> -->
     <div class="section-title">
-      <h2 lang-key="social">Social</h2>
+      <h2 lang-key="social">التواصل الاجتماعي</h2>
     </div>
     <!-- <div> clinic FOLLOW-US </div> -->
     <div class="follow-us">
@@ -115,7 +115,12 @@ const socialTemplate = /*html*/ `
 `;
 
 
-const days = ["Saturday", "Tuesday", "Wednesday", "Thursday"];
+const days = [
+  { en: "Saturday", ar: "السبت" },
+  { en: "Tuesday", ar: "الثلاثاء" },
+  { en: "Wednesday", ar: "الاربعاء" },
+  { en: "Thursday", ar: "الخميس" }
+];
 
 function buildScheduleList() {
   let html = '';
@@ -125,10 +130,10 @@ function buildScheduleList() {
       <div class="circle-shape" style="background-color: #0070cd">
         <img src="${url}/images_svg/calender.svg" alt="calender icon" />
       </div>
-      <h3 lang-key="${day}">${day}</h3>
+      <h3 lang-key="${day.en}">${day.ar}</h3>
       <h5>
-        7:00 <span lang-key="pm">P.M.</span> - 10:00
-        <span lang-key="pm">P.M.</span>
+        7:00 <span lang-key="pm">مساء</span> - 10:00
+        <span lang-key="pm">مساء</span>
       </h5>
     </div>
   </li>`;
@@ -139,7 +144,7 @@ function buildScheduleList() {
 const contactMapHoursTemplate = /*html*/ `
   <!-- Contact Section -->
   <div class="section-title">
-    <h2 lang-key="contact">Contact</h2>
+    <h2 lang-key="contact">التواصل</h2>
   </div>
   <div class="contact-map-hours">
     <div class="map-container">
@@ -153,7 +158,7 @@ const contactMapHoursTemplate = /*html*/ `
     </div>
     <div class="clinic-hours">
       <ul id="clinic-hours-list">
-        <h3 lang-key="clinic-hours">Clinic Hours</h3>
+        <h3 lang-key="clinic-hours">مواعيد العيادة</h3>
         ${buildScheduleList()}
       </ul>
     </div>
