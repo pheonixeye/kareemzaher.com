@@ -49,7 +49,40 @@
             "anchor": "conclusion"
         }
     ],
-    "relatedArticles": [],
+    "relatedArticles": [
+        {
+            "id": 4,
+            "title": "حصوة الحالب: الأعراض والأسباب وطرق العلاج الحديثة والوقاية من تكرار الحصوات",
+            "description": "حصوة الحالب من أكثر أمراض المسالك البولية شيوعًا، وقد تسبب ألمًا شديدًا ومفاجئًا يؤثر على حياة المريض اليومية. في هذا الدليل الشامل نتعرف على أسباب حصوات الحالب وأعراضها وطرق تشخيصها والعلاجات الحديثة المتاحة وكيفية الوقاية من تكرارها مستقبلاً.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780237922/Gemini_Generated_Image_tukm4ytukm4ytukm_fyhfla.png",
+            "filePath": "articles/article4.html",
+            "url": "https://kareemzaher.com/articles/article4.html"
+        },
+        {
+            "id": 8,
+            "title": "متى يجب زيارة دكتور المسالك البولية؟ الدليل الشامل لأعراض المسالك البولية عند الرجال والنساء",
+            "description": "تعرف على أهم أعراض أمراض المسالك البولية والذكورة التي تستدعي زيارة دكتور مسالك بولية، مثل حرقان البول، نزول الدم في البول، ألم الخصية، حصوات الكلى، تضخم البروستاتا، ضعف الانتصاب، سرعة القذف، وتأخر الإنجاب، مع أحدث وسائل التشخيص والعلاج.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781207301/article8_cluhwy.png",
+            "filePath": "articles/article8.html",
+            "url": "https://kareemzaher.com/articles/article8.html"
+        },
+        {
+            "id": 9,
+            "title": "نزول دم في البول: هل هو خطير؟ الأسباب، طرق التشخيص، ومتى يجب زيارة دكتور المسالك البولية",
+            "description": "تعرف على أسباب نزول دم في البول عند الرجال والنساء، ومتى يكون خطيرًا، وكيف يتم تشخيصه وعلاجه، وما هي الحالات التي تستدعي زيارة دكتور المسالك البولية بشكل عاجل.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781208407/article9_irrbvz.png",
+            "filePath": "articles/article9.html",
+            "url": "https://kareemzaher.com/articles/article9.html"
+        },
+        {
+            "id": 12,
+            "title": "كثرة التبول عند الرجال: الأسباب والعلاج",
+            "description": "تعرف على أسباب كثرة التبول عند الرجال، ومتى تستدعي زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج باستخدام أحدث الوسائل الطبية.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781726241/article12_fsbbre.png",
+            "filePath": "articles/article12.html",
+            "url": "https://kareemzaher.com/articles/article12.html"
+        }
+    ],
     "faq": [
         {
             "question": "ما هي حصوات المسالك البولية؟",

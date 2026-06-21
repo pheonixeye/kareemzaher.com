@@ -37,7 +37,48 @@
             "anchor": "conclusion"
         }
     ],
-    "relatedArticles": [],
+    "relatedArticles": [
+        {
+            "id": 2,
+            "title": "حصوات المسالك البولية: الدليل الكامل لفهم الأسباب، الأعراض، طرق التشخيص والعلاج",
+            "description": "تُعد حصوات المسالك البولية من أكثر المشاكل شيوعًا في مجال أمراض المسالك البولية، ويواجهها عدد كبير من الرجال والنساء في مراحل مختلفة من حياتهم. هذه الحصوات قد تبدو بسيطة في البداية، لكنها في كثير من الأحيان قد تُسبب آلامًا شديدة ومضاعفات خطيرة إذا لم تُشخّص وتُعالج في الوقت المناسب.في هذا المقال التوعوي الشامل، سنُسلّط الضوء على أسباب الحصوات، أعراضها، طرق التشخيص، العلاج، والوقاية، وسنوضح متى يجب زيارة دكتور مسالك في المعادي للحصول على الرعاية المناسبة.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748118798/kidney-stones_zkemaj.gif",
+            "filePath": "articles/article2.html",
+            "url": "https://kareemzaher.com/articles/article2.html"
+        },
+        {
+            "id": 5,
+            "title": "سلس البول عند النساء: الأسباب والأعراض وطرق العلاج الحديثة والوقاية",
+            "description": "سلس البول عند النساء من المشكلات الشائعة التي قد تؤثر على الثقة بالنفس والحياة اليومية. تعرفي على أسباب تسرب البول عند النساء، وأنواع السلس البولي، وطرق العلاج الحديثة، وكيفية الوقاية وتحسين جودة الحياة.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239304/Gemini_Generated_Image_kdznt9kdznt9kdzn_wwak58.png",
+            "filePath": "articles/article5.html",
+            "url": "https://kareemzaher.com/articles/article5.html"
+        },
+        {
+            "id": 9,
+            "title": "نزول دم في البول: هل هو خطير؟ الأسباب، طرق التشخيص، ومتى يجب زيارة دكتور المسالك البولية",
+            "description": "تعرف على أسباب نزول دم في البول عند الرجال والنساء، ومتى يكون خطيرًا، وكيف يتم تشخيصه وعلاجه، وما هي الحالات التي تستدعي زيارة دكتور المسالك البولية بشكل عاجل.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781208407/article9_irrbvz.png",
+            "filePath": "articles/article9.html",
+            "url": "https://kareemzaher.com/articles/article9.html"
+        },
+        {
+            "id": 10,
+            "title": "ألم الخصية: الأسباب ومتى يكون طارئًا؟ الدليل الشامل لفهم ألم الخصيتين وطرق العلاج",
+            "description": "تعرف على أسباب ألم الخصية، ومتى يكون حالة طارئة تستدعي التدخل السريع، وكيف يتم التشخيص والعلاج، مع نصائح مهمة للحفاظ على صحة الخصيتين والخصوبة.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781209221/article10_fo4xkx.png",
+            "filePath": "articles/article10.html",
+            "url": "https://kareemzaher.com/articles/article10.html"
+        },
+        {
+            "id": 0,
+            "title": "ضعف الانتصاب: التشخيص والعلاج على يد أفضل الأطباء في المعادي",
+            "description": "تعرف على أسباب ضعف الانتصاب، وكيف يتم تشخيصه وعلاجه، ومتى يجب زيارة طبيب الذكورة، وأحدث الوسائل العلاجية المتاحة لتحسين القدرة الجنسية وجودة الحياة.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1695182078/o3z0zicd7dj9kwzshgmx.webp",
+            "filePath": "articles/article0.html",
+            "url": "https://kareemzaher.com/articles/article0.html"
+        }
+    ],
     "faq": [
         {
             "question": "متى يجب زيارة دكتور مسالك بولية؟",

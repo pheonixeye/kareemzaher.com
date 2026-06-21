@@ -7,7 +7,40 @@
     "datePublished": "2026-05-31",
     "filePath": "articles/article7.html",
     "url": "https://kareemzaher.com/articles/article7.html",
-    "relatedArticles": [],
+    "relatedArticles": [
+        {
+            "id": 0,
+            "title": "ضعف الانتصاب: التشخيص والعلاج على يد أفضل الأطباء في المعادي",
+            "description": "تعرف على أسباب ضعف الانتصاب، وكيف يتم تشخيصه وعلاجه، ومتى يجب زيارة طبيب الذكورة، وأحدث الوسائل العلاجية المتاحة لتحسين القدرة الجنسية وجودة الحياة.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1695182078/o3z0zicd7dj9kwzshgmx.webp",
+            "filePath": "articles/article0.html",
+            "url": "https://kareemzaher.com/articles/article0.html"
+        },
+        {
+            "id": 3,
+            "title": "دوالي الخصية: فهم الحالة وخيارات العلاج الجراحي",
+            "description": "دوالي الخصية هي حالة تحدث عندما تتوسع الأوردة داخل كيس الصفن (الكيس الذي يحتوي على الخصيتين). تشبه هذه الحالة دوالي الساقين، ولكنها تحدث في منطقة الخصيتين. تؤثر دوالي الخصية على حوالي 15% من الرجال البالغين، وقد تكون سببًا في مشاكل الخصوبة لدى بعضهم.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748549946/%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A_zccfna.png",
+            "filePath": "articles/article3.html",
+            "url": "https://kareemzaher.com/articles/article3.html"
+        },
+        {
+            "id": 8,
+            "title": "متى يجب زيارة دكتور المسالك البولية؟ الدليل الشامل لأعراض المسالك البولية عند الرجال والنساء",
+            "description": "تعرف على أهم أعراض أمراض المسالك البولية والذكورة التي تستدعي زيارة دكتور مسالك بولية، مثل حرقان البول، نزول الدم في البول، ألم الخصية، حصوات الكلى، تضخم البروستاتا، ضعف الانتصاب، سرعة القذف، وتأخر الإنجاب، مع أحدث وسائل التشخيص والعلاج.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781207301/article8_cluhwy.png",
+            "filePath": "articles/article8.html",
+            "url": "https://kareemzaher.com/articles/article8.html"
+        },
+        {
+            "id": 10,
+            "title": "ألم الخصية: الأسباب ومتى يكون طارئًا؟ الدليل الشامل لفهم ألم الخصيتين وطرق العلاج",
+            "description": "تعرف على أسباب ألم الخصية، ومتى يكون حالة طارئة تستدعي التدخل السريع، وكيف يتم التشخيص والعلاج، مع نصائح مهمة للحفاظ على صحة الخصيتين والخصوبة.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781209221/article10_fo4xkx.png",
+            "filePath": "articles/article10.html",
+            "url": "https://kareemzaher.com/articles/article10.html"
+        }
+    ],
     "faq": [
         {
             "question": "هل سرعة القذف مرض خطير؟",

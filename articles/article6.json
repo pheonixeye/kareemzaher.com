@@ -57,7 +57,40 @@
             "anchor": "conclusion"
         }
     ],
-    "relatedArticles": [],
+    "relatedArticles": [
+        {
+            "id": 8,
+            "title": "متى يجب زيارة دكتور المسالك البولية؟ الدليل الشامل لأعراض المسالك البولية عند الرجال والنساء",
+            "description": "تعرف على أهم أعراض أمراض المسالك البولية والذكورة التي تستدعي زيارة دكتور مسالك بولية، مثل حرقان البول، نزول الدم في البول، ألم الخصية، حصوات الكلى، تضخم البروستاتا، ضعف الانتصاب، سرعة القذف، وتأخر الإنجاب، مع أحدث وسائل التشخيص والعلاج.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781207301/article8_cluhwy.png",
+            "filePath": "articles/article8.html",
+            "url": "https://kareemzaher.com/articles/article8.html"
+        },
+        {
+            "id": 9,
+            "title": "نزول دم في البول: هل هو خطير؟ الأسباب، طرق التشخيص، ومتى يجب زيارة دكتور المسالك البولية",
+            "description": "تعرف على أسباب نزول دم في البول عند الرجال والنساء، ومتى يكون خطيرًا، وكيف يتم تشخيصه وعلاجه، وما هي الحالات التي تستدعي زيارة دكتور المسالك البولية بشكل عاجل.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781208407/article9_irrbvz.png",
+            "filePath": "articles/article9.html",
+            "url": "https://kareemzaher.com/articles/article9.html"
+        },
+        {
+            "id": 11,
+            "title": "أعراض تضخم البروستاتا عند الرجال بعد سن الخمسين: متى تستدعي زيارة الطبيب؟",
+            "description": "تعرف على أعراض تضخم البروستاتا الحميد عند الرجال بعد سن الخمسين، وأسباب حدوثه، ومتى يجب زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج بأحدث الوسائل الطبية.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781380392/article11_lushys.png",
+            "filePath": "articles/article11.html",
+            "url": "https://kareemzaher.com/articles/article11.html"
+        },
+        {
+            "id": 12,
+            "title": "كثرة التبول عند الرجال: الأسباب والعلاج",
+            "description": "تعرف على أسباب كثرة التبول عند الرجال، ومتى تستدعي زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج باستخدام أحدث الوسائل الطبية.",
+            "imgUrl": "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781726241/article12_fsbbre.png",
+            "filePath": "articles/article12.html",
+            "url": "https://kareemzaher.com/articles/article12.html"
+        }
+    ],
     "faq": [
         {
             "question": "هل تضخم البروستاتا يعني الإصابة بالسرطان؟",
