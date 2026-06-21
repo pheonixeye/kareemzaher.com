@@ -3,12 +3,19 @@
 
 <head>
   <!--**META_TAGS**-->
-  <meta name="description" content="د. كريم زاهر - استشاري جراحة المسالك البولية والذكورة بالقاهرة. حجز مواعيد واستشارات طبية. عضو الجمعية الأوروبية." />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>د. كريم زاهر | طبيب مسالك بولية وذكورة</title>
   <link rel="canonical" href="https://www.kareemzaher.com" />
+  <meta name="description" content="د. كريم زاهر - استشاري جراحة المسالك البولية والذكورة بالقاهرة. حجز مواعيد واستشارات طبية. عضو الجمعية الأوروبية." />
   <meta name="keywords" content="طبيب مسالك بولية, جراحة ذكورة, كريم زاهر, القاهرة, حجز موعد, ضعف الانتصاب, دوالي الخصية, حصوات الكلى, البروستاتا" />
+
+  <!-- Preload LCP hero image - highest priority resource hint -->
+  <link rel="preload" href="images_webp/doctor.webp" as="image" fetchpriority="high" />
+
+  <!-- Google Fonts Preconnect (must be before the stylesheet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Open Graph Meta Tags - Arabic -->
   <meta property="og:title" content="د. كريم زاهر | طبيب مسالك بولية وذكورة" />
@@ -137,6 +144,9 @@
   }
   </script>
 
+  <!-- Cairo Font with font-display:swap to prevent render blocking -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles/social_links.css" />
   <link rel="stylesheet" href="styles/footer.css" />
@@ -146,7 +156,7 @@
   <link rel="stylesheet" href="styles/patient_guide.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Tag Manager (deferred - does not block rendering) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SLJ86T2515"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -154,10 +164,6 @@
     gtag('js', new Date());
     gtag('config', 'G-SLJ86T2515');
   </script>
-  <!-- Google Fonts Preconnect & Cairo Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body id="index-id">
@@ -179,7 +185,7 @@
 
   <div class="nav-and-hero">
     <div class="hero-div">
-      <img src="images_webp/pattern.webp" alt="pattern background" />
+      <img src="images_webp/pattern.webp" alt="pattern background" loading="lazy" />
     </div>
     <div class="nav-bar">
       <div class="site-logo" lang-key="logo">عيادة د / كريم زاهر</div>
@@ -198,7 +204,7 @@
     <div class="hero-main">
       <div class="hero-image-slider">
         <div class="hero-image-slider-background"></div>
-        <img id="slider-image" src="images_webp/doctor.webp" fetchpriority="high" alt="Dr. Kareem Zaher - Urology and Andrology Specialist" />
+        <img id="slider-image" src="images_webp/doctor.webp" fetchpriority="high" alt="Dr. Kareem Zaher - Urology and Andrology Consultant" />
       </div>
       <div class="hero-info-text">
         <h3 lang-key="doctitle">استشاري جراحة المسالك البولية و الذكورة</h3>

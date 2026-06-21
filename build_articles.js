@@ -123,6 +123,13 @@ ${article.relatedArticles.map(rel => `        <a href="../${rel.filePath}" class
   <meta name="keywords"
     content="${escapeHtml(article.keywords || "")}" />
 
+  <!-- Preload LCP article hero image -->
+  <link rel="preload" href="${escapeHtml(article.imgUrl)}" as="image" fetchpriority="high" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!-- Open Graph Meta Tags - Arabic -->
   <meta property="og:title" content="${escapeHtml(article.title)}" />
   <meta property="og:description"
@@ -176,6 +183,9 @@ ${article.relatedArticles.map(rel => `        <a href="../${rel.filePath}" class
   </script>
 ${faqSchemaScript}
 
+  <!-- Cairo Font with font-display:swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../styles/social_links.css" />
   <link rel="stylesheet" href="../styles/footer.css" />
@@ -196,10 +206,6 @@ ${faqSchemaScript}
 
     gtag("config", "G-KP1XD52S9B");
   </script>
-  <!-- Google Fonts Preconnect & Cairo Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body id="articles-id">
