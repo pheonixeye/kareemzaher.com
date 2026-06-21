@@ -82,6 +82,33 @@ ${faqEntities.join(",\n")}
   </script>`;
   }
 
+  let tocHtml = "";
+  if (Array.isArray(article.tableOfContents) && article.tableOfContents.length > 0) {
+    tocHtml = `
+    <div id="table-of-contents" class="table-of-contents">
+      <h2>جدول المحتويات</h2>
+      <ul>
+${article.tableOfContents.map(toc => `        <li><a href="#${toc.anchor}">${escapeHtml(toc.title)}</a></li>`).join("\n")}
+      </ul>
+    </div>
+    <br />`;
+  }
+
+  let relatedHtml = "";
+  if (Array.isArray(article.relatedArticles) && article.relatedArticles.length > 0) {
+    relatedHtml = `
+    <div class="related-articles-section">
+      <h2 class="related-articles-title">مقالات ذات صلة</h2>
+      <div class="related-articles-container">
+${article.relatedArticles.map(rel => `        <a href="../${rel.filePath}" class="related-article-card">
+          <img src="${escapeHtml(rel.imgUrl)}" alt="${escapeHtml(rel.title)}" class="related-article-img" loading="lazy" />
+          <h4 class="related-article-card-title">${escapeHtml(rel.title)}</h4>
+        </a>`).join("\n")}
+      </div>
+    </div>
+    <br />`;
+  }
+
   return `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -186,9 +213,11 @@ ${faqSchemaScript}
     <br />
     <h3 id="article-long-description">articleLongDescription</h3>
     <br />
+    ${tocHtml}
     <div id="article-paragraphs-container">
       <!--load_article_page.js -->
     </div>
+    ${relatedHtml}
   </div>
 
   <script src="../js/nav_and_footer_add.js" type="module"></script>
@@ -213,7 +242,8 @@ function generateArticlesMeta(articles) {
       title: ${JSON.stringify(a.title)},
       description: ${JSON.stringify(a.description)},
       imgUrl: ${JSON.stringify(a.imgUrl)},
-      filePath: ${JSON.stringify(a.filePath)}
+      filePath: ${JSON.stringify(a.filePath)},
+      url: ${JSON.stringify(a.url)}
    }`;
   });
 

@@ -37,11 +37,12 @@ function _buildTemplate(data) {
   articleDescriptionPlaceHolder.innerText = data.description;
   const paragraphs = Array.from(data.paragraphs);
   paragraphs.forEach((p, i) => {
+    const idAttr = p.anchor ? ` id="${p.anchor}"` : '';
     articleParagraphsContainer.insertAdjacentHTML(
       "beforeend",
       /*html*/ `
         <div>
-            <h3>${p.title}</h3>
+            <h3${idAttr}>${p.title}</h3>
             <p>${p.body}</p>
         </div>
     `
