@@ -103,5 +103,13 @@ export const articlesMeta = [
       imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781726241/article12_fsbbre.png",
       filePath: "articles/article12.html",
       url: "https://kareemzaher.com/articles/article12.html"
+   },
+   {
+      id: 13,
+      title: "احتباس البول عند الرجال: الأسباب، الأعراض، وأحدث طرق العلاج",
+      description: "دليل شامل حول احتباس البول الحاد والمزمن عند الرجال، أسبابه مثل تضخم البروستاتا الحميد وضيق مجرى البول، الأعراض، التشخيص، وأحدث العلاجات الطبية والجراحية.",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1782847714/article13_s3rxa9.webp",
+      filePath: "articles/article13.html",
+      url: "https://kareemzaher.com/articles/article13.html"
    }
 ];

@@ -4,7 +4,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://www.kareemzaher.com/</loc>
-    <lastmod>2026-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Appointment Booking Page -->
   <url>
     <loc>https://www.kareemzaher.com/appointments.html</loc>
-    <lastmod>2026-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Services Page -->
   <url>
     <loc>https://www.kareemzaher.com/services.html</loc>
-    <lastmod>2026-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -28,7 +28,7 @@
   <!-- Articles Listing Page -->
   <url>
     <loc>https://www.kareemzaher.com/articles.html</loc>
-    <lastmod>2026-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -112,11 +112,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://www.kareemzaher.com/articles/article13.html</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
   <!-- Reviews Page -->
   <url>
     <loc>https://www.kareemzaher.com/reviews.html</loc>
-    <lastmod>2026-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -124,7 +130,7 @@
   <!-- Erection Test Page -->
   <url>
     <loc>https://www.kareemzaher.com/erection_test.html</loc>
-    <lastmod>2026-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
