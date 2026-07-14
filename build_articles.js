@@ -51,8 +51,9 @@ function loadArticles() {
 // ─── Generate article HTML ──────────────────────────────────────────────────
 
 function generateArticleHtml(article) {
-  const articleFile = `article${article.id}.html`;
-  const canonicalUrl = `${SITE_URL}/articles/${articleFile}`;
+  // const articleFile = `article${article.id}.html`;
+  const articleForCannonical = `article${article.id}`;
+  const canonicalUrl = `${SITE_URL}/articles/${articleForCannonical}`;
   const today = new Date().toISOString().split("T")[0];
   const datePublished = article.datePublished || today;
 
