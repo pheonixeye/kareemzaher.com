@@ -36,7 +36,8 @@
   align-items: center;
 }
 
-.footer-about h1 {
+.footer-about h1,
+.footer-about h2 {
   align-self: center;
 }
 .footer-about h3 {
@@ -67,7 +68,8 @@
   align-items: center;
 }
 
-.footer-nav h1 {
+.footer-nav h1,
+.footer-nav h2 {
   align-self: flex-start;
 }
 

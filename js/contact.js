@@ -13,7 +13,7 @@ function blackStyleString(inFooter) {
 function buildContactTemplate(inFooter) {
   inFooter = inFooter || false;
   const template =
-    `${inFooter ? '<h1 lang-key="logo">عيادة د / كريم زاهر</h1>' : ""}` +
+    `${inFooter ? '<div class="site-logo" lang-key="logo">عيادة د / كريم زاهر</div>' : ""}` +
     /*html*/ `
     <ul>
     <h3 lang-key="contact-info">بيانات التواصل</h3>
