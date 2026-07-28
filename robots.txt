@@ -1,4 +1,3 @@
-User-agent: *
-Disallow: 
-
+User-agent: * 
+Allow: /
 Sitemap: https://www.kareemzaher.com/sitemap.xml
