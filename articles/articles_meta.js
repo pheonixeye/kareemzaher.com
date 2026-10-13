@@ -28,7 +28,7 @@ export const articlesMeta = [
       id: 3,
       title: "دوالي الخصية: فهم الحالة وخيارات العلاج الجراحي",
       description: "دوالي الخصية هي حالة تحدث عندما تتوسع الأوردة داخل كيس الصفن (الكيس الذي يحتوي على الخصيتين). تشبه هذه الحالة دوالي الساقين، ولكنها تحدث في منطقة الخصيتين. تؤثر دوالي الخصية على حوالي 15% من الرجال البالغين، وقد تكون سببًا في مشاكل الخصوبة لدى بعضهم.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748549946/%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A_zccfna.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1748549946/%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A_zccfna.webp",
       filePath: "articles/article3.html",
       url: "https://kareemzaher.com/articles/article3.html"
    },
@@ -36,7 +36,7 @@ export const articlesMeta = [
       id: 4,
       title: "حصوة الحالب: الأعراض والأسباب وطرق العلاج الحديثة والوقاية من تكرار الحصوات",
       description: "حصوة الحالب من أكثر أمراض المسالك البولية شيوعًا، وقد تسبب ألمًا شديدًا ومفاجئًا يؤثر على حياة المريض اليومية. في هذا الدليل الشامل نتعرف على أسباب حصوات الحالب وأعراضها وطرق تشخيصها والعلاجات الحديثة المتاحة وكيفية الوقاية من تكرارها مستقبلاً.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780237922/Gemini_Generated_Image_tukm4ytukm4ytukm_fyhfla.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780237922/Gemini_Generated_Image_tukm4ytukm4ytukm_fyhfla.webp",
       filePath: "articles/article4.html",
       url: "https://kareemzaher.com/articles/article4.html"
    },
@@ -44,7 +44,7 @@ export const articlesMeta = [
       id: 5,
       title: "سلس البول عند النساء: الأسباب والأعراض وطرق العلاج الحديثة والوقاية",
       description: "سلس البول عند النساء من المشكلات الشائعة التي قد تؤثر على الثقة بالنفس والحياة اليومية. تعرفي على أسباب تسرب البول عند النساء، وأنواع السلس البولي، وطرق العلاج الحديثة، وكيفية الوقاية وتحسين جودة الحياة.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239304/Gemini_Generated_Image_kdznt9kdznt9kdzn_wwak58.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239304/Gemini_Generated_Image_kdznt9kdznt9kdzn_wwak58.webp",
       filePath: "articles/article5.html",
       url: "https://kareemzaher.com/articles/article5.html"
    },
@@ -52,7 +52,7 @@ export const articlesMeta = [
       id: 6,
       title: "علاج تضخم البروستاتا: الأسباب والأعراض وأحدث طرق العلاج بدون جراحة وبالجراحة",
       description: "تضخم البروستاتا من أكثر المشكلات شيوعًا لدى الرجال مع التقدم في العمر، وقد يسبب ضعف تدفق البول وكثرة التبول والاستيقاظ المتكرر ليلًا. تعرف على أعراض تضخم البروستاتا وأسبابها وأحدث طرق العلاج الدوائي والجراحي وكيفية اختيار العلاج المناسب.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239758/Gemini_Generated_Image_u0kao4u0kao4u0ka_dnwfie.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780239758/Gemini_Generated_Image_u0kao4u0kao4u0ka_dnwfie.webp",
       filePath: "articles/article6.html",
       url: "https://kareemzaher.com/articles/article6.html"
    },
@@ -60,7 +60,7 @@ export const articlesMeta = [
       id: 7,
       title: "سرعة القذف: التقييم الطبي وأحدث طرق العلاج وإدارة الحالة لتحسين الحياة الزوجية",
       description: "سرعة القذف من أكثر المشكلات الجنسية شيوعًا لدى الرجال، وقد تؤثر على الثقة بالنفس والرضا عن العلاقة الزوجية. تعرف على أسباب سرعة القذف وكيفية تقييم الحالة وأحدث طرق العلاج الدوائي والسلوكي والنصائح التي تساعد على تحسين التحكم في القذف.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780241828/Gemini_Generated_Image_qxuzowqxuzowqxuz_erdvcn.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1780241828/Gemini_Generated_Image_qxuzowqxuzowqxuz_erdvcn.webp",
       filePath: "articles/article7.html",
       url: "https://kareemzaher.com/articles/article7.html"
    },
@@ -68,7 +68,7 @@ export const articlesMeta = [
       id: 8,
       title: "متى يجب زيارة دكتور المسالك البولية؟ الدليل الشامل لأعراض المسالك البولية عند الرجال والنساء",
       description: "تعرف على أهم أعراض أمراض المسالك البولية والذكورة التي تستدعي زيارة دكتور مسالك بولية، مثل حرقان البول، نزول الدم في البول، ألم الخصية، حصوات الكلى، تضخم البروستاتا، ضعف الانتصاب، سرعة القذف، وتأخر الإنجاب، مع أحدث وسائل التشخيص والعلاج.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781207301/article8_cluhwy.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781207301/article8_cluhwy.webp",
       filePath: "articles/article8.html",
       url: "https://kareemzaher.com/articles/article8.html"
    },
@@ -76,7 +76,7 @@ export const articlesMeta = [
       id: 9,
       title: "نزول دم في البول: هل هو خطير؟ الأسباب، طرق التشخيص، ومتى يجب زيارة دكتور المسالك البولية",
       description: "تعرف على أسباب نزول دم في البول عند الرجال والنساء، ومتى يكون خطيرًا، وكيف يتم تشخيصه وعلاجه، وما هي الحالات التي تستدعي زيارة دكتور المسالك البولية بشكل عاجل.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781208407/article9_irrbvz.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781208407/article9_irrbvz.webp",
       filePath: "articles/article9.html",
       url: "https://kareemzaher.com/articles/article9.html"
    },
@@ -84,7 +84,7 @@ export const articlesMeta = [
       id: 10,
       title: "ألم الخصية: الأسباب ومتى يكون طارئًا؟ الدليل الشامل لفهم ألم الخصيتين وطرق العلاج",
       description: "تعرف على أسباب ألم الخصية، ومتى يكون حالة طارئة تستدعي التدخل السريع، وكيف يتم التشخيص والعلاج، مع نصائح مهمة للحفاظ على صحة الخصيتين والخصوبة.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781209221/article10_fo4xkx.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781209221/article10_fo4xkx.webp",
       filePath: "articles/article10.html",
       url: "https://kareemzaher.com/articles/article10.html"
    },
@@ -92,7 +92,7 @@ export const articlesMeta = [
       id: 11,
       title: "أعراض تضخم البروستاتا عند الرجال بعد سن الخمسين: متى تستدعي زيارة الطبيب؟",
       description: "تعرف على أعراض تضخم البروستاتا الحميد عند الرجال بعد سن الخمسين، وأسباب حدوثه، ومتى يجب زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج بأحدث الوسائل الطبية.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781380392/article11_lushys.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781380392/article11_lushys.webp",
       filePath: "articles/article11.html",
       url: "https://kareemzaher.com/articles/article11.html"
    },
@@ -100,7 +100,7 @@ export const articlesMeta = [
       id: 12,
       title: "كثرة التبول عند الرجال: الأسباب والعلاج",
       description: "تعرف على أسباب كثرة التبول عند الرجال، ومتى تستدعي زيارة طبيب المسالك البولية، وكيف يتم التشخيص والعلاج باستخدام أحدث الوسائل الطبية.",
-      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781726241/article12_fsbbre.png",
+      imgUrl: "https://res.cloudinary.com/dw5zbj6pk/image/upload/v1781726241/article12_fsbbre.webp",
       filePath: "articles/article12.html",
       url: "https://kareemzaher.com/articles/article12.html"
    },
