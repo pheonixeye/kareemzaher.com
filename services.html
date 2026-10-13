@@ -69,6 +69,7 @@
   <link rel="stylesheet" href="styles/page_content.css" />
   <link rel="stylesheet" href="styles/floating_btn.css" />
   <link rel="stylesheet" href="styles/services.css" />
+  <link rel="stylesheet" href="styles/breadcrumb.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <!-- Google tag (gtag.js) -->
@@ -85,14 +86,159 @@
   <!-- Google Fonts Preconnect & Cairo Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
 </head>
 
 <body id="services-id">
   <div class="page-content">
-    <div id="services-title" class="section-title">
-      <h2 lang-key="clinic-services">خدمات العيادة</h2>
-    </div>
+    <nav class="breadcrumb">
+      <a href="index.html" lang-key="Home">الرئيسية</a> &gt; <span lang-key="Services">الخدمات</span>
+    </nav>
+
+    <main class="services-shell">
+      <!-- Hero / Introduction Banner -->
+      <section class="services-hero" aria-labelledby="services-hero-title">
+        <div class="hero-card">
+          <span class="hero-orb" aria-hidden="true"></span>
+          <div class="hero-inner">
+            <div class="hero-badge-row">
+              <span class="hero-badge">
+                <span class="material-symbols-outlined">health_and_safety</span>
+                <span lang-key="services-hero-badge">تقنيات جراحية دقيقة بدون جراحة تقليدية</span>
+              </span>
+              <span class="hero-eau">
+                <span class="material-symbols-outlined">verified</span>
+                <span lang-key="services-eau">اعتماد أوروبي EAU</span>
+              </span>
+            </div>
+            <h1 id="services-hero-title" lang-key="services-hero-title">خدماتنا الطبية المتخصصة</h1>
+            <p class="hero-desc" lang-key="services-hero-desc">
+              نقدم في عيادة د. كريم زاهر أحدث الحلول العلاجية والجراحية الدقيقة لأمراض المسالك البولية، جراحات الذكورة، وعلاج العقم بأعلى المعايير العالمية وبالمناظير المرنة والليزر.
+            </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-num">+15</span>
+                <span class="stat-label" lang-key="services-stat1">عاماً من الخبرة</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">98%</span>
+                <span class="stat-label" lang-key="services-stat2">نسب نجاح قياسية</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num" lang-key="services-stat3-num">يوم 1</span>
+                <span class="stat-label" lang-key="services-stat3">إجراء وتعافي فوري</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Category Filter Chips -->
+        <div class="service-filters" id="service-filters" role="tablist" aria-label="تصفية الخدمات">
+          <button class="filter-chip active-filter" type="button" data-filter="all">
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <span lang-key="filter-all">الكل (5)</span>
+          </button>
+          <button class="filter-chip" type="button" data-filter="andrology">
+            <span class="material-symbols-outlined">male</span>
+            <span lang-key="filter-andrology">جراحة الذكورة</span>
+          </button>
+          <button class="filter-chip" type="button" data-filter="stones">
+            <span class="material-symbols-outlined">offline_bolt</span>
+            <span lang-key="filter-stones">تفتيت الحصوات</span>
+          </button>
+          <button class="filter-chip" type="button" data-filter="prostate">
+            <span class="material-symbols-outlined">water_drop</span>
+            <span lang-key="filter-prostate">البروستاتا</span>
+          </button>
+          <button class="filter-chip" type="button" data-filter="kidney">
+            <span class="material-symbols-outlined">biotech</span>
+            <span lang-key="filter-kidney">مناظير الكلى</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Services List / Cards Collection (rendered by js/services.js) -->
+      <section class="services-grid" id="services-grid" aria-label="الخدمات الطبية"></section>
+
+      <!-- Why Choose Clinic Section / Trust Bento -->
+      <section class="trust-card">
+        <div class="trust-head">
+          <span class="material-symbols-outlined">workspace_premium</span>
+          <h3 lang-key="trust-title">لماذا عيادة دكتور كريم زاهر؟</h3>
+        </div>
+        <div class="trust-list">
+          <div class="trust-item">
+            <span class="material-symbols-outlined">verified</span>
+            <div>
+              <h4 lang-key="trust1-title">عضوية الجمعية الأوروبية (EAU)</h4>
+              <p lang-key="trust1-desc">تطبيق أدق الإرشادات والبروتوكولات الطبية الأوروبية المعتمدة.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="material-symbols-outlined">hotel_class</span>
+            <div>
+              <h4 lang-key="trust2-title">ماجستير جراحة المسالك - قصر العيني</h4>
+              <p lang-key="trust2-desc">تدريب أكاديمي وخبرة سريرية تمتد لآلاف العمليات الناجحة في مصر.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="material-symbols-outlined">lock</span>
+            <div>
+              <h4 lang-key="trust3-title">أعلى مستويات الخصوصية والسرية</h4>
+              <p lang-key="trust3-desc">جلسات تشخيصية منفردة وسرية تامة في كل ما يخص جراحات الذكورة والضعف.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clinic Timetable & Quick Contact Block -->
+      <section class="timetable-card">
+        <div class="timetable-head">
+          <div class="timetable-title">
+            <span class="material-symbols-outlined">schedule</span>
+            <h3 lang-key="hours-title">مواعيد العيادة والاستشارات</h3>
+          </div>
+          <span class="timetable-badge" lang-key="hours-evening">مسائية</span>
+        </div>
+        <p class="timetable-address" lang-key="hours-address">
+          زهراء المعادي - الشطر الثالث عشر - برج الندى (الدور الأول)
+        </p>
+        <div class="timetable-grid">
+          <div class="timetable-row">
+            <span lang-key="Saturday">السبت</span>
+            <span>7:00 م - 10:00 م</span>
+          </div>
+          <div class="timetable-row">
+            <span lang-key="Tuesday">الثلاثاء</span>
+            <span>7:00 م - 10:00 م</span>
+          </div>
+          <div class="timetable-row">
+            <span lang-key="Wednesday">الاربعاء</span>
+            <span>7:00 م - 10:00 م</span>
+          </div>
+          <div class="timetable-row">
+            <span lang-key="Thursday">الخميس</span>
+            <span>7:00 م - 10:00 م</span>
+          </div>
+        </div>
+        <div class="timetable-actions">
+          <a class="btn-call" href="tel:01021646574">
+            <span class="material-symbols-outlined">call</span>
+            <span lang-key="services-call">اتصال: 01021646574</span>
+          </a>
+          <a class="btn-wa" href="https://wa.me/201021646574" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">chat</span>
+            <span lang-key="services-whatsapp">واتساب</span>
+          </a>
+        </div>
+      </section>
+
+      <p class="services-note">
+        <span class="material-symbols-outlined">info</span>
+        <span lang-key="services-note">للحالات الطارئة ومتابعات العمليات الجراحية، يرجى التواصل هاتفياً مباشرة</span>
+      </p>
+    </main>
   </div>
 
   <script src="js/nav_and_footer_add.js" type="module"></script>

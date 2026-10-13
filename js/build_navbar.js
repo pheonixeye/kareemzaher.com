@@ -20,12 +20,27 @@ function buildTemplate(isMobile) {
   return template;
 }
 
+function buildBottomTemplate() {
+  const templateList = [];
+
+  for (let index = 0; index < navData.length; index++) {
+    templateList.push(
+      `<li><a id="${navData[index].id}" class="nav-link" href="${navData[index].link}">${navData[index].icon}<span class="bottom-nav-label" lang-key="${navData[index].text}_short">${navData[index].shortArText || navData[index].text}</span></a></li>`
+    );
+  }
+  templateList.pop();
+  return templateList.join(" ");
+}
+
 document
   .querySelector("#overlay-content")
   .insertAdjacentHTML("beforeend", buildTemplate(true));
 document
   .querySelector("#desktop-nav")
   .insertAdjacentHTML("beforeend", buildTemplate(false));
+document
+  .querySelector("#bottom-nav")
+  ?.insertAdjacentHTML("beforeend", buildBottomTemplate());
 
 const navLinks = document.querySelectorAll(".nav-link");
 const body = document.getElementsByTagName("body");

@@ -52,6 +52,9 @@ const navTemplate = /*html*/ `
 <button type="button" id='close-nav-btn' class="closebtn">X</button>
   <div class="overlay-content" id="overlay-content"></div>
 </div>
+<nav class="bottom-nav">
+  <ul id="bottom-nav"></ul>
+</nav>
 <div class="nav-bar">
   <div class="site-logo" lang-key="logo">عيادة د / كريم زاهر</div>
   <nav class="desktop-nav">

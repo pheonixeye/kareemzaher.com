@@ -2,118 +2,215 @@
 import { services } from "./services_data.js";
 import { url } from "./urls.js";
 
-const servicesPageContent = document.querySelector(
-  "#services-id .page-content"
-);
+const html = document.documentElement;
+const servicesGrid = document.querySelector("#services-id #services-grid");
+const filterBar = document.querySelector("#services-id #service-filters");
 
-const html = document.querySelector("html");
-const pageTitle = document.querySelector("#services-title");
+// Category used by the filter chips on the services page.
+const categoryById = {
+  0: "andrology",
+  1: "stones",
+  2: "prostate",
+  3: "andrology",
+  4: "kidney",
+};
 
-let servicesContainer = document.querySelector(".services-container");
-if (!servicesContainer) {
-  servicesContainer = document.createElement("div");
-  servicesContainer.className = "services-container";
-  pageTitle.insertAdjacentElement("afterend", servicesContainer);
-}
+// Per-service presentation extras that are not part of the shared data file.
+const cardMetaById = {
+  0: {
+    icon: "smb_share",
+    category: { ar: "الذكورة والإنجاب", en: "Andrology & Fertility" },
+    badge: { ar: "جراحة ميكروسكوبية دقيقة", en: "Precise Microscopic Surgery" },
+  },
+  1: {
+    icon: "flash_on",
+    category: { ar: "حصوات المسالك", en: "Urinary Stones" },
+    badge: { ar: "ليزر هولميوم فائق الدقة", en: "Ultra-precise Holmium Laser" },
+  },
+  2: {
+    icon: "water_drop",
+    category: { ar: "تضخم البروستاتا", en: "Enlarged Prostate" },
+    badge: { ar: "مناظير البلازما ثنائية القطب", en: "Bipolar Plasma Endoscopy" },
+  },
+  3: {
+    icon: "lock",
+    category: { ar: "جراحة الذكورة", en: "Andrology Surgery" },
+    badge: { ar: "سرية تامة وأعلى درجات التعقيم", en: "Full Discretion & Sterility" },
+  },
+  4: {
+    icon: "radio_button_checked",
+    category: { ar: "مناظير الكلى", en: "Kidney Endoscopy" },
+    badge: { ar: "ثقب ميكروسكوبي 5 ملم", en: "5 mm Micro Puncture" },
+  },
+};
 
-function buildServiceItemTemplate(dataItem, isEnglish) {
+function buildServiceCard(service, isEnglish) {
+  const meta = cardMetaById[service.id];
+  const short = isEnglish ? "en" : "ar";
+  const title = isEnglish ? service.entitle : service.artitle;
+  const description = isEnglish ? service.enparagraph : service.arparagraph;
+
+  const tags = service.info
+    .slice(0, 3)
+    .map((info) => (isEnglish ? info.entitle : info.artitle));
+  const details = service.info.map((info) =>
+    isEnglish ? info.entext : info.artext
+  );
+
+  const cta = isEnglish ? "Details & Booking" : "تفاصيل وحجز استشارة";
+  const detailsTitle = isEnglish
+    ? "Clinical highlights:"
+    : "أبرز ما يميز هذه الخدمة:";
+  const toggleLabel = isEnglish
+    ? "Show more information"
+    : "عرض معلومات إضافية";
+  const videoLabel = isEnglish ? "Watch the video" : "شاهد الفيديو";
+
   return /*html*/ `
-<div class="service-item" id="service-item-no-${dataItem.id}">
-  <div class="service-card">
+  <article class="service-card" id="service-item-no-${service.id}" data-category="${categoryById[service.id]}">
     <div class="service-media">
-      <img
-        class="service-main-img"
-        src="${url}/${dataItem.img}"
-        alt="${isEnglish ? dataItem.entitle : dataItem.artitle}"
-      />
-      <div class="service-media-overlay">
-        <button class="youtube-btn" type="button" aria-label="Watch video" data-ytlink="${dataItem.ytlink}">
-          <svg class="youtube-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-          </svg>
-           <span class="youtube-btn-text">${isEnglish ? 'Watch Video' : 'شاهد الفيديو'}</span>
+      <img src="${url}/${service.img}" alt="${title}" loading="lazy" />
+      <span class="service-media-badge">
+        <span class="material-symbols-outlined">${meta.icon}</span>
+        <span>${meta.badge[short]}</span>
+      </span>
+    </div>
+    <div class="service-body">
+      <div class="service-head">
+        <div class="service-head-main">
+          <img class="service-icon" src="${url}/${service.svg}" alt="" aria-hidden="true" />
+          <h2 class="service-card-title">${title}</h2>
+        </div>
+        <span class="service-tag">${meta.category[short]}</span>
+      </div>
+      <p class="service-card-desc">${description}</p>
+      <div class="service-features">
+        ${tags
+          .map(
+            (tag) => /*html*/ `
+          <span class="service-feature">
+            <span class="material-symbols-outlined">check_circle</span>
+            ${tag}
+          </span>`
+          )
+          .join("")}
+      </div>
+      <div class="service-actions">
+        <a class="service-cta" href="appointments.html">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>${cta}</span>
+        </a>
+        <button class="service-toggle" type="button" aria-label="${toggleLabel}" aria-expanded="false">
+          <span class="material-symbols-outlined">expand_more</span>
         </button>
       </div>
-    </div>
-    
-    <div class="service-content">
-      <div class="service-header">
-        <img class="service-icon" src="${url}/${dataItem.svg}" alt="icon" />
-        <h3 class="service-title">${isEnglish ? dataItem.entitle : dataItem.artitle}</h3>
-      </div>
-      
-      <p class="service-description">
-        ${isEnglish ? dataItem.enparagraph : dataItem.arparagraph}
-      </p>
-      
-      <div class="service-features">
-        ${dataItem.info.map(infoItem => `
-          <div class="feature-item">
-             <div class="feature-icon-wrapper">
-               <svg class="feature-bullet" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
-             </div>
-             <div class="feature-text">
-               <h4>${isEnglish ? infoItem.entitle : infoItem.artitle}</h4>
-               <p>${isEnglish ? infoItem.entext : infoItem.artext}</p>
-             </div>
-          </div>
-        `).join('')}
+      <div class="service-extra" hidden>
+        <p class="service-extra-title">${detailsTitle}</p>
+        <ul>
+          ${details.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+        ${
+          service.ytlink
+            ? /*html*/ `
+        <a class="service-video" href="${service.ytlink}" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined">smart_display</span>
+          ${videoLabel}
+        </a>`
+            : ""
+        }
       </div>
     </div>
-  </div>
-</div>
-`;
+  </article>`;
+}
+
+function bindDetailsToggles() {
+  servicesGrid
+    .querySelectorAll(".service-toggle")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const extra = button
+          .closest(".service-card")
+          .querySelector(".service-extra");
+        const isOpening = extra.hasAttribute("hidden");
+
+        if (isOpening) {
+          extra.removeAttribute("hidden");
+        } else {
+          extra.setAttribute("hidden", "");
+        }
+
+        button.setAttribute("aria-expanded", String(isOpening));
+        button.classList.toggle("is-open", isOpening);
+      });
+    });
 }
 
 function rebuildServices() {
-  const isEnglish = html.getAttribute("lang") === "en";
-  servicesContainer.innerHTML = '';
+  if (!servicesGrid) return;
 
-  services.forEach((service) => {
-    servicesContainer.insertAdjacentHTML(
-      "beforeend",
-      buildServiceItemTemplate(service, isEnglish)
-    );
+  const isEnglish = html.getAttribute("lang") === "en";
+  servicesGrid.innerHTML = services
+    .map((service) => buildServiceCard(service, isEnglish))
+    .join("");
+
+  bindDetailsToggles();
+}
+
+function applyFilter(filterValue) {
+  const cards = servicesGrid.querySelectorAll(".service-card");
+  cards.forEach((card) => {
+    const matches =
+      filterValue === "all" || card.dataset.category === filterValue;
+    card.hidden = !matches;
   });
-  
-  const btns = servicesContainer.querySelectorAll(".youtube-btn");
-  btns.forEach(btn => {
-    btn.onclick = () => {
-      window.open(btn.getAttribute("data-ytlink"), "_blank");
-    };
+}
+
+function bindFilters() {
+  if (!filterBar) return;
+
+  const chips = filterBar.querySelectorAll(".filter-chip");
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((item) => item.classList.remove("active-filter"));
+      chip.classList.add("active-filter");
+      applyFilter(chip.dataset.filter);
+    });
   });
 }
 
 function scrollToHash() {
-  if (window.location.hash) {
-    const id = window.location.hash.substring(1);
-    const element = document.getElementById(id);
-    if (element) {
-      setTimeout(() => {
-        const headerOffset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  if (!window.location.hash) return;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }, 600);
-    }
-  }
+  const target = document.getElementById(window.location.hash.slice(1));
+  if (!target) return;
+
+  setTimeout(() => {
+    const headerOffset = 90;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition =
+      elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }, 400);
 }
 
 // Initial build
 rebuildServices();
+bindFilters();
 scrollToHash();
 
+// Rebuild when the language toggles (localization.js flips <html lang>)
 const observer = new MutationObserver((mutations) => {
-  mutations.forEach((m) => {
-    if (m.type === "attributes" && m.attributeName === "lang") {
+  mutations.forEach((mutation) => {
+    if (mutation.type === "attributes" && mutation.attributeName === "lang") {
       rebuildServices();
     }
   });
 });
 observer.observe(html, {
-  attributes: true
+  attributes: true,
+  attributeFilter: ["lang"],
 });

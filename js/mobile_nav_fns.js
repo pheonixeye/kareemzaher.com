@@ -1,39 +1,42 @@
 //mobile navigation
 const overlayNav = document.querySelector(".overlay-nav");
+const menuButton = document.querySelector(".mobile-nav-btn");
 
 function openNav() {
+  if (!overlayNav) return;
   overlayNav.style.width = "50%";
   overlayNav.classList.toggle("is-open");
 }
 
 function closeNav() {
+  if (!overlayNav) return;
   overlayNav.style.width = "0%";
   overlayNav.classList.toggle("is-open");
 }
-const menuButton = document.querySelector(".mobile-nav-btn");
+
+if (menuButton) {
+  menuButton.addEventListener("click", () => {
+    openNav();
+  });
+}
 
 document.addEventListener("click", (e) => {
-  // console.log(e.target.id);
   if (
+    overlayNav &&
     overlayNav.classList.contains("is-open") &&
     !e.target.isEqualNode(menuButton) &&
     !e.target.isEqualNode(overlayNav) &&
-    !menuButton.contains(e.target)
+    !(menuButton && menuButton.contains(e.target))
   ) {
     closeNav();
   }
 });
 
-menuButton.addEventListener('click', (e) => {
-  openNav();
-});
-
-
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener("DOMContentLoaded", () => {
   const closeMenuButton = document.querySelector("#close-nav-btn");
-  closeMenuButton.addEventListener("click", (e) => {
-    closeNav();
-  });
+  if (closeMenuButton) {
+    closeMenuButton.addEventListener("click", () => {
+      closeNav();
+    });
+  }
 });
-
-
