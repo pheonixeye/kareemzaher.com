@@ -284,6 +284,7 @@ function generateSitemap(articles) {
   const servicePages = [
     { loc: "/services/varicocelectomy/", changefreq: "monthly", priority: "0.85" },
     { loc: "/services/laser_lithotripsy/", changefreq: "monthly", priority: "0.85" },
+    { loc: "/services/turp/", changefreq: "monthly", priority: "0.85" },
   ];
 
   const servicePagesXml = servicePages

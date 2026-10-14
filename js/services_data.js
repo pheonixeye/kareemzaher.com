@@ -66,6 +66,7 @@ export const services = [
         id: 2,
         entitle: "TRANS-URETHRAL RESECTION OF PROSTATE",
         artitle: "استئصال البروستاتا بالتبخير",
+        page: "services/turp/",
         svg: "images_svg/2.svg",
         img: "images_webp/2.webp",
         ytlink: "https://www.youtube.com/watch?v=aBelQBJNDNM&t=22s&ab_channel=NucleusMedicalMedia",
