@@ -280,6 +280,24 @@ function generateSitemap(articles) {
     { loc: "/erection_test.html", changefreq: "monthly", priority: "0.70" },
   ];
 
+  // Individual service detail pages (one per service)
+  const servicePages = [
+    { loc: "/services/varicocelectomy/", changefreq: "monthly", priority: "0.85" },
+    { loc: "/services/laser_lithotripsy/", changefreq: "monthly", priority: "0.85" },
+  ];
+
+  const servicePagesXml = servicePages
+    .map(
+      (page) => `
+  <url>
+    <loc>${SITE_URL}${page.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`
+    )
+    .join("");
+
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -306,6 +324,8 @@ function generateSitemap(articles) {
     <changefreq>${staticPages[2].changefreq}</changefreq>
     <priority>${staticPages[2].priority}</priority>
   </url>
+
+  <!-- Service Detail Pages -->${servicePagesXml}
 
   <!-- Articles Listing Page -->
   <url>

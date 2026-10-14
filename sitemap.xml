@@ -25,6 +25,20 @@
     <priority>0.90</priority>
   </url>
 
+  <!-- Service Detail Pages -->
+  <url>
+    <loc>https://www.kareemzaher.com/services/varicocelectomy/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.kareemzaher.com/services/laser_lithotripsy/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Articles Listing Page -->
   <url>
     <loc>https://www.kareemzaher.com/articles.html</loc>

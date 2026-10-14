@@ -96,7 +96,7 @@ function buildServiceCard(service, isEnglish) {
           .join("")}
       </div>
       <div class="service-actions">
-        <a class="service-cta" href="appointments.html">
+        <a class="service-cta" href="${service.page || "appointments.html"}">
           <span class="material-symbols-outlined">calendar_today</span>
           <span>${cta}</span>
         </a>

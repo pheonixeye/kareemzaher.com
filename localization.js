@@ -38,7 +38,7 @@ function buildArCache() {
   document.querySelectorAll("[lang-key]").forEach((el) => {
     const key = el.getAttribute("lang-key");
     if (key && !arCache[key]) {
-      arCache[key] = el.innerText;
+      arCache[key] = el.innerText || el.textContent;
     }
   });
 }
