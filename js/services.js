@@ -13,6 +13,7 @@ const categoryById = {
   2: "prostate",
   3: "andrology",
   4: "kidney",
+  5: "bladder",
 };
 
 // Per-service presentation extras that are not part of the shared data file.
@@ -30,17 +31,31 @@ const cardMetaById = {
   2: {
     icon: "water_drop",
     category: { ar: "تضخم البروستاتا", en: "Enlarged Prostate" },
-    badge: { ar: "مناظير البلازما ثنائية القطب", en: "Bipolar Plasma Endoscopy" },
+    badge: {
+      ar: "مناظير البلازما ثنائية القطب",
+      en: "Bipolar Plasma Endoscopy",
+    },
   },
   3: {
     icon: "lock",
     category: { ar: "جراحة الذكورة", en: "Andrology Surgery" },
-    badge: { ar: "سرية تامة وأعلى درجات التعقيم", en: "Full Discretion & Sterility" },
+    badge: {
+      ar: "سرية تامة وأعلى درجات التعقيم",
+      en: "Full Discretion & Sterility",
+    },
   },
   4: {
     icon: "radio_button_checked",
     category: { ar: "مناظير الكلى", en: "Kidney Endoscopy" },
     badge: { ar: "ثقب ميكروسكوبي 5 ملم", en: "5 mm Micro Puncture" },
+  },
+  5: {
+    icon: "health_and_safety",
+    category: { ar: "أورام المثانة", en: "Bladder Tumors" },
+    badge: {
+      ar: "استئصال بالمنظار بدون شق",
+      en: "Incision-free Endoscopic Resection",
+    },
   },
 };
 
@@ -54,7 +69,7 @@ function buildServiceCard(service, isEnglish) {
     .slice(0, 3)
     .map((info) => (isEnglish ? info.entitle : info.artitle));
   const details = service.info.map((info) =>
-    isEnglish ? info.entext : info.artext
+    isEnglish ? info.entext : info.artext,
   );
 
   const cta = isEnglish ? "Details & Booking" : "تفاصيل وحجز استشارة";
@@ -91,7 +106,7 @@ function buildServiceCard(service, isEnglish) {
           <span class="service-feature">
             <span class="material-symbols-outlined">check_circle</span>
             ${tag}
-          </span>`
+          </span>`,
           )
           .join("")}
       </div>
@@ -124,25 +139,23 @@ function buildServiceCard(service, isEnglish) {
 }
 
 function bindDetailsToggles() {
-  servicesGrid
-    .querySelectorAll(".service-toggle")
-    .forEach((button) => {
-      button.addEventListener("click", () => {
-        const extra = button
-          .closest(".service-card")
-          .querySelector(".service-extra");
-        const isOpening = extra.hasAttribute("hidden");
+  servicesGrid.querySelectorAll(".service-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const extra = button
+        .closest(".service-card")
+        .querySelector(".service-extra");
+      const isOpening = extra.hasAttribute("hidden");
 
-        if (isOpening) {
-          extra.removeAttribute("hidden");
-        } else {
-          extra.setAttribute("hidden", "");
-        }
+      if (isOpening) {
+        extra.removeAttribute("hidden");
+      } else {
+        extra.setAttribute("hidden", "");
+      }
 
-        button.setAttribute("aria-expanded", String(isOpening));
-        button.classList.toggle("is-open", isOpening);
-      });
+      button.setAttribute("aria-expanded", String(isOpening));
+      button.classList.toggle("is-open", isOpening);
     });
+  });
 }
 
 function rebuildServices() {
@@ -187,8 +200,7 @@ function scrollToHash() {
   setTimeout(() => {
     const headerOffset = 90;
     const elementPosition = target.getBoundingClientRect().top;
-    const offsetPosition =
-      elementPosition + window.pageYOffset - headerOffset;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
     window.scrollTo({
       top: offsetPosition,

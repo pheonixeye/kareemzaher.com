@@ -285,6 +285,9 @@ function generateSitemap(articles) {
     { loc: "/services/varicocelectomy/", changefreq: "monthly", priority: "0.85" },
     { loc: "/services/laser_lithotripsy/", changefreq: "monthly", priority: "0.85" },
     { loc: "/services/turp/", changefreq: "monthly", priority: "0.85" },
+    { loc: "/services/penile_prothesis/", changefreq: "monthly", priority: "0.85" },
+    { loc: "/services/pcnl/", changefreq: "monthly", priority: "0.85" },
+    { loc: "/services/turbt/", changefreq: "monthly", priority: "0.85" },
   ];
 
   const servicePagesXml = servicePages

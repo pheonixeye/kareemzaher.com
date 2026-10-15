@@ -172,49 +172,6 @@
   color: var(--sp-text-muted);
 }
 
-.svc-doctor-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 2px;
-  padding: 12px;
-  border-radius: var(--sp-radius-lg);
-  background: var(--sp-container-low);
-}
-
-.svc-doctor-avatar {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--sp-primary-container);
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  box-shadow: var(--sp-shadow-sm);
-}
-
-.svc-doctor-info {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.svc-doctor-name {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--sp-teal-dark);
-}
-
-.svc-doctor-cred {
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--sp-text-muted);
-}
-
 /* --------------------------------------------------------------- Metrics */
 .svc-metrics {
   display: grid;
@@ -1125,6 +1082,571 @@
   color: var(--sp-text-muted);
 }
 
+/* ------------------------------------------------------- Stats (bento) */
+.svc-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.svc-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  border-radius: var(--sp-radius-lg);
+  background: var(--sp-surface-card);
+  border: 1px solid var(--sp-border-subtle);
+  box-shadow: var(--sp-shadow-sm);
+}
+
+.svc-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 2px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.svc-stat-icon--primary {
+  background: #b9eaff;
+  color: var(--sp-teal-dark);
+}
+
+.svc-stat-icon--cyan {
+  background: var(--sp-container-high);
+  color: var(--sp-secondary);
+}
+
+.svc-stat-icon--teal {
+  background: var(--sp-container-low);
+  color: var(--sp-cyan-vivid);
+}
+
+.svc-stat-icon--gold {
+  background: var(--sp-gold-light);
+  color: var(--sp-gold);
+}
+
+.svc-stat-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--sp-primary);
+}
+
+.svc-stat-value--secondary {
+  color: var(--sp-secondary);
+}
+
+.svc-stat-value--cyan {
+  color: var(--sp-cyan-vivid);
+}
+
+.svc-stat-value--gold {
+  color: var(--sp-gold);
+}
+
+.svc-stat-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sp-teal-dark);
+}
+
+.svc-stat-desc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--sp-text-muted);
+}
+
+/* ----------------------------------------------------------- Profile card */
+.svc-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--sp-radius-lg);
+  background: var(--sp-surface-card);
+  border: 1px solid var(--sp-border-subtle);
+  box-shadow: var(--sp-shadow-sm);
+}
+
+.svc-profile-avatar {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--sp-shadow-sm);
+}
+
+.svc-profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.svc-profile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.svc-profile-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sp-teal-dark);
+}
+
+.svc-profile-name .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--sp-cyan-vivid);
+}
+
+.svc-profile-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sp-teal-core);
+}
+
+.svc-profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.svc-profile-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--sp-text-body);
+}
+
+.svc-profile-dot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sp-primary);
+}
+
+.svc-profile-dot--gold {
+  background: var(--sp-gold);
+}
+
+/* -------------------------------------------------------------- Info list */
+.svc-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.svc-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-container-low);
+}
+
+.svc-info-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: #b9eaff;
+  color: var(--sp-teal-dark);
+  font-size: 17px;
+}
+
+.svc-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.svc-info-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sp-teal-dark);
+}
+
+.svc-info-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--sp-text-body);
+}
+
+/* -------------------------------------------------------------- Tag / pill */
+.svc-tag {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.svc-tag .material-symbols-outlined {
+  font-size: 14px;
+}
+
+.svc-tag--primary {
+  background: #b9eaff;
+  color: #004d62;
+}
+
+.svc-tag--secondary {
+  background: var(--sp-container-high);
+  color: var(--sp-secondary);
+}
+
+.svc-tag--neutral {
+  background: var(--sp-container);
+  color: var(--sp-teal-dark);
+}
+
+/* ------------------------------------------------------------ Warranty row */
+.svc-warranty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 2px;
+  padding: 10px 12px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-container-low);
+}
+
+.svc-warranty-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sp-teal-dark);
+}
+
+.svc-warranty-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sp-primary);
+}
+
+.svc-warranty-value--secondary {
+  color: var(--sp-secondary);
+}
+
+/* ----------------------------------------------------------- Review footer */
+.svc-review-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--sp-text-muted);
+}
+
+/* -------------------------------------------------------------- Duo grid */
+.svc-duo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* --------------------------------------------------- Hero overlay (PCNL) */
+.svc-hero--overlay {
+  position: relative;
+  border: none;
+  background: var(--sp-teal-dark);
+}
+
+.svc-hero--overlay .svc-hero-media {
+  aspect-ratio: 16 / 11;
+}
+
+.svc-hero--overlay .svc-hero-overlay {
+  background: linear-gradient(to top, rgba(12, 52, 70, 0.96) 0%, rgba(12, 52, 70, 0.72) 42%, rgba(12, 52, 70, 0.32) 100%);
+}
+
+.svc-hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px;
+}
+
+.svc-hero--overlay .svc-hero-badges {
+  position: static;
+  inset: auto;
+  justify-content: flex-start;
+  margin-bottom: 2px;
+}
+
+.svc-hero--overlay .svc-hero-content h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.svc-hero--overlay .svc-hero-sub {
+  max-width: 34rem;
+  color: #cffafe;
+}
+
+.svc-chip--glass-cyan {
+  background: rgba(8, 145, 178, 0.26);
+  color: #b9eaff;
+  backdrop-filter: blur(6px);
+}
+
+.svc-chip--glass-cyan .material-symbols-outlined {
+  color: #b9eaff;
+}
+
+.svc-chip--glass-gold {
+  background: rgba(254, 243, 199, 0.2);
+  color: #ffdcc3;
+  backdrop-filter: blur(6px);
+}
+
+.svc-chip--glass-gold .material-symbols-outlined {
+  color: #ffdcc3;
+}
+
+/* ------------------------------------------------ Profile credential chips */
+.svc-profile-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.svc-profile-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-surface-bg);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sp-text-muted);
+}
+
+.svc-profile-chip .material-symbols-outlined {
+  font-size: 14px;
+  color: var(--sp-cyan-vivid);
+}
+
+.svc-profile-chip--gold .material-symbols-outlined {
+  color: var(--sp-gold);
+}
+
+/* -------------------------------------------------- Stat value (teal core) */
+.svc-stat-value--teal {
+  color: var(--sp-teal-core);
+}
+
+/* ---------------------------------------------------- Tag (cyan variant) */
+.svc-tag--cyan {
+  background: var(--sp-container-high);
+  color: var(--sp-cyan-vivid);
+}
+
+/* --------------------------------------------------------------- Explainer */
+.svc-panel-body {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: var(--sp-text-body);
+}
+
+.svc-panel-body strong {
+  color: var(--sp-primary);
+  font-weight: 800;
+}
+
+.svc-checklist-box {
+  padding: 12px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-container-low);
+}
+
+/* ------------------------------------------------------------ Compare table */
+.svc-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.svc-compare-group {
+  padding: 12px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-surface-bg);
+}
+
+.svc-compare-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sp-teal-dark);
+}
+
+.svc-compare-cells {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.svc-compare-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-surface-card);
+  border: 1px solid var(--sp-border-subtle);
+}
+
+.svc-compare-cell--best {
+  background: var(--sp-container-high);
+  border-color: transparent;
+}
+
+.svc-compare-cell-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sp-text-muted);
+}
+
+.svc-compare-cell--best .svc-compare-cell-title {
+  color: var(--sp-primary);
+}
+
+.svc-compare-cell-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--sp-text-muted);
+}
+
+.svc-compare-cell--best .svc-compare-cell-value {
+  color: var(--sp-primary);
+}
+
+.svc-compare-cell-value--bad {
+  color: #ba1a1a;
+}
+
+/* -------------------------------------------------------- Review quote */
+.svc-review-text--quote {
+  padding-inline-start: 12px;
+  border-inline-start: 3px solid var(--sp-cyan-vivid);
+}
+
+/* ------------------------------------------------------ Hero contained (TURBT) */
+.svc-hero--contain .svc-hero-media {
+  aspect-ratio: auto;
+  background: var(--sp-container-low);
+}
+
+.svc-hero--contain .svc-hero-media img {
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.svc-hero-badges--inline {
+  position: static;
+  inset: auto;
+  justify-content: flex-start;
+  margin: 0 0 2px;
+}
+
+.svc-chip--primary {
+  background: var(--sp-primary);
+  color: #fff;
+}
+
+.svc-chip--primary .material-symbols-outlined {
+  color: #fff;
+}
+
+.svc-chip--soft {
+  background: #b9eaff;
+  color: #004d62;
+}
+
+.svc-chip--soft .material-symbols-outlined {
+  color: #004d62;
+}
+
+.svc-icon-fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* --------------------------------------------------- Profile gold variant */
+.svc-profile--gold {
+  background: rgba(254, 243, 199, 0.42);
+  border-color: transparent;
+}
+
+.svc-verified-badge {
+  font-size: 18px;
+  color: var(--sp-gold);
+}
+
+/* ----------------------------------------------------- Info icon (error) */
+.svc-info-icon--error {
+  background: #ffdad6;
+  color: #ba1a1a;
+}
+
+/* -------------------------------------------------------- Checklist boxed */
+.svc-checklist--boxed {
+  gap: 10px;
+}
+
+.svc-checklist--boxed li {
+  padding: 12px;
+  border-radius: var(--sp-radius);
+  background: var(--sp-container-low);
+}
+
+.svc-checklist--boxed strong {
+  font-weight: 800;
+  color: var(--sp-teal-dark);
+}
+
 /* --------------------------------------------------------- Responsive */
 @media (min-width: 720px) {
   .svc-shell {
@@ -1137,6 +1659,14 @@
 
   .svc-hero-media {
     aspect-ratio: 16 / 7;
+  }
+
+  .svc-hero--overlay .svc-hero-media {
+    aspect-ratio: 16 / 8;
+  }
+
+  .svc-hero-content {
+    padding: 24px;
   }
 
   .svc-cards-3 {
@@ -1165,6 +1695,15 @@
   }
 
   .svc-cards-2 {
+    gap: 14px;
+  }
+
+  .svc-duo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .svc-stats {
     gap: 14px;
   }
 
