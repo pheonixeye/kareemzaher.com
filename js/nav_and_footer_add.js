@@ -38,7 +38,7 @@ const footerTemplate = /*html*/ `
 
 const navTemplate = /*html*/ `
 <div class="floating-btn-div">
-  <button class="lang-btn" type="button" onclick="window.open('https://wa.me/+201021646574','_blank')">
+  <button class="lang-btn" type="button" onclick="window.open('https://wa.me/+201091966224','_blank')">
   <img
   src="${url}/images_svg/wa.svg"
   alt="whatsapp icon"
